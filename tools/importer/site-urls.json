@@ -1,0 +1,1205 @@
+{
+  "originUrl": "https://aashirvaad.com",
+  "lastCrawled": "https://aashirvaad.com/",
+  "urls": [
+    {
+      "url": "https://aashirvaad.com/",
+      "source": "SITEMAPS",
+      "targetPath": "/",
+      "id": "c9275713a925aaca24e64b03217f58c63e651346"
+    },
+    {
+      "url": "https://aashirvaad.com/aashirvaad-masala-factory-locator.html",
+      "source": "SITEMAPS",
+      "targetPath": "/aashirvaad-masala-factory-locator",
+      "id": "7510f1e8929d640c0ff462be0cfc10653f04d3d9"
+    },
+    {
+      "url": "https://aashirvaad.com/aashirvaad-shudh-chakki-campaign.html",
+      "source": "SITEMAPS",
+      "targetPath": "/aashirvaad-shudh-chakki-campaign",
+      "id": "6d3c2da44a2743041bb35c0f6f195c531f5c819c"
+    },
+    {
+      "url": "https://aashirvaad.com/blogs.html",
+      "source": "SITEMAPS",
+      "targetPath": "/blogs",
+      "id": "8bd1c30c8da5149e9c3cdd9150c01c3f2330fc90"
+    },
+    {
+      "url": "https://aashirvaad.com/blogs/10-best-indian-sweets.html",
+      "source": "SITEMAPS",
+      "targetPath": "/blogs/10-best-indian-sweets",
+      "id": "9736209cadf8e4fdb341121c5c801543c8ccc599"
+    },
+    {
+      "url": "https://aashirvaad.com/blogs/10-delicious-besan-recipes.html",
+      "source": "SITEMAPS",
+      "targetPath": "/blogs/10-delicious-besan-recipes",
+      "id": "24db8b9d144b27527bbc7e703711217ffd9d401f"
+    },
+    {
+      "url": "https://aashirvaad.com/blogs/10-delicious-millets-recipes.html",
+      "source": "SITEMAPS",
+      "targetPath": "/blogs/10-delicious-millets-recipes",
+      "id": "de10eda07d20a4e293f8ed31e2f030f4dc63f58b"
+    },
+    {
+      "url": "https://aashirvaad.com/blogs/9-awesome-hacks-to-treat-digestive-issues-at-home.html",
+      "source": "SITEMAPS",
+      "targetPath": "/blogs/9-awesome-hacks-to-treat-digestive-issues-at-home",
+      "id": "6eb4b55fb037978a9d5c89cc4adf9f3277723827"
+    },
+    {
+      "url": "https://aashirvaad.com/blogs/a-beginners-guide-to-going-organic-easy-tips-for-a-cleaner-diet.html",
+      "source": "SITEMAPS",
+      "targetPath": "/blogs/a-beginners-guide-to-going-organic-easy-tips-for-a-cleaner-diet",
+      "id": "2e9dc1e312697c3b71f4f3e014a286acdf4767c4"
+    },
+    {
+      "url": "https://aashirvaad.com/blogs/all-you-need-to-know-about-multigrain-atta.html",
+      "source": "SITEMAPS",
+      "targetPath": "/blogs/all-you-need-to-know-about-multigrain-atta",
+      "id": "e92fc2508693ba1b17875d0888f2c67451095b60"
+    },
+    {
+      "url": "https://aashirvaad.com/blogs/beetroot-chukandar-nutrition-benefits-side-effects-and-recipes.html",
+      "source": "SITEMAPS",
+      "targetPath": "/blogs/beetroot-chukandar-nutrition-benefits-side-effects-and-recipes",
+      "id": "227b67e18953009d5a047b260616b45fa4a6c162"
+    },
+    {
+      "url": "https://aashirvaad.com/blogs/besan-pakora.html",
+      "source": "SITEMAPS",
+      "targetPath": "/blogs/besan-pakora",
+      "id": "31044945a622f85145478646ac84c835d2e0b064"
+    },
+    {
+      "url": "https://aashirvaad.com/blogs/best-moong-daal-recipes.html",
+      "source": "SITEMAPS",
+      "targetPath": "/blogs/best-moong-daal-recipes",
+      "id": "1168660bbdda9fe37c64293681881f66b120187e"
+    },
+    {
+      "url": "https://aashirvaad.com/blogs/breakfast-ideas-with-besan.html",
+      "source": "SITEMAPS",
+      "targetPath": "/blogs/breakfast-ideas-with-besan",
+      "id": "c6e25cc63c981d6fd4b4ce5657abdcc26d2a67c4"
+    },
+    {
+      "url": "https://aashirvaad.com/blogs/coriander-advantages-and-nutrition-guide.html",
+      "source": "SITEMAPS",
+      "targetPath": "/blogs/coriander-advantages-and-nutrition-guide",
+      "id": "6d7143513ffe368f832fde7e3e1accfc6e7683a1"
+    },
+    {
+      "url": "https://aashirvaad.com/blogs/delicious-vermicelli-recipes.html",
+      "source": "SITEMAPS",
+      "targetPath": "/blogs/delicious-vermicelli-recipes",
+      "id": "e44e9476de70a18ae9e3eea675e953b0d14730b4"
+    },
+    {
+      "url": "https://aashirvaad.com/blogs/different-types-of-millets.html",
+      "source": "SITEMAPS",
+      "targetPath": "/blogs/different-types-of-millets",
+      "id": "437101c10a647937255feac2deb9c60c1d27904d"
+    },
+    {
+      "url": "https://aashirvaad.com/blogs/foxtail-millet-benefits-nutrition-and-more.html",
+      "source": "SITEMAPS",
+      "targetPath": "/blogs/foxtail-millet-benefits-nutrition-and-more",
+      "id": "4bdbcc28daf48d885c398543e42972ab192e9387"
+    },
+    {
+      "url": "https://aashirvaad.com/blogs/garam-masala-the-king-of-indian-cooking.html",
+      "source": "SITEMAPS",
+      "targetPath": "/blogs/garam-masala-the-king-of-indian-cooking",
+      "id": "21e0fdea11cf27894e95f1ba621d0851683dc490"
+    },
+    {
+      "url": "https://aashirvaad.com/blogs/ghee-vs-butter-healthier-options.html",
+      "source": "SITEMAPS",
+      "targetPath": "/blogs/ghee-vs-butter-healthier-options",
+      "id": "048c3ec34dd23548b7755311ebca0fff6f3825de"
+    },
+    {
+      "url": "https://aashirvaad.com/blogs/gulab-jamun-dessert-history-and-nutritional-values.html",
+      "source": "SITEMAPS",
+      "targetPath": "/blogs/gulab-jamun-dessert-history-and-nutritional-values",
+      "id": "e5468bee52fc650d67fea5356210a3c62ab30550"
+    },
+    {
+      "url": "https://aashirvaad.com/blogs/health-benefits-of-ragi.html",
+      "source": "SITEMAPS",
+      "targetPath": "/blogs/health-benefits-of-ragi",
+      "id": "493505a5c344ab215a4e0ad25b35bf28ec1d5794"
+    },
+    {
+      "url": "https://aashirvaad.com/blogs/how-to-use-instant-dosa-batter.html",
+      "source": "SITEMAPS",
+      "targetPath": "/blogs/how-to-use-instant-dosa-batter",
+      "id": "ffadb35995469fdd0fa9fdf3126757956430e183"
+    },
+    {
+      "url": "https://aashirvaad.com/blogs/indian-spice-history-varieties-and-national-spices.html",
+      "source": "SITEMAPS",
+      "targetPath": "/blogs/indian-spice-history-varieties-and-national-spices",
+      "id": "3cdfb175ca2c42f21d6cf0813117c53487ecb0d3"
+    },
+    {
+      "url": "https://aashirvaad.com/blogs/jowar-vs-bajra-which-super-grain-is-best-for-weight-loss.html",
+      "source": "SITEMAPS",
+      "targetPath": "/blogs/jowar-vs-bajra-which-super-grain-is-best-for-weight-loss",
+      "id": "848328af73faa52e8e9f2467bcef8a4ce7818231"
+    },
+    {
+      "url": "https://aashirvaad.com/blogs/kitchen-essential-spices.html",
+      "source": "SITEMAPS",
+      "targetPath": "/blogs/kitchen-essential-spices",
+      "id": "47a58cab7e2949b73e47daeaa7250ef5f3e1b859"
+    },
+    {
+      "url": "https://aashirvaad.com/blogs/lifestyle-changes-for-better-digestion.html",
+      "source": "SITEMAPS",
+      "targetPath": "/blogs/lifestyle-changes-for-better-digestion",
+      "id": "fcb5bbb8dd8d5cd7e75a75659d1ce12af75d31df"
+    },
+    {
+      "url": "https://aashirvaad.com/blogs/little-millet-benefits-uncovered.html",
+      "source": "SITEMAPS",
+      "targetPath": "/blogs/little-millet-benefits-uncovered",
+      "id": "84a495a665fd072032c4349557fe7ee7ebfcbc73"
+    },
+    {
+      "url": "https://aashirvaad.com/blogs/moong-dal-snacks-for-party.html",
+      "source": "SITEMAPS",
+      "targetPath": "/blogs/moong-dal-snacks-for-party",
+      "id": "5bc08dc2164ad5200b061a716c749e98e11a2c62"
+    },
+    {
+      "url": "https://aashirvaad.com/blogs/perks-of-consuming-iodized-salt.html",
+      "source": "SITEMAPS",
+      "targetPath": "/blogs/perks-of-consuming-iodized-salt",
+      "id": "9671ac6a7b59d9ff1e14c197bf6d2e9c32e114cf"
+    },
+    {
+      "url": "https://aashirvaad.com/blogs/pink-himalayan-salt-unveiling-the-mysteries.html",
+      "source": "SITEMAPS",
+      "targetPath": "/blogs/pink-himalayan-salt-unveiling-the-mysteries",
+      "id": "50d793bf628f7abd047e1ccb459af242577e0b9e"
+    },
+    {
+      "url": "https://aashirvaad.com/blogs/six-besan-recipes-you-must-try.html",
+      "source": "SITEMAPS",
+      "targetPath": "/blogs/six-besan-recipes-you-must-try",
+      "id": "cd1622799a8e370c355d7190d6591a75a139df39"
+    },
+    {
+      "url": "https://aashirvaad.com/blogs/sorghum-millets-jowar-benefits-nutrition-uses-side-effect.html",
+      "source": "SITEMAPS",
+      "targetPath": "/blogs/sorghum-millets-jowar-benefits-nutrition-uses-side-effect",
+      "id": "3f0cc4a441e2ca5cfc7902e85870162b905673fd"
+    },
+    {
+      "url": "https://aashirvaad.com/blogs/tracing-biryani-origins-and-its-different-types-in-India.html",
+      "source": "SITEMAPS",
+      "targetPath": "/blogs/tracing-biryani-origins-and-its-different-types-in-india",
+      "id": "2dc65ee2e1ac463f921712a379cc1d1db4a63225"
+    },
+    {
+      "url": "https://aashirvaad.com/blogs/understanding-metabolism-and-its-role-in-weight-loss-how-to-increase-metabolism.html",
+      "source": "SITEMAPS",
+      "targetPath": "/blogs/understanding-metabolism-and-its-role-in-weight-loss-how-to-increase-metabolism",
+      "id": "b2d607944d52360a2926cddb2eea1892c93c02c3"
+    },
+    {
+      "url": "https://aashirvaad.com/blogs/unveiling-bajra-pearl-millet-the-supergrain.html",
+      "source": "SITEMAPS",
+      "targetPath": "/blogs/unveiling-bajra-pearl-millet-the-supergrain",
+      "id": "b50822c6e0eb5c98ed9d5fa520159c6628243339"
+    },
+    {
+      "url": "https://aashirvaad.com/blogs/vermicelli-nutrition-facts-and-health-benefits.html",
+      "source": "SITEMAPS",
+      "targetPath": "/blogs/vermicelli-nutrition-facts-and-health-benefits",
+      "id": "0aad7ce96e2edebd4e5c6003b8f77d8da0a4e4b5"
+    },
+    {
+      "url": "https://aashirvaad.com/blogs/ways-to-use-frozen-foods.html",
+      "source": "SITEMAPS",
+      "targetPath": "/blogs/ways-to-use-frozen-foods",
+      "id": "b9811c58afdde1500fefeee8d5b3c24c545f3ad8"
+    },
+    {
+      "url": "https://aashirvaad.com/blogs/ways-to-use-haldi-in-cooking.html",
+      "source": "SITEMAPS",
+      "targetPath": "/blogs/ways-to-use-haldi-in-cooking",
+      "id": "ea757108bc42cdcef10c1148a8434e0062541e1c"
+    },
+    {
+      "url": "https://aashirvaad.com/blogs/what-is-dietary-fibre-benefits-functions-and-requirements.html",
+      "source": "SITEMAPS",
+      "targetPath": "/blogs/what-is-dietary-fibre-benefits-functions-and-requirements",
+      "id": "83b98a370233ce9db53c8b5f08a2b49d9655e7e4"
+    },
+    {
+      "url": "https://aashirvaad.com/blogs/what-is-digestion-digestive-system-digestion-problems-and-solution.html",
+      "source": "SITEMAPS",
+      "targetPath": "/blogs/what-is-digestion-digestive-system-digestion-problems-and-solution",
+      "id": "e68235e6f68e73ff62c4fd1595c1fabaec174947"
+    },
+    {
+      "url": "https://aashirvaad.com/blogs/what-is-gluten-free-atta.html",
+      "source": "SITEMAPS",
+      "targetPath": "/blogs/what-is-gluten-free-atta",
+      "id": "26788afd304c2220ab774d2870dcfeea3bfea561"
+    },
+    {
+      "url": "https://aashirvaad.com/blogs/what-is-millet.html",
+      "source": "SITEMAPS",
+      "targetPath": "/blogs/what-is-millet",
+      "id": "34647350d9e55cadaa280cb0aa31b3cce065af6f"
+    },
+    {
+      "url": "https://aashirvaad.com/blogs/what-is-toor-dal-uses-benefits-and-nutrition.html",
+      "source": "SITEMAPS",
+      "targetPath": "/blogs/what-is-toor-dal-uses-benefits-and-nutrition",
+      "id": "104c0db636a6da7cda09c9ba38e2fcbaffd8869a"
+    },
+    {
+      "url": "https://aashirvaad.com/blogs/what-is-urad-dal.html",
+      "source": "SITEMAPS",
+      "targetPath": "/blogs/what-is-urad-dal",
+      "id": "e99ac0e4c2207ed92b689e52be7ed48f6e435c79"
+    },
+    {
+      "url": "https://aashirvaad.com/blogs/wheat-and-atta-types-guide.html",
+      "source": "SITEMAPS",
+      "targetPath": "/blogs/wheat-and-atta-types-guide",
+      "id": "31b8dd1d3109dac5fe375928e70781041f352905"
+    },
+    {
+      "url": "https://aashirvaad.com/chhath-puja.html",
+      "source": "SITEMAPS",
+      "targetPath": "/chhath-puja",
+      "id": "95a37f581463a46938c5ec74af1875aff84aa3c2"
+    },
+    {
+      "url": "https://aashirvaad.com/contact-us.html",
+      "source": "SITEMAPS",
+      "targetPath": "/contact-us",
+      "id": "66f8ac36d8188868190d0baadcef777c687a31cc"
+    },
+    {
+      "url": "https://aashirvaad.com/DammuMeedeStarMeere.html",
+      "source": "SITEMAPS",
+      "targetPath": "/dammumeedestarmeere",
+      "id": "9d00fa304e82605dc32bc62c29f5c72625c31925"
+    },
+    {
+      "url": "https://aashirvaad.com/factoryfinder.html",
+      "source": "SITEMAPS",
+      "targetPath": "/factoryfinder",
+      "id": "5e4702a1b3ca1cf56e79059d79bef46991656e94"
+    },
+    {
+      "url": "https://aashirvaad.com/factorylocator.html",
+      "source": "SITEMAPS",
+      "targetPath": "/factorylocator",
+      "id": "58d167ada3648e545c3ea1f5040c96ffc139256b"
+    },
+    {
+      "url": "https://aashirvaad.com/fermented-drinks.html",
+      "source": "SITEMAPS",
+      "targetPath": "/fermented-drinks",
+      "id": "f5fd99768db6a7f6ea7e2bc0e844a7bebdf7914d"
+    },
+    {
+      "url": "https://aashirvaad.com/our-products.html",
+      "source": "SITEMAPS",
+      "targetPath": "/our-products",
+      "id": "8d175f5736668f21c20ef72f8445da0a015ec987"
+    },
+    {
+      "url": "https://aashirvaad.com/our-products/atta.html",
+      "source": "SITEMAPS",
+      "targetPath": "/our-products/atta",
+      "id": "a7f002f246dd4bad24bbc5d7e7ea715e751843cf"
+    },
+    {
+      "url": "https://aashirvaad.com/our-products/atta/fortified-chakki-atta.html",
+      "source": "SITEMAPS",
+      "targetPath": "/our-products/atta/fortified-chakki-atta",
+      "id": "342bbcdbf059f8698a16dbcb8da2ce8b83bec733"
+    },
+    {
+      "url": "https://aashirvaad.com/our-products/atta/gluten-free-flour.html",
+      "source": "SITEMAPS",
+      "targetPath": "/our-products/atta/gluten-free-flour",
+      "id": "cf4f0115d072f971de31c4f02572e105aeb3d7aa"
+    },
+    {
+      "url": "https://aashirvaad.com/our-products/atta/mp-chakki-atta.html",
+      "source": "SITEMAPS",
+      "targetPath": "/our-products/atta/mp-chakki-atta",
+      "id": "2d374a7ecbc3a0a519f8b2c8a0a6935c049edc2d"
+    },
+    {
+      "url": "https://aashirvaad.com/our-products/atta/multigrain-atta.html",
+      "source": "SITEMAPS",
+      "targetPath": "/our-products/atta/multigrain-atta",
+      "id": "35ec88e87673261592b6f9492b75424d4c4d90a1"
+    },
+    {
+      "url": "https://aashirvaad.com/our-products/atta/select-atta.html",
+      "source": "SITEMAPS",
+      "targetPath": "/our-products/atta/select-atta",
+      "id": "422d43484daea00b3c6411b610ee2c473e053c6c"
+    },
+    {
+      "url": "https://aashirvaad.com/our-products/atta/shudh-chakki-atta.html",
+      "source": "SITEMAPS",
+      "targetPath": "/our-products/atta/shudh-chakki-atta",
+      "id": "03cd46e14e567a25916666cc8cbb53dc069c7856"
+    },
+    {
+      "url": "https://aashirvaad.com/our-products/atta/sugar-release-control-atta.html",
+      "source": "SITEMAPS",
+      "targetPath": "/our-products/atta/sugar-release-control-atta",
+      "id": "371c3ff0afa964cb43f752317463f4b0fed39f71"
+    },
+    {
+      "url": "https://aashirvaad.com/our-products/atta/superior-mp-atta.html",
+      "source": "SITEMAPS",
+      "targetPath": "/our-products/atta/superior-mp-atta",
+      "id": "8be11f0b8d654ba31927868a33e17fce006ca810"
+    },
+    {
+      "url": "https://aashirvaad.com/our-products/basic-spices.html",
+      "source": "SITEMAPS",
+      "targetPath": "/our-products/basic-spices",
+      "id": "678f38d232aa41702d3a2e372b7f392d510ac9cc"
+    },
+    {
+      "url": "https://aashirvaad.com/our-products/basic-spices/byadagi-chilli-powder.html",
+      "source": "SITEMAPS",
+      "targetPath": "/our-products/basic-spices/byadagi-chilli-powder",
+      "id": "f7cf95407392ed21fdf9d3143063b50101b6aa45"
+    },
+    {
+      "url": "https://aashirvaad.com/our-products/basic-spices/coriander-powder.html",
+      "source": "SITEMAPS",
+      "targetPath": "/our-products/basic-spices/coriander-powder",
+      "id": "875e7880f9fd1ce0e92f5705774ad790ec78a1e4"
+    },
+    {
+      "url": "https://aashirvaad.com/our-products/basic-spices/guntur-byadagi-chilli-powder.html",
+      "source": "SITEMAPS",
+      "targetPath": "/our-products/basic-spices/guntur-byadagi-chilli-powder",
+      "id": "e664fdf1db94f5d45978e2b863006f87720e823b"
+    },
+    {
+      "url": "https://aashirvaad.com/our-products/basic-spices/kashmiri-chilli-powder.html",
+      "source": "SITEMAPS",
+      "targetPath": "/our-products/basic-spices/kashmiri-chilli-powder",
+      "id": "516d5993340fe0eee7fb21f03447236f6a3b5bfe"
+    },
+    {
+      "url": "https://aashirvaad.com/our-products/basic-spices/pepper-powder.html",
+      "source": "SITEMAPS",
+      "targetPath": "/our-products/basic-spices/pepper-powder",
+      "id": "5580fc66f7eb945c95d73dd26845f94b86f7f6f8"
+    },
+    {
+      "url": "https://aashirvaad.com/our-products/basic-spices/premium-chilli-powder.html",
+      "source": "SITEMAPS",
+      "targetPath": "/our-products/basic-spices/premium-chilli-powder",
+      "id": "37143cb72372437035a738064f299d6c90af6aa7"
+    },
+    {
+      "url": "https://aashirvaad.com/our-products/basic-spices/red-chilli-powder.html",
+      "source": "SITEMAPS",
+      "targetPath": "/our-products/basic-spices/red-chilli-powder",
+      "id": "ab5017ee37f6c3eb461d566b327fa79b1817aded"
+    },
+    {
+      "url": "https://aashirvaad.com/our-products/basic-spices/turmeric-powder.html",
+      "source": "SITEMAPS",
+      "targetPath": "/our-products/basic-spices/turmeric-powder",
+      "id": "a2e41aa2def11d51ae47ee2d2570e0029cd0426b"
+    },
+    {
+      "url": "https://aashirvaad.com/our-products/besan.html",
+      "source": "SITEMAPS",
+      "targetPath": "/our-products/besan",
+      "id": "b96506f6be60881fb50c0833eab2d23fe18fc7e6"
+    },
+    {
+      "url": "https://aashirvaad.com/our-products/besan/besan.html",
+      "source": "SITEMAPS",
+      "targetPath": "/our-products/besan/besan",
+      "id": "79d7a8ca9019c91b69f1e6f27bb6fb516020069b"
+    },
+    {
+      "url": "https://aashirvaad.com/our-products/blended-spices/aloo-dum-masala.html",
+      "source": "SITEMAPS",
+      "targetPath": "/our-products/blended-spices/aloo-dum-masala",
+      "id": "d1cf5a205504b0887fdad28226ebd0e238b88094"
+    },
+    {
+      "url": "https://aashirvaad.com/our-products/blended-spices/chaat-masala.html",
+      "source": "SITEMAPS",
+      "targetPath": "/our-products/blended-spices/chaat-masala",
+      "id": "f1fc04e863606b028223014620e853c05597a3fc"
+    },
+    {
+      "url": "https://aashirvaad.com/our-products/blended-spices/dal-masala.html",
+      "source": "SITEMAPS",
+      "targetPath": "/our-products/blended-spices/dal-masala",
+      "id": "91c2624bb0c95184349f8ddf59173965e4084e29"
+    },
+    {
+      "url": "https://aashirvaad.com/our-products/blended-spices/kitchen-king-masala.html",
+      "source": "SITEMAPS",
+      "targetPath": "/our-products/blended-spices/kitchen-king-masala",
+      "id": "c69eb55ce3108930c1701ed6a75047c1f940458b"
+    },
+    {
+      "url": "https://aashirvaad.com/our-products/blended-spices/masala-karam.html",
+      "source": "SITEMAPS",
+      "targetPath": "/our-products/blended-spices/masala-karam",
+      "id": "e025bdc1ebe9ac031ba6bd3904944ce329c70d56"
+    },
+    {
+      "url": "https://aashirvaad.com/our-products/blended-spices/paneer-masala.html",
+      "source": "SITEMAPS",
+      "targetPath": "/our-products/blended-spices/paneer-masala",
+      "id": "0594854bf67c6804a83c25664de82ff2d231e5ca"
+    },
+    {
+      "url": "https://aashirvaad.com/our-products/blended-spices/pav-bhaji-masala.html",
+      "source": "SITEMAPS",
+      "targetPath": "/our-products/blended-spices/pav-bhaji-masala",
+      "id": "e58f5105e7fae2ddfa45aee538fa8e153df54359"
+    },
+    {
+      "url": "https://aashirvaad.com/our-products/blended-spices/punjabi-chole-masala.html",
+      "source": "SITEMAPS",
+      "targetPath": "/our-products/blended-spices/punjabi-chole-masala",
+      "id": "597bdc00b8790aff2826e49e3cc817452518370b"
+    },
+    {
+      "url": "https://aashirvaad.com/our-products/blended-spices/rasam-powder.html",
+      "source": "SITEMAPS",
+      "targetPath": "/our-products/blended-spices/rasam-powder",
+      "id": "bcd436a831c360d560f655a58a54c14a5262b02c"
+    },
+    {
+      "url": "https://aashirvaad.com/our-products/blended-spices/sabji-masala.html",
+      "source": "SITEMAPS",
+      "targetPath": "/our-products/blended-spices/sabji-masala",
+      "id": "e4c5646ce5dc69fbe1de26039fdb004afc61242f"
+    },
+    {
+      "url": "https://aashirvaad.com/our-products/blended-spices/sambar-powder.html",
+      "source": "SITEMAPS",
+      "targetPath": "/our-products/blended-spices/sambar-powder",
+      "id": "9b9def9d63f9b6f881c060e8ad891835745ee7ec"
+    },
+    {
+      "url": "https://aashirvaad.com/our-products/blended-spices/shahi-garam-masala.html",
+      "source": "SITEMAPS",
+      "targetPath": "/our-products/blended-spices/shahi-garam-masala",
+      "id": "c98cf752c646cfd743ffef514b82a56ec2050857"
+    },
+    {
+      "url": "https://aashirvaad.com/our-products/frozen-naans-parathas.html",
+      "source": "SITEMAPS",
+      "targetPath": "/our-products/frozen-naans-parathas",
+      "id": "3f113f251a6139e118f4e623fc38e793e7479c79"
+    },
+    {
+      "url": "https://aashirvaad.com/our-products/frozen-naans-parathas/aloo-paratha.html",
+      "source": "SITEMAPS",
+      "targetPath": "/our-products/frozen-naans-parathas/aloo-paratha",
+      "id": "97310613da509c77d4a0d507077a769d2667309e"
+    },
+    {
+      "url": "https://aashirvaad.com/our-products/frozen-naans-parathas/garlic-and-coriander-naan.html",
+      "source": "SITEMAPS",
+      "targetPath": "/our-products/frozen-naans-parathas/garlic-and-coriander-naan",
+      "id": "d79168150d4186867b5fe6e384cf2a621a697c4e"
+    },
+    {
+      "url": "https://aashirvaad.com/our-products/frozen-naans-parathas/malabar-paratha.html",
+      "source": "SITEMAPS",
+      "targetPath": "/our-products/frozen-naans-parathas/malabar-paratha",
+      "id": "f2e6417a194a169502e7e230059b5b4b1067bd81"
+    },
+    {
+      "url": "https://aashirvaad.com/our-products/frozen-naans-parathas/paneer-paratha.html",
+      "source": "SITEMAPS",
+      "targetPath": "/our-products/frozen-naans-parathas/paneer-paratha",
+      "id": "ea653e771bba9f5b780ada3c1795d3c51ac88e62"
+    },
+    {
+      "url": "https://aashirvaad.com/our-products/frozen-naans-parathas/tandoori-naan.html",
+      "source": "SITEMAPS",
+      "targetPath": "/our-products/frozen-naans-parathas/tandoori-naan",
+      "id": "151ad9f4d542d0252c6de026d5f71d9f7b754230"
+    },
+    {
+      "url": "https://aashirvaad.com/our-products/ghee/svasti-ghee.html",
+      "source": "SITEMAPS",
+      "targetPath": "/our-products/ghee/svasti-ghee",
+      "id": "a8ee66b5f70ca2576795dd7daadf77e4f69accc2"
+    },
+    {
+      "url": "https://aashirvaad.com/our-products/instant-meals.html",
+      "source": "SITEMAPS",
+      "targetPath": "/our-products/instant-meals",
+      "id": "c5f8c583d34e33a2ec6d7f2f9996457a3992c8f9"
+    },
+    {
+      "url": "https://aashirvaad.com/our-products/instant-meals/dal-makhani.html",
+      "source": "SITEMAPS",
+      "targetPath": "/our-products/instant-meals/dal-makhani",
+      "id": "14139e7b2f497d30959cf0bb5e6229d2d1473311"
+    },
+    {
+      "url": "https://aashirvaad.com/our-products/instant-meals/instant-halwa.html",
+      "source": "SITEMAPS",
+      "targetPath": "/our-products/instant-meals/instant-halwa",
+      "id": "e5a627d917f7ae7ff8cffa4219e239fb0f1ba094"
+    },
+    {
+      "url": "https://aashirvaad.com/our-products/instant-meals/instant-mini-idli-sambar.html",
+      "source": "SITEMAPS",
+      "targetPath": "/our-products/instant-meals/instant-mini-idli-sambar",
+      "id": "aa1c5a692f8407b64e45dd8015f31c49478000f0"
+    },
+    {
+      "url": "https://aashirvaad.com/our-products/instant-meals/instant-poha.html",
+      "source": "SITEMAPS",
+      "targetPath": "/our-products/instant-meals/instant-poha",
+      "id": "bd1cbbe8287c13a7859062ad6afac633a1772290"
+    },
+    {
+      "url": "https://aashirvaad.com/our-products/instant-meals/instant-upma.html",
+      "source": "SITEMAPS",
+      "targetPath": "/our-products/instant-meals/instant-upma",
+      "id": "f7b9c413efc61a39da2ce278720f625b2840c617"
+    },
+    {
+      "url": "https://aashirvaad.com/our-products/instant-meals/paneer-butter-masala.html",
+      "source": "SITEMAPS",
+      "targetPath": "/our-products/instant-meals/paneer-butter-masala",
+      "id": "61291366c9511bb6dfb9ece349cc0da7804d0593"
+    },
+    {
+      "url": "https://aashirvaad.com/our-products/instant-mixes.html",
+      "source": "SITEMAPS",
+      "targetPath": "/our-products/instant-mixes",
+      "id": "86334d38332ccdb9be7e15c213aa4ad55b82b3dd"
+    },
+    {
+      "url": "https://aashirvaad.com/our-products/instant-mixes/instant-gulab-jamun-mix.html",
+      "source": "SITEMAPS",
+      "targetPath": "/our-products/instant-mixes/instant-gulab-jamun-mix",
+      "id": "aa52ec283dadfbe8f888bcd7463001aeed7fa18f"
+    },
+    {
+      "url": "https://aashirvaad.com/our-products/instant-mixes/instant-rava-idli.html",
+      "source": "SITEMAPS",
+      "targetPath": "/our-products/instant-mixes/instant-rava-idli",
+      "id": "fc55480be1a0668bb44056d38bd5a13a7d169f52"
+    },
+    {
+      "url": "https://aashirvaad.com/our-products/instant-mixes/instant-rice-dosa.html",
+      "source": "SITEMAPS",
+      "targetPath": "/our-products/instant-mixes/instant-rice-dosa",
+      "id": "23b591733016b6476d55fd3d7e2de58392b08356"
+    },
+    {
+      "url": "https://aashirvaad.com/our-products/instant-mixes/instant-rice-idli.html",
+      "source": "SITEMAPS",
+      "targetPath": "/our-products/instant-mixes/instant-rice-idli",
+      "id": "fc9b425b651eb1f5684b3726639b760c7345a73b"
+    },
+    {
+      "url": "https://aashirvaad.com/our-products/millets.html",
+      "source": "SITEMAPS",
+      "targetPath": "/our-products/millets",
+      "id": "ca65ba3c65d02fe084a2aec8f3e11d09ac8604f2"
+    },
+    {
+      "url": "https://aashirvaad.com/our-products/millets/atta-with-millets.html",
+      "source": "SITEMAPS",
+      "targetPath": "/our-products/millets/atta-with-millets",
+      "id": "2b6906b1c7582e563dc72bf4b3d7977915aac85e"
+    },
+    {
+      "url": "https://aashirvaad.com/our-products/millets/batter-mix.html",
+      "source": "SITEMAPS",
+      "targetPath": "/our-products/millets/batter-mix",
+      "id": "ddae86bca389e22a449dbda7b1037b152fadf511"
+    },
+    {
+      "url": "https://aashirvaad.com/our-products/millets/multi-millet-flour.html",
+      "source": "SITEMAPS",
+      "targetPath": "/our-products/millets/multi-millet-flour",
+      "id": "8141fcb1b46fb15b66eac216ac9ddc5c2e6f339c"
+    },
+    {
+      "url": "https://aashirvaad.com/our-products/millets/ragi-flour.html",
+      "source": "SITEMAPS",
+      "targetPath": "/our-products/millets/ragi-flour",
+      "id": "5a3b261f8f5d9709200feedc954c5693cbf2f529"
+    },
+    {
+      "url": "https://aashirvaad.com/our-products/organic.html",
+      "source": "SITEMAPS",
+      "targetPath": "/our-products/organic",
+      "id": "9dedaee4d93f07ede3f0406956d712cf836105dc"
+    },
+    {
+      "url": "https://aashirvaad.com/our-products/organic/organic-atta.html",
+      "source": "SITEMAPS",
+      "targetPath": "/our-products/organic/organic-atta",
+      "id": "7a83d6c6e719ccbec5d0120e945f7ab56bf4b8cd"
+    },
+    {
+      "url": "https://aashirvaad.com/our-products/organic/organic-chana-dal.html",
+      "source": "SITEMAPS",
+      "targetPath": "/our-products/organic/organic-chana-dal",
+      "id": "9bb83f707e3deabf6bbaac0610573f96edb0812f"
+    },
+    {
+      "url": "https://aashirvaad.com/our-products/organic/organic-kabuli-chana.html",
+      "source": "SITEMAPS",
+      "targetPath": "/our-products/organic/organic-kabuli-chana",
+      "id": "0050fddb5050734b62ea4ab0306f7af605f07ad5"
+    },
+    {
+      "url": "https://aashirvaad.com/our-products/organic/organic-masoor-dal.html",
+      "source": "SITEMAPS",
+      "targetPath": "/our-products/organic/organic-masoor-dal",
+      "id": "155787c6c49b9e884a9d5a1f5fdfd03926d1733b"
+    },
+    {
+      "url": "https://aashirvaad.com/our-products/organic/organic-moong-dal.html",
+      "source": "SITEMAPS",
+      "targetPath": "/our-products/organic/organic-moong-dal",
+      "id": "3779d429776539a378f9557f141fc47b19677467"
+    },
+    {
+      "url": "https://aashirvaad.com/our-products/organic/organic-rajma.html",
+      "source": "SITEMAPS",
+      "targetPath": "/our-products/organic/organic-rajma",
+      "id": "aff7c02e37d7a2e5d1014cd87a93f7a8f20c9766"
+    },
+    {
+      "url": "https://aashirvaad.com/our-products/organic/organic-tur-dal.html",
+      "source": "SITEMAPS",
+      "targetPath": "/our-products/organic/organic-tur-dal",
+      "id": "41367647b34db74fe2cc3a15c9f17d4719d01cae"
+    },
+    {
+      "url": "https://aashirvaad.com/our-products/organic/organic-urad-dal-whole.html",
+      "source": "SITEMAPS",
+      "targetPath": "/our-products/organic/organic-urad-dal-whole",
+      "id": "51a04bf9332482701b0f12a1deb2b4ee863dd297"
+    },
+    {
+      "url": "https://aashirvaad.com/our-products/organic/organic-urad-dal.html",
+      "source": "SITEMAPS",
+      "targetPath": "/our-products/organic/organic-urad-dal",
+      "id": "8ee39f9c87d4821f051a7ec44c2b30c7a04e8b50"
+    },
+    {
+      "url": "https://aashirvaad.com/our-products/rava.html",
+      "source": "SITEMAPS",
+      "targetPath": "/our-products/rava",
+      "id": "646869b3b5ded485e5a995ee7a655d3c601b8a39"
+    },
+    {
+      "url": "https://aashirvaad.com/our-products/rava/bansi-rava.html",
+      "source": "SITEMAPS",
+      "targetPath": "/our-products/rava/bansi-rava",
+      "id": "430f018b719918a4db5e429210e0560c5447a60f"
+    },
+    {
+      "url": "https://aashirvaad.com/our-products/rava/double-roasted-suji-rava.html",
+      "source": "SITEMAPS",
+      "targetPath": "/our-products/rava/double-roasted-suji-rava",
+      "id": "64945034aff96126aacd18adf27cc769ca2793ac"
+    },
+    {
+      "url": "https://aashirvaad.com/our-products/rava/samba-broken-wheat.html",
+      "source": "SITEMAPS",
+      "targetPath": "/our-products/rava/samba-broken-wheat",
+      "id": "a7c2fc902f7002e849296b79c2941a65599413ba"
+    },
+    {
+      "url": "https://aashirvaad.com/our-products/ready-to-cook-chapati.html",
+      "source": "SITEMAPS",
+      "targetPath": "/our-products/ready-to-cook-chapati",
+      "id": "e1218d5e20d8b4b189bb36374d49a062819d7e24"
+    },
+    {
+      "url": "https://aashirvaad.com/our-products/ready-to-cook-chapati/rtc-chapati.html",
+      "source": "SITEMAPS",
+      "targetPath": "/our-products/ready-to-cook-chapati/rtc-chapati",
+      "id": "f2f9158316ad24342a1ffc30dcf47974dcca3532"
+    },
+    {
+      "url": "https://aashirvaad.com/our-products/salt.html",
+      "source": "SITEMAPS",
+      "targetPath": "/our-products/salt",
+      "id": "2490eb9986f64be5ea4ae6e46af65fd27ae0fc94"
+    },
+    {
+      "url": "https://aashirvaad.com/our-products/salt/himalayan-pink-salt.html",
+      "source": "SITEMAPS",
+      "targetPath": "/our-products/salt/himalayan-pink-salt",
+      "id": "88a5a23dcf1aca9e0938526ed203b829366b0264"
+    },
+    {
+      "url": "https://aashirvaad.com/our-products/salt/iodized-crystal-salt.html",
+      "source": "SITEMAPS",
+      "targetPath": "/our-products/salt/iodized-crystal-salt",
+      "id": "1e860c1de6ac71ba058bb9f082b6eeac1d869695"
+    },
+    {
+      "url": "https://aashirvaad.com/our-products/salt/iodized-salt.html",
+      "source": "SITEMAPS",
+      "targetPath": "/our-products/salt/iodized-salt",
+      "id": "bef7f2f9991d8b953221a86fe54e6fe7e90a03ca"
+    },
+    {
+      "url": "https://aashirvaad.com/our-products/salt/salt-active.html",
+      "source": "SITEMAPS",
+      "targetPath": "/our-products/salt/salt-active",
+      "id": "131454f882c8cdc96063ba21898646535c8811c8"
+    },
+    {
+      "url": "https://aashirvaad.com/our-products/vermicelli.html",
+      "source": "SITEMAPS",
+      "targetPath": "/our-products/vermicelli",
+      "id": "5e74d504c459e0952fe33a02b6d98f436c29df44"
+    },
+    {
+      "url": "https://aashirvaad.com/our-products/vermicelli/roasted-vermicelli.html",
+      "source": "SITEMAPS",
+      "targetPath": "/our-products/vermicelli/roasted-vermicelli",
+      "id": "4fd09d58344562d023bf4b504715a9346f518748"
+    },
+    {
+      "url": "https://aashirvaad.com/our-products/vermicelli/vermicelli.html",
+      "source": "SITEMAPS",
+      "targetPath": "/our-products/vermicelli/vermicelli",
+      "id": "bc232a47a363c76b3fe01bc307761f7d4321d1a7"
+    },
+    {
+      "url": "https://aashirvaad.com/our-products/whole-spices/ajwain.html",
+      "source": "SITEMAPS",
+      "targetPath": "/our-products/whole-spices/ajwain",
+      "id": "297be4b2c02bd2ac9ecbc0c950399270557ece4e"
+    },
+    {
+      "url": "https://aashirvaad.com/our-products/whole-spices/black-pepper.html",
+      "source": "SITEMAPS",
+      "targetPath": "/our-products/whole-spices/black-pepper",
+      "id": "b2702b1f2fbaa6646b611b1f2fd86b4e35cc801f"
+    },
+    {
+      "url": "https://aashirvaad.com/our-products/whole-spices/cardamom.html",
+      "source": "SITEMAPS",
+      "targetPath": "/our-products/whole-spices/cardamom",
+      "id": "af2582d950156eb4f9f06058c93efa5d9945d71a"
+    },
+    {
+      "url": "https://aashirvaad.com/our-products/whole-spices/clove.html",
+      "source": "SITEMAPS",
+      "targetPath": "/our-products/whole-spices/clove",
+      "id": "41c862f24b33219c95a84d13a5393d8374a0daca"
+    },
+    {
+      "url": "https://aashirvaad.com/our-products/whole-spices/jeera.html",
+      "source": "SITEMAPS",
+      "targetPath": "/our-products/whole-spices/jeera",
+      "id": "cdb675dcc794ac634686b020afed4648205793ad"
+    },
+    {
+      "url": "https://aashirvaad.com/our-products/whole-spices/kasuri-methi.html",
+      "source": "SITEMAPS",
+      "targetPath": "/our-products/whole-spices/kasuri-methi",
+      "id": "c575b091fbd8d0c149c36e46db6f1b7aa3c31fc9"
+    },
+    {
+      "url": "https://aashirvaad.com/our-products/whole-spices/methi.html",
+      "source": "SITEMAPS",
+      "targetPath": "/our-products/whole-spices/methi",
+      "id": "7413a4c6cf15d5435232e0fb7d4f4fa7ae37c6f0"
+    },
+    {
+      "url": "https://aashirvaad.com/our-products/whole-spices/mustard.html",
+      "source": "SITEMAPS",
+      "targetPath": "/our-products/whole-spices/mustard",
+      "id": "c825ae8880e40ea52963a1e5aaca22544b57355b"
+    },
+    {
+      "url": "https://aashirvaad.com/our-products/whole-spices/poppy-seeds.html",
+      "source": "SITEMAPS",
+      "targetPath": "/our-products/whole-spices/poppy-seeds",
+      "id": "8a38bf5dcdfbf4725bb9eb588dc22e03792ad922"
+    },
+    {
+      "url": "https://aashirvaad.com/our-products/whole-spices/saunf.html",
+      "source": "SITEMAPS",
+      "targetPath": "/our-products/whole-spices/saunf",
+      "id": "ac8c7afb371fc74f404f6a26bf8ed80fbd0dca31"
+    },
+    {
+      "url": "https://aashirvaad.com/our-story.html",
+      "source": "SITEMAPS",
+      "targetPath": "/our-story",
+      "id": "b52e9926337a634b5647bb7316ed308fbe4b58af"
+    },
+    {
+      "url": "https://aashirvaad.com/privacy-policy.html",
+      "source": "SITEMAPS",
+      "targetPath": "/privacy-policy",
+      "id": "80e8a81c719e4a1d4b45fd70e8388f33f9b8972e"
+    },
+    {
+      "url": "https://aashirvaad.com/recipe-listing.html",
+      "source": "SITEMAPS",
+      "targetPath": "/recipe-listing",
+      "id": "7ce298077916d314fae2a545dafdc75b68c083e3"
+    },
+    {
+      "url": "https://aashirvaad.com/recipe-listing/aloo-parantha.html",
+      "source": "SITEMAPS",
+      "targetPath": "/recipe-listing/aloo-parantha",
+      "id": "eb89ffde42f1163664cb783c4a248e58984ece47"
+    },
+    {
+      "url": "https://aashirvaad.com/recipe-listing/atta-halwa-recipe.html",
+      "source": "SITEMAPS",
+      "targetPath": "/recipe-listing/atta-halwa-recipe",
+      "id": "1dc3459be721c01ed01d4a085b71e32dd26692ec"
+    },
+    {
+      "url": "https://aashirvaad.com/recipe-listing/atta-kachori-recipe.html",
+      "source": "SITEMAPS",
+      "targetPath": "/recipe-listing/atta-kachori-recipe",
+      "id": "6895d0860d533b0b29089cf183aa3eafcb2b2349"
+    },
+    {
+      "url": "https://aashirvaad.com/recipe-listing/atta-laddoo-recipe.html",
+      "source": "SITEMAPS",
+      "targetPath": "/recipe-listing/atta-laddoo-recipe",
+      "id": "677903cdbaf0c79d63d50580d51f8a94966d13ea"
+    },
+    {
+      "url": "https://aashirvaad.com/recipe-listing/atta-momo-recipe.html",
+      "source": "SITEMAPS",
+      "targetPath": "/recipe-listing/atta-momo-recipe",
+      "id": "a64816752325b91506f47e6819d9393489c5708c"
+    },
+    {
+      "url": "https://aashirvaad.com/recipe-listing/atta-murukku-recipe.html",
+      "source": "SITEMAPS",
+      "targetPath": "/recipe-listing/atta-murukku-recipe",
+      "id": "cf9260a0286722b332b77407ed9a44e52f416469"
+    },
+    {
+      "url": "https://aashirvaad.com/recipe-listing/atte-ki-barfi.html",
+      "source": "SITEMAPS",
+      "targetPath": "/recipe-listing/atte-ki-barfi",
+      "id": "aa8c4b0db1395b0ef456951975fd845d30d79b29"
+    },
+    {
+      "url": "https://aashirvaad.com/recipe-listing/bedmi-puri.html",
+      "source": "SITEMAPS",
+      "targetPath": "/recipe-listing/bedmi-puri",
+      "id": "f84843f10d3d0aa2a5616c5b1a1f9ac130c935af"
+    },
+    {
+      "url": "https://aashirvaad.com/recipe-listing/besan-halwa-recipe.html",
+      "source": "SITEMAPS",
+      "targetPath": "/recipe-listing/besan-halwa-recipe",
+      "id": "64d76040c76a7bd5b55ab079525a8ee29f5b467c"
+    },
+    {
+      "url": "https://aashirvaad.com/recipe-listing/bhakarwadi.html",
+      "source": "SITEMAPS",
+      "targetPath": "/recipe-listing/bhakarwadi",
+      "id": "13fd99fd3aaa483f7786350bc9671fbecf67fb21"
+    },
+    {
+      "url": "https://aashirvaad.com/recipe-listing/bhindi-masala-with-roti.html",
+      "source": "SITEMAPS",
+      "targetPath": "/recipe-listing/bhindi-masala-with-roti",
+      "id": "0a5c1800e814f9d42f2fd9eca36a2d6daf6c6486"
+    },
+    {
+      "url": "https://aashirvaad.com/recipe-listing/cheesy-corn-spinach-pizza.html",
+      "source": "SITEMAPS",
+      "targetPath": "/recipe-listing/cheesy-corn-spinach-pizza",
+      "id": "ef4404d00d8046d032fded0efe7da0281ffd84f7"
+    },
+    {
+      "url": "https://aashirvaad.com/recipe-listing/chilli-cheese-paratha.html",
+      "source": "SITEMAPS",
+      "targetPath": "/recipe-listing/chilli-cheese-paratha",
+      "id": "a5137358979bcc2811deea9ad49234d412d407dd"
+    },
+    {
+      "url": "https://aashirvaad.com/recipe-listing/choco-lava-cake.html",
+      "source": "SITEMAPS",
+      "targetPath": "/recipe-listing/choco-lava-cake",
+      "id": "0635fe64a0d185b0decd7e381fd3f1267a8ddcdc"
+    },
+    {
+      "url": "https://aashirvaad.com/recipe-listing/dal-dhokli.html",
+      "source": "SITEMAPS",
+      "targetPath": "/recipe-listing/dal-dhokli",
+      "id": "e80891db20c43afa01322a6cb5e686da4a1adac4"
+    },
+    {
+      "url": "https://aashirvaad.com/recipe-listing/dal-paratha-recipe.html",
+      "source": "SITEMAPS",
+      "targetPath": "/recipe-listing/dal-paratha-recipe",
+      "id": "4e7d2ad773358079f336dfcf83cedccbb5bdd44a"
+    },
+    {
+      "url": "https://aashirvaad.com/recipe-listing/dal-puri.html",
+      "source": "SITEMAPS",
+      "targetPath": "/recipe-listing/dal-puri",
+      "id": "c470806440dfb77f7477fb01007d44ae8499d61e"
+    },
+    {
+      "url": "https://aashirvaad.com/recipe-listing/flaxseed-laddoo-recipe.html",
+      "source": "SITEMAPS",
+      "targetPath": "/recipe-listing/flaxseed-laddoo-recipe",
+      "id": "81d8c2f9c934acc2549ebdf7cbcf497d0fd250fe"
+    },
+    {
+      "url": "https://aashirvaad.com/recipe-listing/four-fold-wrap..html",
+      "source": "SITEMAPS",
+      "targetPath": "/recipe-listing/four-fold-wrap",
+      "id": "6e025726d2d84d62afa20d1039dece84a52abcfc"
+    },
+    {
+      "url": "https://aashirvaad.com/recipe-listing/garlic-naan.html",
+      "source": "SITEMAPS",
+      "targetPath": "/recipe-listing/garlic-naan",
+      "id": "2a41a7ab98c97c7684f205b03782fca8d2a586dd"
+    },
+    {
+      "url": "https://aashirvaad.com/recipe-listing/homemade-atta-biscuits.html",
+      "source": "SITEMAPS",
+      "targetPath": "/recipe-listing/homemade-atta-biscuits",
+      "id": "caefc5cbce32c0da6c5de264dfbb0304026c9fa2"
+    },
+    {
+      "url": "https://aashirvaad.com/recipe-listing/hot-cross-buns.html",
+      "source": "SITEMAPS",
+      "targetPath": "/recipe-listing/hot-cross-buns",
+      "id": "03619ac8cfe624d57585f01613ebbf0419ad0c10"
+    },
+    {
+      "url": "https://aashirvaad.com/recipe-listing/kerela-puttu-recipe.html",
+      "source": "SITEMAPS",
+      "targetPath": "/recipe-listing/kerela-puttu-recipe",
+      "id": "e9adfb3db9ea923beac3d2c531aefb1cef67ce87"
+    },
+    {
+      "url": "https://aashirvaad.com/recipe-listing/litti-chokha.html",
+      "source": "SITEMAPS",
+      "targetPath": "/recipe-listing/litti-chokha",
+      "id": "e0a4bbd37885642479ff1e30f77f3a086fb23cf9"
+    },
+    {
+      "url": "https://aashirvaad.com/recipe-listing/malpua.html",
+      "source": "SITEMAPS",
+      "targetPath": "/recipe-listing/malpua",
+      "id": "9b62e50c7055ae93f58f31dc6c01f48a322ce894"
+    },
+    {
+      "url": "https://aashirvaad.com/recipe-listing/missi-roti.html",
+      "source": "SITEMAPS",
+      "targetPath": "/recipe-listing/missi-roti",
+      "id": "d8b9b33565bb5d63b335301a8e956b18dcc5503a"
+    },
+    {
+      "url": "https://aashirvaad.com/recipe-listing/obbattu-recipe.html",
+      "source": "SITEMAPS",
+      "targetPath": "/recipe-listing/obbattu-recipe",
+      "id": "f7e1287404daabcab5bfb98eb7afed26fc806eac"
+    },
+    {
+      "url": "https://aashirvaad.com/recipe-listing/onion-samosa.html",
+      "source": "SITEMAPS",
+      "targetPath": "/recipe-listing/onion-samosa",
+      "id": "bc04193c6e44e3e02f0929134c9dc37679cac4b1"
+    },
+    {
+      "url": "https://aashirvaad.com/recipe-listing/palak-puri-recipe.html",
+      "source": "SITEMAPS",
+      "targetPath": "/recipe-listing/palak-puri-recipe",
+      "id": "76f46782ef0602cda3e17ea15da5845cd3bb1aeb"
+    },
+    {
+      "url": "https://aashirvaad.com/recipe-listing/papadi-chaat.html",
+      "source": "SITEMAPS",
+      "targetPath": "/recipe-listing/papadi-chaat",
+      "id": "6bdab0947d9d520f5fcf72f64963b5a4e5e981e9"
+    },
+    {
+      "url": "https://aashirvaad.com/recipe-listing/phulka-recipe.html",
+      "source": "SITEMAPS",
+      "targetPath": "/recipe-listing/phulka-recipe",
+      "id": "4980129132290e6b506f34ec4054352172d73897"
+    },
+    {
+      "url": "https://aashirvaad.com/recipe-listing/pita-bread.html",
+      "source": "SITEMAPS",
+      "targetPath": "/recipe-listing/pita-bread",
+      "id": "3756a97f83f0dedc8ca6872fe50e45c1ebc3a3c6"
+    },
+    {
+      "url": "https://aashirvaad.com/recipe-listing/pizza-paratha.html",
+      "source": "SITEMAPS",
+      "targetPath": "/recipe-listing/pizza-paratha",
+      "id": "ebe6150ea12f28f3d8b1d083b4c6a363581490bb"
+    },
+    {
+      "url": "https://aashirvaad.com/recipe-listing/potato-peas-roll.html",
+      "source": "SITEMAPS",
+      "targetPath": "/recipe-listing/potato-peas-roll",
+      "id": "7912d9c010c1f4b68712865034852ab6e0d70e1e"
+    },
+    {
+      "url": "https://aashirvaad.com/recipe-listing/shakarpara-aashirvaad-superior-mp-atta.html",
+      "source": "SITEMAPS",
+      "targetPath": "/recipe-listing/shakarpara-aashirvaad-superior-mp-atta",
+      "id": "56c1f6e1a492e08c7a23d53b8a1c61e8e4067950"
+    },
+    {
+      "url": "https://aashirvaad.com/recipe-listing/spicy-nachos-and-dip.html",
+      "source": "SITEMAPS",
+      "targetPath": "/recipe-listing/spicy-nachos-and-dip",
+      "id": "c744c1964c75a963587e13a07195f15c4f9b9da4"
+    },
+    {
+      "url": "https://aashirvaad.com/recipe-listing/vermicelli-biryani.html",
+      "source": "SITEMAPS",
+      "targetPath": "/recipe-listing/vermicelli-biryani",
+      "id": "cade50be1c26390da3b22611a5eea696b00b07d5"
+    },
+    {
+      "url": "https://aashirvaad.com/recipe-listing/wheat-dosa.html",
+      "source": "SITEMAPS",
+      "targetPath": "/recipe-listing/wheat-dosa",
+      "id": "caf78ef2da3f72e102ae7b7e95a39924be391f16"
+    },
+    {
+      "url": "https://aashirvaad.com/recipe-listing/wheat-kerela-parotta.html",
+      "source": "SITEMAPS",
+      "targetPath": "/recipe-listing/wheat-kerela-parotta",
+      "id": "8105675531e3e290ef16832fe5255b50d3c1b61d"
+    },
+    {
+      "url": "https://aashirvaad.com/recipe-listing/whole-wheat-bread.html",
+      "source": "SITEMAPS",
+      "targetPath": "/recipe-listing/whole-wheat-bread",
+      "id": "332d2e381af229d96dc6c2456af66bf8019199b5"
+    },
+    {
+      "url": "https://aashirvaad.com/svasti-milk-contest.html",
+      "source": "SITEMAPS",
+      "targetPath": "/svasti-milk-contest",
+      "id": "4701a77e5bdd24a81a53c44775ef3257ca98533b"
+    },
+    {
+      "url": "https://aashirvaad.com/terms-of-use.html",
+      "source": "SITEMAPS",
+      "targetPath": "/terms-of-use",
+      "id": "bf91d7068267e128b83352f00745ff8a3049e21a"
+    }
+  ],
+  "crawlOptions": {
+    "timeout": 64800000,
+    "inclusionPatterns": [],
+    "exclusionPatterns": [],
+    "limit": -1,
+    "sameDomain": true,
+    "keepHash": false,
+    "strategy": "sitemaps",
+    "logger": {},
+    "strategiesAttempted": [
+      "SITEMAPS"
+    ]
+  },
+  "extractionErrors": [
+    {
+      "url": "https://aashirvaad.com/community.html",
+      "status": "301 Moved Permanently Redirect: https://aashirvaad.com/"
+    },
+    {
+      "url": "https://aashirvaad.com/error_page.html",
+      "status": "301 Moved Permanently Redirect: https://aashirvaad.com/"
+    },
+    {
+      "url": "https://aashirvaad.com/error_page.html",
+      "status": "301 Moved Permanently Redirect: https://aashirvaad.com/"
+    },
+    {
+      "url": "https://aashirvaad.com/error_page.html",
+      "status": "301 Moved Permanently Redirect: https://aashirvaad.com/"
+    },
+    {
+      "url": "https://aashirvaad.com/our-products/svasti-ghee.html",
+      "status": "301 Moved Permanently Redirect: https://aashirvaad.com/error_page.html"
+    },
+    {
+      "url": "https://aashirvaad.com/our-products/blended-spices.html",
+      "status": "301 Moved Permanently Redirect: https://aashirvaad.com/error_page.html"
+    },
+    {
+      "url": "https://aashirvaad.com/our-products/whole-spices.html",
+      "status": "301 Moved Permanently Redirect: https://aashirvaad.com/error_page.html"
+    },
+    {
+      "url": "https://aashirvaad.com/our-products/atta/organic-atta.html",
+      "status": "301 Moved Permanently Redirect: https://aashirvaad.com/our-products/organic/organic-atta.html"
+    },
+    {
+      "url": "https://aashirvaad.com/our-products/ghee.html",
+      "status": "301 Moved Permanently Redirect: https://aashirvaad.com/our-products/svasti-ghee.html"
+    },
+    {
+      "url": "https://aashirvaad.com/header-pages/community.html",
+      "status": "308 Permanent Redirect Redirect: https://aashirvaad.com/community.html"
+    },
+    {
+      "url": "https://aashirvaad.com/header-pages/our-products.html",
+      "status": "308 Permanent Redirect Redirect: https://aashirvaad.com/our-products.html"
+    },
+    {
+      "url": "https://aashirvaad.com/header-pages/our-products/basic-spices.html",
+      "status": "308 Permanent Redirect Redirect: https://aashirvaad.com/our-products/basic-spices.html"
+    },
+    {
+      "url": "https://aashirvaad.com/header-pages/our-products/blended-spices.html",
+      "status": "308 Permanent Redirect Redirect: https://aashirvaad.com/our-products/blended-spices.html"
+    },
+    {
+      "url": "https://aashirvaad.com/header-pages/our-products/whole-spices.html",
+      "status": "308 Permanent Redirect Redirect: https://aashirvaad.com/our-products/whole-spices.html"
+    }
+  ]
+}
