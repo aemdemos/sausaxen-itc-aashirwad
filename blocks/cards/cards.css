@@ -89,7 +89,7 @@
   margin: 0 0 4px;
   font-size: 20px;
   font-weight: 700;
-  font-family: Libre Baskerville, 'Libre Baskerville Fallback', sans-serif;
+  font-family: "Libre Baskerville", 'Libre Baskerville Fallback', sans-serif;
   color: #3e2723;
   line-height: 1.2;
   letter-spacing: -0.5px;
@@ -204,7 +204,7 @@
 
 .cards.cards10 .cards-card-body h5 {
   color: #353024;
-  font-family: Lora, Libre Baskerville, serif;
+  font-family: Lora, "Libre Baskerville", serif;
   font-size: 1.33rem;
   font-weight: 700;
   margin: 8px 0 0;
@@ -304,6 +304,20 @@
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+/* Move .cards.cards34 > ul > li above .cards.cards17 > ul > li:hover to fix no-descending-specificity */
+.cards.cards34 > ul > li {
+  border: none;
+  background: none;
+  box-shadow: none;
+  margin: 0;
+  padding: 0;
+  min-width: 0;
+  width: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .cards.cards17 > ul > li {
@@ -764,3 +778,94 @@
 }
 
 /* --- END GENERATED CSS --- */
+
+.cards.cards34 {
+  background: #e6ded5;
+  padding: 0;
+  margin: 0;
+  height: 54px;
+  display: flex;
+  align-items: center;
+}
+
+.cards.cards34 > ul {
+  display: flex;
+  flex-direction: row;
+  gap: 2px;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  background: transparent;
+  align-items: center;
+  justify-content: flex-start;
+  height: 100%;
+}
+
+.cards.cards34 .cards-card-body:first-child {
+  display: none;
+}
+
+.cards.cards34 .cards-card-body:nth-child(2) {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 14px;
+  height: 28px;
+  min-width: 0;
+  font-size: 13px;
+  font-family: inherit;
+  font-weight: 700;
+  border-radius: 14px;
+  border: 1px solid #6a625a;
+  color: #6a625a;
+  background: transparent;
+  box-sizing: border-box;
+  white-space: nowrap;
+  cursor: pointer;
+  line-height: 1;
+  transition: background 0.15s, color 0.15s;
+}
+
+.cards.cards34 > ul > li:first-child .cards-card-body:nth-child(2) {
+  background: #e30613;
+  color: #fff;
+  border: none;
+}
+
+.cards.cards34 > ul > li:not(:first-child) .cards-card-body:nth-child(2) {
+  background: transparent;
+  color: #6a625a;
+  border: 1px solid #6a625a;
+}
+
+.cards.cards34 > ul,
+.cards.cards34 > ul > li {
+  margin-top: 0;
+  margin-bottom: 0;
+  padding-top: 0;
+  padding-bottom: 0;
+}
+
+.cards-wrapper,
+.cards.cards34 {
+  padding-left: 0;
+  margin-left: 0;
+}
+
+@media (width <= 600px) {
+  .cards.cards34 {
+    height: auto;
+  }
+
+  .cards.cards34 > ul {
+    flex-direction: column;
+    gap: 6px;
+    align-items: stretch;
+    height: auto;
+  }
+
+  .cards.cards34 .cards-card-body:nth-child(2) {
+    width: 100%;
+    justify-content: flex-start;
+  }
+}
