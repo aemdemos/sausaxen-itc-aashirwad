@@ -364,6 +364,11 @@
 }
 
 /* ---- GENERATED CSS ---- */
+.columns.columns4 {
+  background: #e5dbcf;
+  padding: 48px 0;
+}
+
 .columns.columns4 > div {
   max-width: 950px;
   margin: 0 auto;
@@ -473,7 +478,162 @@
   }
 }
 
-.columns.columns4 {
-  background: #e5dbcf;
-  padding: 48px 0;
+/* --- Merged .columns.columns5 --- */
+.columns.columns5 {
+  background: #FFF6E7;
+  padding: 0;
+}
+
+.columns.columns5 > div {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 32px;
+  max-width: 900px;
+  margin: 16px auto 0;
+  background: #FFF6E7;
+  border-radius: 8px;
+  padding: 38px 36px 48px;
+  box-sizing: border-box;
+}
+
+@media (width <= 900px) {
+  .columns.columns5 > div {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 22px;
+    padding: 22px 6px 26px;
+    margin: 10px 0 0;
+  }
+}
+
+.columns.columns5 .columns-img-col {
+  flex: 0 0 360px;
+  max-width: 380px;
+  min-width: 320px;
+  background: #fff;
+  border-radius: 3px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 415px;
+  padding: 10px 12px 12px;
+  box-sizing: border-box;
+  box-shadow: none;
+  margin: 0;
+}
+
+@media (width <= 900px) {
+  .columns.columns5 .columns-img-col {
+    flex: unset;
+    min-width: 0;
+    max-width: 100%;
+    min-height: 0;
+    padding: 14px 6px;
+    margin: 0 auto;
+  }
+}
+
+.columns.columns5 .columns-img-col picture,
+.columns.columns5 .columns-img-col img {
+  max-width: 100%;
+  width: auto;
+  height: auto;
+  display: block;
+  margin: 0 auto;
+}
+
+.columns.columns5 > div > div:not(.columns-img-col) {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  gap: 0;
+  padding: 0;
+  min-width: 0;
+  flex: 1 1 0;
+  max-width: 390px;
+}
+
+.columns.columns5 h1 {
+  font-family: var(--heading-font-family);
+  font-size: 2rem;
+  color: #222;
+  font-weight: 700;
+  margin: 0 0 8px;
+  line-height: 1.16;
+  letter-spacing: 0;
+  padding: 0;
+}
+
+.columns.columns5 h1 + p {
+  color: #444;
+  font-size: 1.11rem;
+  line-height: 1.42;
+  margin: 0 0 23px;
+  padding-right: 10px;
+}
+
+.columns.columns5 h3 {
+  font-family: var(--heading-font-family);
+  color: #222;
+  font-size: 1.19rem;
+  font-weight: 700;
+  margin: 22px 0 9px;
+  letter-spacing: 0;
+  padding: 0;
+  line-height: 1.22;
+}
+
+.columns.columns5 #available-pack-sizes + p {
+  display: inline-block;
+  background: #222;
+  color: #fff;
+  font-weight: 700;
+  font-size: 1rem;
+  padding: 8px 20px;
+  border-radius: 22px;
+  margin: 0 0 20px;
+  letter-spacing: 0.5px;
+  line-height: 1.1;
+  min-width: 68px;
+  text-align: center;
+}
+
+.columns.columns5 #available-pack-sizes + p + p,
+.columns.columns5 #available-pack-sizes + p + p + p {
+  display: none;
+}
+
+.columns.columns5 h3[id*="product-information"] {
+  position: relative;
+  padding-bottom: 7px;
+  margin-bottom: 17px;
+  border-bottom: 1.2px solid #222;
+  display: flex;
+  align-items: center;
+  font-size: 1.19rem;
+  font-weight: 700;
+}
+
+.columns.columns5 > div > div:not(.columns-img-col) > h3 + p,
+.columns.columns5 > div > div:not(.columns-img-col) > h3[id*="product-information"] + p {
+  margin-top: 0;
+  margin-bottom: 14px;
+}
+
+@media (width <= 900px) {
+  .columns.columns5 h1,
+  .columns.columns5 h3,
+  .columns.columns5 > div > div:not(.columns-img-col) {
+    text-align: left;
+  }
+}
+
+@media (width <= 1200px) and (width >= 901px) {
+  .columns.columns5 > div {
+    max-width: 98vw;
+    padding-left: 10px;
+    padding-right: 10px;
+  }
 }
