@@ -1,8 +1,8 @@
+/* --- GROUP 1: Base .accordion rules --- */
 .accordion details {
   border: 1px solid #dadada;
 }
 
-/* stylelint-disable-next-line no-descending-specificity */
 .accordion details + details {
   margin-top: 24px;
 }
@@ -19,6 +19,26 @@
   list-style: none;
   overflow: auto;
   transition: background-color 0.2s;
+}
+
+.accordion.accordion21 summary,
+.accordion.accordion21 .accordion-item-label {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  padding: 5px 10px 5px 0;
+  font-family: serif;
+  color: #3F3326;
+  font-size: 16px;
+  background: #FAF0DC;
+  cursor: pointer;
+  outline: none;
+  border: none;
+  box-shadow: none;
+  min-height: 0;
+  margin: 0;
+  line-height: 1.2;
 }
 
 .accordion details[open] summary {
@@ -55,7 +75,73 @@
   padding: 0 16px;
 }
 
-.accordion details[open] .accordion-item-body {
+.accordion.accordion21 .accordion-item-body {
+  background: #FAF0DC;
+  padding: 0 0 5px;
+  color: #3F3326;
+  font-family: serif;
+  font-size: 15px;
+  border: none;
+  box-shadow: none;
+}
+
+.accordion.details[open] .accordion-item-body {
   border-top: 1px solid #dadada;
   background-color: var(--background-color);
+}
+
+/* --- GROUP 2: .accordion.accordion21 rules --- */
+.accordion.accordion21 {
+  font-family: serif;
+  color: #3F3326;
+  font-size: 16px;
+  background: #FAF0DC;
+}
+
+.accordion.accordion21 summary p,
+.accordion.accordion21 .accordion-item-label p {
+  font-family: serif;
+  font-size: 16px;
+  color: #3F3326;
+  margin: 0;
+  font-weight: normal;
+  line-height: 1.2;
+}
+
+.accordion.accordion21 details {
+  background: #FAF0DC;
+  border: none;
+  margin: 0;
+  padding: 0;
+}
+
+.accordion.accordion21 details + details {
+  margin-top: 0;
+}
+
+.accordion.accordion21 details:not(:last-child) {
+  border-bottom: 1px solid #3F3326;
+}
+
+.accordion.accordion21 details summary::after {
+  display: inline-block;
+  align-self: center;
+  margin-left: 4px;
+  margin-right: 0;
+  width: 10px;
+  height: 10px;
+  border-right: 2px solid #C83221;
+  border-bottom: 2px solid #C83221;
+  border-top: none;
+  border-left: none;
+  transform: rotate(45deg) translateY(-2px);
+  vertical-align: middle;
+  transition: transform 0.2s;
+  box-sizing: border-box;
+  background: none;
+  content: "";
+}
+
+.accordion.accordion21 details[open] summary::after {
+  transform: rotate(-135deg) translateY(-2px);
 }
