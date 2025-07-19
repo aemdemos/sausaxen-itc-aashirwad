@@ -93,12 +93,11 @@
   margin: 0;
 }
 
-/* All .hero.hero6 > div:first-child > ... selectors before .block variants */
 .hero.hero6 > div:first-child > div,
-.hero.hero6 > div:first-child picture,
-.hero.hero6 > div:first-child img,
 .hero.hero6.block > div:first-child > div,
+.hero.hero6 > div:first-child picture,
 .hero.hero6.block > div:first-child picture,
+.hero.hero6 > div:first-child img,
 .hero.hero6.block > div:first-child img {
   width: 100%;
   height: 100%;
@@ -214,8 +213,8 @@
 }
 
 .hero.hero6 .button:focus,
-.hero.hero6 .button:hover,
 .hero.hero6.block .button:focus,
+.hero.hero6 .button:hover,
 .hero.hero6.block .button:hover {
   color: #fff;
   background: #b00610;
@@ -285,7 +284,7 @@
   width: 100vw;
   max-width: none;
   min-height: 600px;
-  background-image: url('./media_1901603107e7298fefb1531d4e6f917bddce67c26.png?width=2000&format=png&optimize=medium');
+  background-image: url("./media_1901603107e7298fefb1531d4e6f917bddce67c26.png?width=2000&format=png&optimize=medium");
   background-repeat: repeat;
   background-position: center 61%;
   background-size: 630px auto;
@@ -352,15 +351,12 @@
     background-size: 230px auto;
     background-position: center 86%;
   }
-
   .hero.hero14 > div:last-child {
     margin-top: 57px;
   }
-
   .hero.hero14 h1 {
     font-size: 1.13rem;
   }
-
   .hero.hero14 p {
     font-size: 0.89rem;
   }
@@ -376,7 +372,7 @@
   min-height: 520px;
   width: 100vw;
   max-width: 100vw;
-  background: url('https://s7ap1.scene7.com/is/image/itcportalprod/Product-Story-Background-Image-Desktop?fmt=webp-alpha') center center/cover no-repeat;
+  background: url("https://s7ap1.scene7.com/is/image/itcportalprod/Product-Story-Background-Image-Desktop?fmt=webp-alpha") center center/cover no-repeat;
   position: relative;
   box-sizing: border-box;
   padding: 0;
@@ -497,22 +493,18 @@
     gap: 20px;
     max-width: 100vw;
   }
-
   .hero.hero20 > div > div:first-child {
     padding: 32px 8px 24px 12px;
     max-width: 100%;
   }
-
   .hero.hero20 > div > div:last-child {
     padding: 24px 12px 32px 8px;
     max-width: 100%;
   }
-
   .hero.hero20 picture,
   .hero.hero20 img {
     max-width: 180px;
   }
-
   .hero.hero20 h1,
   .hero.hero20 h2 {
     font-size: 1.45rem;
@@ -524,7 +516,6 @@
     min-height: 0;
     padding: 0;
   }
-
   .hero.hero20 > div {
     flex-direction: column;
     max-width: 100vw;
@@ -533,7 +524,6 @@
     gap: 0;
     align-items: stretch;
   }
-
   .hero.hero20 > div > div:first-child,
   .hero.hero20 > div > div:last-child {
     align-items: center;
@@ -541,11 +531,9 @@
     padding: 14px 4px 0;
     max-width: 100vw;
   }
-
   .hero.hero20 > div > div:last-child {
     padding: 6px 4px 14px;
   }
-
   .hero.hero20 picture,
   .hero.hero20 img {
     max-width: 110px;
@@ -717,3 +705,17 @@
 }
 
 /* --- END GENERATED CSS (EXPERIMENT 3) --- */
+
+/* --- MERGED SELECTOR --- */
+.hero.hero32 {
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  align-items: stretch;
+  min-height: 340px;
+  border-radius: 18px;
+  overflow: hidden;
+  width: 100vw;
+  max-width: 100vw;
+  background: none;
+}
