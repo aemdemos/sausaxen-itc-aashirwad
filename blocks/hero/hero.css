@@ -60,7 +60,6 @@
 
 /* --- Begin generated CSS (except .hero.hero6.block) --- */
 
-/* All .hero.hero6 selectors - parents then children, general to specific */
 .hero.hero6,
 .hero.hero6.block {
   position: relative;
@@ -94,10 +93,10 @@
 }
 
 .hero.hero6 > div:first-child > div,
-.hero.hero6.block > div:first-child > div,
 .hero.hero6 > div:first-child picture,
-.hero.hero6.block > div:first-child picture,
 .hero.hero6 > div:first-child img,
+.hero.hero6.block > div:first-child > div,
+.hero.hero6.block > div:first-child picture,
 .hero.hero6.block > div:first-child img {
   width: 100%;
   height: 100%;
@@ -213,8 +212,8 @@
 }
 
 .hero.hero6 .button:focus,
-.hero.hero6.block .button:focus,
 .hero.hero6 .button:hover,
+.hero.hero6.block .button:focus,
 .hero.hero6.block .button:hover {
   color: #fff;
   background: #b00610;
@@ -351,18 +350,19 @@
     background-size: 230px auto;
     background-position: center 86%;
   }
+
   .hero.hero14 > div:last-child {
     margin-top: 57px;
   }
+
   .hero.hero14 h1 {
     font-size: 1.13rem;
   }
+
   .hero.hero14 p {
     font-size: 0.89rem;
   }
 }
-
-/* --- BEGIN GENERATED CSS (EXPERIMENT 4) --- */
 
 .hero.hero20 {
   display: flex;
@@ -493,18 +493,22 @@
     gap: 20px;
     max-width: 100vw;
   }
+
   .hero.hero20 > div > div:first-child {
     padding: 32px 8px 24px 12px;
     max-width: 100%;
   }
+
   .hero.hero20 > div > div:last-child {
     padding: 24px 12px 32px 8px;
     max-width: 100%;
   }
+
   .hero.hero20 picture,
   .hero.hero20 img {
     max-width: 180px;
   }
+
   .hero.hero20 h1,
   .hero.hero20 h2 {
     font-size: 1.45rem;
@@ -516,6 +520,7 @@
     min-height: 0;
     padding: 0;
   }
+
   .hero.hero20 > div {
     flex-direction: column;
     max-width: 100vw;
@@ -524,6 +529,7 @@
     gap: 0;
     align-items: stretch;
   }
+
   .hero.hero20 > div > div:first-child,
   .hero.hero20 > div > div:last-child {
     align-items: center;
@@ -531,9 +537,11 @@
     padding: 14px 4px 0;
     max-width: 100vw;
   }
+
   .hero.hero20 > div > div:last-child {
     padding: 6px 4px 14px;
   }
+
   .hero.hero20 picture,
   .hero.hero20 img {
     max-width: 110px;
@@ -551,10 +559,6 @@
   text-decoration: underline;
 }
 
-/* --- END GENERATED CSS (EXPERIMENT 4) --- */
-
-/* --- BEGIN GENERATED CSS (EXPERIMENT 3) --- */
-
 .hero.hero28 {
   position: relative;
   display: flex;
@@ -568,7 +572,6 @@
   box-sizing: border-box;
 }
 
-/* Make the image fill the hero background via absolute positioning and object-fit */
 .hero.hero28 > div:first-child {
   position: absolute;
   inset: 0;
@@ -590,7 +593,6 @@
   border-radius: 0;
 }
 
-/* Improved overlay for better text contrast, shorter on right for more color on left */
 .hero.hero28::before {
   position: absolute;
   inset: 0;
@@ -603,7 +605,6 @@
   display: block;
 }
 
-/* Content column: right-aligned, overlays background */
 .hero.hero28 > div:nth-child(2) {
   position: relative;
   z-index: 2;
@@ -704,9 +705,6 @@
   }
 }
 
-/* --- END GENERATED CSS (EXPERIMENT 3) --- */
-
-/* --- MERGED SELECTOR --- */
 .hero.hero32 {
   position: relative;
   display: flex;
@@ -718,4 +716,197 @@
   width: 100vw;
   max-width: 100vw;
   background: none;
+}
+
+.hero.hero42 {
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: flex-start;
+  min-height: 260px;
+  border-radius: 24px;
+  overflow: hidden;
+  box-sizing: border-box;
+  width: 100%;
+  max-width: 100%;
+  padding: 0;
+  background: none;
+}
+
+.hero.hero42 > div:last-child > div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  width: 100%;
+  max-width: 1000px;
+  padding: 60px 0 40px;
+  position: relative;
+  text-align: center;
+}
+
+.hero.hero42 > div:last-child > div h1,
+.hero.hero42 > div:last-child > div h2 {
+  text-align: center;
+  width: 100%;
+}
+
+.hero.hero42 .hero42-options-row {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 48px;
+  margin: 1.7em 0 2.2em;
+  width: 100%;
+  max-width: 600px;
+}
+
+.hero.hero42 > div:last-child > div > p {
+  display: none;
+  margin: 0;
+  padding: 0;
+}
+
+.hero.hero42 > div:last-child > div > p.hero42-option-cell {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 132px;
+  margin: 0;
+  background: transparent;
+  position: relative;
+}
+
+.hero.hero42 > div:last-child > div > p.hero42-option-cell picture img {
+  width: 104px;
+  height: 104px;
+  border-radius: 50%;
+  border: 4px solid #fff;
+  box-shadow: 0 2px 12px 0 rgb(0 0 0 / 16%);
+  background: #fff;
+  object-fit: cover;
+  margin-bottom: 0.6em;
+  margin-top: 0;
+  display: block;
+}
+
+.hero.hero42 > div:last-child > div > p.hero42-option-label {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  font-size: 1rem;
+  font-weight: 600;
+  text-align: center;
+  margin: 0;
+  margin-top: -0.2em;
+  margin-bottom: 0;
+  min-height: 22px;
+  width: 100%;
+  background: transparent;
+  padding: 0;
+}
+
+.hero.hero42 > div:last-child > div .hero42-options-row {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.hero.hero42 > div:last-child > div > p:nth-of-type(1),
+.hero.hero42 > div:last-child > div > p:nth-of-type(3),
+.hero.hero42 > div:last-child > div > p:nth-of-type(5) {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 132px;
+  margin-left: 24px;
+  margin-right: 24px;
+  background: transparent;
+  position: relative;
+}
+.hero.hero42 > div:last-child > div > p:nth-of-type(1) { margin-left: 0; }
+.hero.hero42 > div:last-child > div > p:nth-of-type(5) { margin-right: 0; }
+
+.hero.hero42 > div:last-child > div > p:nth-of-type(2),
+.hero.hero42 > div:last-child > div > p:nth-of-type(4),
+.hero.hero42 > div:last-child > div > p:nth-of-type(6) {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  font-size: 1rem;
+  font-weight: 600;
+  text-align: center;
+  margin: -0.2em 0 0.1em;
+  min-height: 22px;
+  width: 100%;
+  background: transparent;
+  padding: 0;
+}
+.hero.hero42 > div:last-child > div > p:nth-of-type(2) { margin-left: 0; }
+.hero.hero42 > div:last-child > div > p:nth-of-type(6) { margin-right: 0; }
+
+.hero.hero42 > div:last-child > div > p:nth-of-type(1) picture img,
+.hero.hero42 > div:last-child > div > p:nth-of-type(3) picture img,
+.hero.hero42 > div:last-child > div > p:nth-of-type(5) picture img {
+  margin-bottom: 0.6em;
+}
+
+@media (width <= 900px) {
+  .hero.hero42 > div:last-child > div {
+    padding: 30px 0 24px;
+    max-width: 100vw;
+  }
+
+  .hero.hero42 > div:last-child > div > p:nth-of-type(1),
+  .hero.hero42 > div:last-child > div > p:nth-of-type(3),
+  .hero.hero42 > div:last-child > div > p:nth-of-type(5),
+  .hero.hero42 > div:last-child > div > p:nth-of-type(2),
+  .hero.hero42 > div:last-child > div > p:nth-of-type(4),
+  .hero.hero42 > div:last-child > div > p:nth-of-type(6) {
+    width: 100%;
+    margin: 0 0 0.7em;
+  }
+
+  .hero.hero42 > div:last-child > div > p:nth-of-type(1) picture img,
+  .hero.hero42 > div:last-child > div > p:nth-of-type(3) picture img,
+  .hero.hero42 > div:last-child > div > p:nth-of-type(5) picture img {
+    width: 72px;
+    height: 72px;
+  }
+
+  .hero.hero42 > div:last-child > div > p:nth-of-type(2),
+  .hero.hero42 > div:last-child > div > p:nth-of-type(4),
+  .hero.hero42 > div:last-child > div > p:nth-of-type(6) {
+    margin-top: -1em;
+    font-size: 0.98rem;
+  }
+}
+
+.hero.hero42 > div:last-child > div > p:last-of-type {
+  display: block;
+  background: #e6858a;
+  color: #fff;
+  border-radius: 20px;
+  font-size: 1.1rem;
+  font-family: var(--body-font-family), sans-serif;
+  font-weight: 600;
+  padding: 0.75em 2.4em;
+  text-align: center;
+  margin: 2.7em auto 0;
+  box-shadow: 0 2px 8px 0 rgb(0 0 0 / 11%);
+  cursor: pointer;
+  transition: background 0.18s;
+  min-width: 120px;
+  max-width: 240px;
+  letter-spacing: 0.03em;
+  position: relative;
+  z-index: 1;
+}
+
+.hero.hero42 > div:last-child > div > p:last-of-type:hover,
+.hero.hero42 > div:last-child > div > p:last-of-type:focus {
+  background: #cc6e74;
 }
