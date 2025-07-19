@@ -1,4 +1,5 @@
 
+
 /* --- columns base --- */
 .columns > div {
   display: flex;
@@ -1101,10 +1102,8 @@
   opacity: 1;
 }
 
-/* --- merged .columns.columns12 selector --- */
-.columns.columns12 {
-  display: block;
-  background: #FFF5E1;
-  padding: 64px 0;
-  box-sizing: border-box;
+/* --- merged .columns.columns13 selector --- */
+.columns.columns13 {
+  background: #FFF6E6;
+  padding: 0;
 }
