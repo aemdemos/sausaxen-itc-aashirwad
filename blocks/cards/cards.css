@@ -1,3 +1,4 @@
+
 .cards > ul {
   list-style: none;
   margin: 0;
@@ -24,4 +25,112 @@
   width: 100%;
   aspect-ratio: 4 / 3;
   object-fit: cover;
+}
+
+.cards.cards8 {
+  background: #e3d5ca;
+  padding: 48px 0;
+}
+
+.cards.cards8 > ul {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  max-width: 1020px;
+  margin: 0 auto;
+  justify-items: center;
+}
+
+.cards.cards8 > ul > li {
+  background: transparent;
+  border: none;
+  box-shadow: none;
+  padding: 0;
+  margin: 0;
+  width: 300px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.cards.cards8 .cards-card-image {
+  background: #fff;
+  border-radius: 8px;
+  width: 144px;
+  height: 144px;
+  margin: 0 0 18px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 12px 0 rgb(0 0 0 / 7%);
+  overflow: hidden;
+  align-self: flex-start;
+}
+
+.cards.cards8 .cards-card-image img {
+  max-width: 132px;
+  max-height: 132px;
+  width: auto;
+  height: auto;
+  display: block;
+  margin: 0 auto;
+}
+
+.cards.cards8 .cards-card-body {
+  padding: 0;
+  margin: 0;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.cards.cards8 .cards-card-body h5 {
+  margin: 0 0 4px;
+  font-size: 20px;
+  font-weight: 700;
+  font-family: "Libre Baskerville", "Libre Baskerville Fallback", sans-serif;
+  color: #3e2723;
+  line-height: 1.2;
+  letter-spacing: -0.5px;
+}
+
+.cards.cards8 .cards-card-body p {
+  margin: 0;
+  font-size: 15px;
+  color: #5d4037;
+  line-height: 1.5;
+  font-family: Poppins, "Poppins Fallback", sans-serif;
+  letter-spacing: 0.01em;
+}
+
+@media (width <= 1050px) {
+  .cards.cards8 > ul {
+    grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
+    gap: 18px;
+    max-width: 760px;
+  }
+
+  .cards.cards8 > ul > li {
+    width: 100%;
+    max-width: 300px;
+    min-width: 0;
+  }
+}
+
+@media (width <= 800px) {
+  .cards.cards8 > ul {
+    grid-template-columns: 1fr;
+    max-width: 400px;
+    gap: 10px;
+  }
+
+  .cards.cards8 {
+    padding: 20px 0;
+  }
+
+  .cards.cards8 > ul > li {
+    margin-left: auto;
+    margin-right: auto;
+  }
 }
