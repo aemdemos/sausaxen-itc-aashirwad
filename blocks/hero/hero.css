@@ -92,21 +92,6 @@
   margin: 0;
 }
 
-.hero.hero6 > div:first-child > div,
-.hero.hero6 > div:first-child picture,
-.hero.hero6 > div:first-child img,
-.hero.hero6.block > div:first-child > div,
-.hero.hero6.block > div:first-child picture,
-.hero.hero6.block > div:first-child img {
-  width: 100%;
-  height: 100%;
-  display: block;
-  object-fit: cover;
-  min-width: 0;
-  min-height: 0;
-  border-radius: 0;
-}
-
 .hero.hero6 > div:last-child,
 .hero.hero6.block > div:last-child {
   position: relative;
@@ -124,6 +109,21 @@
   background: none;
   padding: 0;
   margin: 0;
+}
+
+.hero.hero6 > div:first-child > div,
+.hero.hero6 > div:first-child picture,
+.hero.hero6 > div:first-child img,
+.hero.hero6.block > div:first-child > div,
+.hero.hero6.block > div:first-child picture,
+.hero.hero6.block > div:first-child img {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+  min-width: 0;
+  min-height: 0;
+  border-radius: 0;
 }
 
 .hero.hero6 > div:last-child > div,
@@ -718,6 +718,7 @@
   background: none;
 }
 
+/* ---- MERGED .hero.hero42 SELECTOR BELOW ---- */
 .hero.hero42 {
   position: relative;
   display: flex;
@@ -734,179 +735,181 @@
   background: none;
 }
 
+/* ----- Ensure correct stacking of content ----- */
 .hero.hero42 > div:last-child > div {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: flex-start;
   width: 100%;
-  max-width: 1000px;
-  padding: 60px 0 40px;
+  max-width: 900px;
+  text-align: center;
   position: relative;
-  text-align: center;
+  gap: 2.1em;
+  padding-bottom: 2em;
 }
 
-.hero.hero42 > div:last-child > div h1,
-.hero.hero42 > div:last-child > div h2 {
-  text-align: center;
-  width: 100%;
+/* ----- Show only the appropriate option elements and group them horizontally ----- */
+.hero.hero42 > div:last-child > div > p {
+  display: none;
 }
 
-.hero.hero42 .hero42-options-row {
+/* Group the three image+label pairs in a flex row: treat every pair as a column */
+.hero.hero42 > div:last-child > div .hero42-options-row {
   display: flex;
   flex-direction: row;
   justify-content: center;
-  align-items: flex-start;
-  gap: 48px;
-  margin: 1.7em 0 2.2em;
+  align-items: flex-end;
+  gap: 2.5rem;
+  margin: 1.3em 0 2.1em;
   width: 100%;
-  max-width: 600px;
+  max-width: 570px;
 }
 
-.hero.hero42 > div:last-child > div > p {
-  display: none;
-  margin: 0;
-  padding: 0;
-}
-
-.hero.hero42 > div:last-child > div > p.hero42-option-cell {
+/* Make the three option columns (image + label) visible and stack content vertically */
+.hero.hero42 > div:last-child > div > p.hero42-option-col {
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: 132px;
+  width: 120px;
   margin: 0;
-  background: transparent;
-  position: relative;
+  background: none;
+  padding: 0;
 }
 
-.hero.hero42 > div:last-child > div > p.hero42-option-cell picture img {
-  width: 104px;
-  height: 104px;
+/* For this HTML, set up nth-child selectors to emulate a row of columns.
+   1,3,5 = cell with image, 2,4,6 = label below image */
+.hero.hero42 > div:last-child > div .hero42-options-row > p {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 120px;
+  margin: 0;
+  background: none;
+  padding: 0;
+}
+
+/* The option columns: we use the nth-of-type trick to create three "columns" */
+.hero.hero42 > div:last-child > div .hero42-options-row > p:nth-of-type(1),
+.hero.hero42 > div:last-child > div .hero42-options-row > p:nth-of-type(3),
+.hero.hero42 > div:last-child > div .hero42-options-row > p:nth-of-type(5) {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 120px;
+  margin: 0;
+  background: none;
+  padding: 0;
+}
+
+/* Image styling */
+.hero.hero42 > div:last-child > div .hero42-options-row > p:nth-of-type(1) picture img,
+.hero.hero42 > div:last-child > div .hero42-options-row > p:nth-of-type(3) picture img,
+.hero.hero42 > div:last-child > div .hero42-options-row > p:nth-of-type(5) picture img {
+  width: 88px;
+  height: 88px;
   border-radius: 50%;
-  border: 4px solid #fff;
-  box-shadow: 0 2px 12px 0 rgb(0 0 0 / 16%);
+  border: 3px solid #fff;
   background: #fff;
   object-fit: cover;
-  margin-bottom: 0.6em;
+  box-shadow: 0 4px 14px 0 rgb(0 0 0 / 13%);
+  margin-bottom: 0.55em;
   margin-top: 0;
   display: block;
 }
 
-.hero.hero42 > div:last-child > div > p.hero42-option-label {
+/* Option labels: next sibling right after image */
+.hero.hero42 > div:last-child > div .hero42-options-row > p:nth-of-type(2),
+.hero.hero42 > div:last-child > div .hero42-options-row > p:nth-of-type(4),
+.hero.hero42 > div:last-child > div .hero42-options-row > p:nth-of-type(6) {
   display: flex;
   align-items: center;
   justify-content: center;
-  color: #fff;
-  font-size: 1rem;
+  font-size: 1.08rem;
   font-weight: 600;
-  text-align: center;
-  margin: 0;
-  margin-top: -0.2em;
-  margin-bottom: 0;
-  min-height: 22px;
-  width: 100%;
-  background: transparent;
-  padding: 0;
-}
-
-.hero.hero42 > div:last-child > div .hero42-options-row {
-  margin-left: auto;
-  margin-right: auto;
-}
-
-.hero.hero42 > div:last-child > div > p:nth-of-type(1),
-.hero.hero42 > div:last-child > div > p:nth-of-type(3),
-.hero.hero42 > div:last-child > div > p:nth-of-type(5) {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  width: 132px;
-  margin-left: 24px;
-  margin-right: 24px;
-  background: transparent;
-  position: relative;
-}
-.hero.hero42 > div:last-child > div > p:nth-of-type(1) { margin-left: 0; }
-.hero.hero42 > div:last-child > div > p:nth-of-type(5) { margin-right: 0; }
-
-.hero.hero42 > div:last-child > div > p:nth-of-type(2),
-.hero.hero42 > div:last-child > div > p:nth-of-type(4),
-.hero.hero42 > div:last-child > div > p:nth-of-type(6) {
-  display: flex;
-  align-items: center;
-  justify-content: center;
   color: #fff;
-  font-size: 1rem;
-  font-weight: 600;
+  margin: 0.1em 0 0;
   text-align: center;
-  margin: -0.2em 0 0.1em;
-  min-height: 22px;
-  width: 100%;
-  background: transparent;
+  min-height: 1.5em;
   padding: 0;
-}
-.hero.hero42 > div:last-child > div > p:nth-of-type(2) { margin-left: 0; }
-.hero.hero42 > div:last-child > div > p:nth-of-type(6) { margin-right: 0; }
-
-.hero.hero42 > div:last-child > div > p:nth-of-type(1) picture img,
-.hero.hero42 > div:last-child > div > p:nth-of-type(3) picture img,
-.hero.hero42 > div:last-child > div > p:nth-of-type(5) picture img {
-  margin-bottom: 0.6em;
+  background: none;
+  width: 120px;
 }
 
-@media (width <= 900px) {
-  .hero.hero42 > div:last-child > div {
-    padding: 30px 0 24px;
-    max-width: 100vw;
-  }
-
-  .hero.hero42 > div:last-child > div > p:nth-of-type(1),
-  .hero.hero42 > div:last-child > div > p:nth-of-type(3),
-  .hero.hero42 > div:last-child > div > p:nth-of-type(5),
-  .hero.hero42 > div:last-child > div > p:nth-of-type(2),
-  .hero.hero42 > div:last-child > div > p:nth-of-type(4),
-  .hero.hero42 > div:last-child > div > p:nth-of-type(6) {
-    width: 100%;
-    margin: 0 0 0.7em;
-  }
-
-  .hero.hero42 > div:last-child > div > p:nth-of-type(1) picture img,
-  .hero.hero42 > div:last-child > div > p:nth-of-type(3) picture img,
-  .hero.hero42 > div:last-child > div > p:nth-of-type(5) picture img {
-    width: 72px;
-    height: 72px;
-  }
-
-  .hero.hero42 > div:last-child > div > p:nth-of-type(2),
-  .hero.hero42 > div:last-child > div > p:nth-of-type(4),
-  .hero.hero42 > div:last-child > div > p:nth-of-type(6) {
-    margin-top: -1em;
-    font-size: 0.98rem;
-  }
+/* Headings: visually group them and reduce margin below h2 */
+.hero.hero42 > div:last-child > div > h1 {
+  margin-bottom: 0.15em;
 }
 
+.hero.hero42 > div:last-child > div > h2 {
+  margin-bottom: 0.7em;
+}
+
+/* Button styling: visually grouped below options row */
 .hero.hero42 > div:last-child > div > p:last-of-type {
-  display: block;
+  display: inline-block;
   background: #e6858a;
   color: #fff;
-  border-radius: 20px;
-  font-size: 1.1rem;
+  font-size: 1.18rem;
   font-family: var(--body-font-family), sans-serif;
   font-weight: 600;
-  padding: 0.75em 2.4em;
-  text-align: center;
-  margin: 2.7em auto 0;
+  border-radius: 1.5em;
+  padding: 0.82em 2.5em;
+  margin: 2.1em auto 0;
   box-shadow: 0 2px 8px 0 rgb(0 0 0 / 11%);
+  text-align: center;
   cursor: pointer;
   transition: background 0.18s;
   min-width: 120px;
-  max-width: 240px;
+  max-width: 244px;
   letter-spacing: 0.03em;
-  position: relative;
-  z-index: 1;
+  border: none;
 }
 
 .hero.hero42 > div:last-child > div > p:last-of-type:hover,
 .hero.hero42 > div:last-child > div > p:last-of-type:focus {
   background: #cc6e74;
+}
+
+/* Responsive: stack options vertically on small screens */
+@media (width <= 900px) {
+  .hero.hero42 > div:last-child > div .hero42-options-row {
+    flex-direction: column;
+    gap: 1.2em;
+    max-width: 150px;
+    margin-bottom: 1.1em;
+  }
+
+  .hero.hero42 > div:last-child > div .hero42-options-row > p {
+    width: 100%;
+    margin: 0;
+  }
+
+  .hero.hero42 > div:last-child > div .hero42-options-row > p:nth-of-type(1) picture img,
+  .hero.hero42 > div:last-child > div .hero42-options-row > p:nth-of-type(3) picture img,
+  .hero.hero42 > div:last-child > div .hero42-options-row > p:nth-of-type(5) picture img {
+    width: 62px;
+    height: 62px;
+    margin-bottom: 0.4em;
+  }
+
+  .hero.hero42 > div:last-child > div .hero42-options-row > p:nth-of-type(2),
+  .hero.hero42 > div:last-child > div .hero42-options-row > p:nth-of-type(4),
+  .hero.hero42 > div:last-child > div .hero42-options-row > p:nth-of-type(6) {
+    font-size: 0.96rem;
+    min-height: 1.2em;
+  }
+
+  .hero.hero42 > div:last-child > div > p:last-of-type {
+    font-size: 1rem;
+    padding: 0.7em 2em;
+    margin-top: 1.1em;
+    min-width: 94px;
+    max-width: 180px;
+  }
+}
+
+/* Ensure hero is full width */
+.hero-container > .hero-wrapper {
+  max-width: unset;
+  padding: 0;
 }
