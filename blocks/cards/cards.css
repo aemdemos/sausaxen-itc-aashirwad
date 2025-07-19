@@ -1,5 +1,3 @@
-
- 
 .cards > ul {
   list-style: none;
   margin: 0;
@@ -101,7 +99,7 @@
   font-size: 15px;
   color: #5d4037;
   line-height: 1.5;
-  font-family: Poppins, "Poppins Fallback", sans-serif;
+  font-family: Poppins, Poppins Fallback, sans-serif;
   letter-spacing: 0.01em;
 }
 
@@ -136,13 +134,10 @@
   }
 }
 
-/* --- START MERGED SELECTOR --- */
 .cards.cards10 {
   background: #e9dfd2;
   padding: 40px 0;
 }
-
-/* --- END MERGED SELECTOR --- */
 
 .cards.cards10 > ul {
   display: grid;
@@ -208,7 +203,7 @@
 
 .cards.cards10 .cards-card-body h5 {
   color: #353024;
-  font-family: Lora, "Libre Baskerville", serif;
+  font-family: Lora, Libre Baskerville, serif;
   font-size: 1.33rem;
   font-weight: 700;
   margin: 8px 0 0;
@@ -235,14 +230,9 @@
   }
 }
 
-/* merged .cards.cards17 selector below */
 .cards.cards17 {
   margin-top: 0;
   padding-top: 0;
-
-  /* Merged properties from generated CSS below */
-
-  /* Latest values from generated CSS take precedence in case of conflicts */
 }
 
 .cards.cards17 > ul {
@@ -272,6 +262,27 @@
     max-width: 98vw;
     gap: 12px;
   }
+}
+
+.cards.cards22 > ul {
+  display: block;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  width: 100%;
+}
+
+.cards.cards22 > ul > li {
+  display: flex;
+  flex-direction: row;
+  align-items: stretch;
+  border: none;
+  background: none;
+  padding: 0;
+  margin: 0;
+  min-height: 0;
+  width: 100%;
+  box-sizing: border-box;
 }
 
 .cards.cards17 > ul > li {
@@ -367,7 +378,7 @@
 .cards.cards17 .cards-card-body p:last-child {
   margin-top: auto;
   padding-bottom: 0;
-  font-family: Poppins, 'Poppins Fallback', sans-serif;
+  font-family: Poppins, Poppins Fallback, sans-serif;
   font-size: 18px;
   color: #453D34;
   display: flex;
@@ -455,3 +466,137 @@
   }
 }
 
+/* Moved .cards.cards22 > ul > li before .cards.cards17 > ul > li:hover to resolve specificity order */
+.cards.cards22 > ul {
+  display: block;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  width: 100%;
+}
+
+.cards.cards22 > ul > li {
+  display: flex;
+  flex-direction: row;
+  align-items: stretch;
+  border: none;
+  background: none;
+  padding: 0;
+  margin: 0;
+  min-height: 0;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+/* Left vertical strip: ultra slim, slightly warmer subtle gradient, minimal radius */
+.cards.cards22 .cards-card-body:first-child {
+  width: 4px;
+  min-width: 4px;
+  max-width: 4px;
+  background: linear-gradient(to bottom, #c4d8ec 0%, #d6e7bb 100%);
+  border-radius: 2px 0 0;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  align-self: stretch;
+}
+
+/* Right (main) black area: sharper radius, reduced padding, top-aligned, smaller font */
+.cards.cards22 .cards-card-body:nth-child(2) {
+  flex: 1 1 0;
+  background: #000;
+  border-radius: 4px 4px 0 0;
+  margin: 0;
+  padding: 3px 14px 5px;
+  box-sizing: border-box;
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  min-height: 0;
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+  position: relative;
+  box-shadow: 0 -4px 12px -7px rgb(0 0 0 / 45%);
+  font-size: 0.88em;
+}
+
+/* Sharper, shorter top edge gradient */
+.cards.cards22 .cards-card-body:nth-child(2)::after {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  height: 5px;
+  background: linear-gradient(to bottom, rgb(0 0 0 / 59%) 0%, rgb(0 0 0 / 0%) 100%);
+  border-radius: 4px 4px 0 0;
+  width: 100%;
+  pointer-events: none;
+  z-index: 1;
+  display: block;
+  content: "";
+}
+
+/* Ensure content is above the gradient */
+.cards.cards22 .cards-card-body:nth-child(2) > * {
+  position: relative;
+  z-index: 2;
+}
+
+/* Remove default spacing on header/link and set compact font */
+.cards.cards22 .cards-card-body:nth-child(2) strong {
+  margin: 0;
+  font-size: 0.98em;
+  line-height: 1.13;
+  display: block;
+  font-weight: 700;
+}
+
+.cards.cards22 .cards-card-body:nth-child(2) p {
+  margin: 0;
+  padding: 0;
+  line-height: 1.13;
+  font-size: 0.90em;
+}
+
+.cards.cards22 .cards-card-body:nth-child(2) strong + p {
+  margin-top: 0.1em;
+}
+
+/* Link: slightly smaller font, keep break-all for long URLs */
+.cards.cards22 .cards-card-body:nth-child(2) a {
+  color: #fff;
+  text-decoration: underline;
+  word-break: break-all;
+  font-size: 0.87em;
+}
+
+.cards.cards22 .cards-card-body:nth-child(2) a:hover {
+  color: #fff;
+  text-decoration: underline;
+}
+
+@media (width <= 600px) {
+  .cards.cards22 > ul > li {
+    flex-direction: column;
+  }
+
+  .cards.cards22 .cards-card-body:first-child {
+    width: 100%;
+    min-width: 0;
+    max-width: none;
+    height: 3px;
+    border-radius: 2px 2px 0 0;
+    background: linear-gradient(to right, #c4d8ec 0%, #d6e7bb 100%);
+  }
+
+  .cards.cards22 .cards-card-body:nth-child(2) {
+    border-radius: 0 0 4px 4px;
+    padding: 3px 7px 5px;
+  }
+
+  .cards.cards22 .cards-card-body:nth-child(2)::after {
+    border-radius: 0 0 4px 4px;
+    height: 3px;
+  }
+}
