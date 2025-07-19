@@ -1,3 +1,5 @@
+/* Ensure empty lines before rules for readability */
+
 .hero-container .hero-wrapper {
   max-width: unset;
   padding: 0;
@@ -48,21 +50,97 @@
 
 /* --- Begin generated CSS (except .hero.hero6.block) --- */
 
+.hero.hero6,
 .hero.hero6.block {
   position: relative;
   display: flex;
   flex-direction: row;
-  align-items: flex-start;
   overflow: hidden;
   min-height: 340px;
-  max-width: 100vw;
-  border-radius: 24px 0 0 24px;
   margin: 0 auto;
   background: none;
   box-shadow: none;
+  align-items: stretch;
+  justify-content: flex-start;
+  border-radius: 24px;
+  width: 100%;
+  max-width: 100%;
+}
+
+/* Order .hero.hero6 selectors before .block variants for specificity (no-descending-specificity) */
+.hero.hero6 > div:first-child,
+.hero.hero6 > div:first-child > div,
+.hero.hero6 > div:first-child picture,
+.hero.hero6 > div:first-child img {
+  /* grouped for specificity */
+}
+.hero.hero6 > div:last-child,
+.hero.hero6 > div:last-child > div {
+  /* grouped for specificity */
+}
+.hero.hero6.block > div:first-child,
+.hero.hero6.block > div:first-child > div,
+.hero.hero6.block > div:first-child picture,
+.hero.hero6.block > div:first-child img {
+  /* grouped for specificity */
+}
+.hero.hero6.block > div:last-child,
+.hero.hero6.block > div:last-child > div {
+  /* grouped for specificity */
 }
 
 /* Make the image fill the block and sit underneath content */
+.hero.hero6 > div:first-child {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+  display: flex;
+  align-items: stretch;
+  min-width: 0;
+  order: 2;
+  padding: 0;
+  margin: 0;
+}
+.hero.hero6 > div:first-child > div,
+.hero.hero6 > div:first-child picture,
+.hero.hero6 > div:first-child img {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+  min-width: 0;
+  min-height: 0;
+  border-radius: 0;
+}
+.hero.hero6 > div:last-child {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  max-width: 510px;
+  box-sizing: border-box;
+  flex: 0 0 42%;
+  order: 1;
+  justify-content: center;
+  min-width: 0;
+  min-height: 220px;
+  z-index: 3;
+  background: none;
+  padding: 0;
+  margin: 0;
+}
+.hero.hero6 > div:last-child > div {
+  max-width: 370px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 16px;
+  padding: 40px 0 40px 24px;
+}
+
 .hero.hero6.block > div:first-child {
   position: absolute;
   inset: 0;
@@ -70,90 +148,112 @@
   height: 100%;
   z-index: 0;
   display: flex;
+  align-items: stretch;
+  min-width: 0;
+  order: 2;
+  padding: 0;
+  margin: 0;
 }
-
-.hero.hero6.block > div:last-child {
-  position: relative;
-  z-index: 2;
-  flex: 1 1 0;
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  justify-content: flex-start;
-  min-height: 340px;
-  padding: 40px 40px 32px 44px;
-  max-width: 510px;
-  box-sizing: border-box;
-}
-
 .hero.hero6.block > div:first-child > div,
 .hero.hero6.block > div:first-child picture,
 .hero.hero6.block > div:first-child img {
   width: 100%;
   height: 100%;
   display: block;
-}
-
-.hero.hero6.block > div:first-child img {
   object-fit: cover;
-  width: 100%;
-  height: 100%;
+  min-width: 0;
+  min-height: 0;
   border-radius: 0;
 }
-
-/* Overlay for gradient effect on the left */
-.hero.hero6.block::before {
-  content: "";
-  display: block;
-  position: absolute;
-  z-index: 1;
-  top: 0;
-  left: 0;
-  bottom: 0;
-  width: 57%;
-  min-width: 230px;
-  background: linear-gradient(90deg, rgb(59 33 22 / 86%) 76%, rgb(59 33 22 / 13%) 100%);
-  pointer-events: none;
-  border-top-left-radius: 24px;
-  border-bottom-left-radius: 24px;
+.hero.hero6.block > div:last-child {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  max-width: 510px;
+  box-sizing: border-box;
+  flex: 0 0 42%;
+  order: 1;
+  justify-content: center;
+  min-width: 0;
+  min-height: 220px;
+  z-index: 3;
+  background: none;
+  padding: 0;
+  margin: 0;
 }
-
 .hero.hero6.block > div:last-child > div {
   max-width: 370px;
   width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 16px;
+  padding: 40px 0 40px 24px;
 }
 
+/* Overlay for gradient effect on the left */
+.hero.hero6::before,
+.hero.hero6.block::before {
+  content: "";
+  display: block;
+  min-width: 230px;
+  border-top-left-radius: 24px;
+  border-bottom-left-radius: 24px;
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 50%;
+  height: 100%;
+  z-index: 2;
+  pointer-events: none;
+  background: linear-gradient(
+    90deg,
+    rgb(58 35 33 / 92%) 0%,
+    rgb(58 35 33 / 88%) 21%,
+    rgb(58 35 33 / 72%) 32%,
+    rgb(58 35 33 / 54%) 40%,
+    rgb(58 35 33 / 28%) 54%,
+    rgb(58 35 33 / 0%) 100%
+  );
+}
+
+.hero.hero6 h1,
 .hero.hero6.block h1,
+.hero.hero6 h2,
 .hero.hero6.block h2 {
   color: #fff;
   font-family: var(--heading-font-family), serif;
   font-size: 2rem;
-  font-weight: 600;
   margin-top: 0;
   margin-bottom: 14px;
   line-height: 1.18;
+  font-weight: 500;
+  letter-spacing: -0.01em;
 }
 
+.hero.hero6 p:not(.button-container),
 .hero.hero6.block p:not(.button-container) {
-  color: #d8cfc5;
   font-size: 1rem;
   line-height: 1.5;
   margin-top: 0;
   margin-bottom: 20px;
+  color: #e1e1e1;
+  letter-spacing: 0.01em;
 }
 
+.hero.hero6 .button-container,
 .hero.hero6.block .button-container {
   margin: 0;
 }
 
+.hero.hero6 .button,
 .hero.hero6.block .button {
-  background: #E01725;
   color: #fff;
   font-weight: 600;
-  border-radius: 999px;
   font-size: 1rem;
   line-height: 1.5;
-  padding: 8px 28px;
   border: none;
   margin: 0;
   box-shadow: none;
@@ -161,16 +261,22 @@
   max-width: 100%;
   display: inline-block;
   transition: background 0.2s;
+  background: #e50914;
+  border-radius: 20px;
+  padding: 10px 28px;
+  text-align: center;
 }
 
-.hero.hero6.block .button:hover,
-.hero.hero6.block .button:focus {
-  background: #b3121d;
+.hero.hero6 .button:focus,
+.hero.hero6 .button:hover,
+.hero.hero6.block .button:focus,
+.hero.hero6.block .button:hover {
   color: #fff;
+  background: #b00610;
 }
 
-/* Responsive: stack vertically, overlay covers top, image fills block */
 @media (width <= 900px) {
+  .hero.hero6,
   .hero.hero6.block {
     flex-direction: column;
     border-radius: 0;
@@ -178,8 +284,10 @@
     max-width: 100vw;
   }
 
-  .hero.hero6.block > div:first-child,
-  .hero.hero6.block > div:first-child > div {
+  .hero.hero6 > div:first-child > div,
+  .hero.hero6 > div:first-child,
+  .hero.hero6.block > div:first-child > div,
+  .hero.hero6.block > div:first-child {
     position: absolute;
     width: 100%;
     height: 100%;
@@ -187,6 +295,7 @@
     max-height: 200px;
   }
 
+  .hero.hero6 > div:last-child,
   .hero.hero6.block > div:last-child {
     position: relative;
     max-width: none;
@@ -197,31 +306,23 @@
     z-index: 2;
   }
 
+  .hero.hero6::before,
   .hero.hero6.block::before {
     width: 100%;
     min-width: 0;
-    border-radius: 0;
     background: linear-gradient(180deg, rgb(59 33 22 / 93%) 70%, rgb(59 33 22 / 0%) 100%);
+    background: linear-gradient(
+      180deg,
+      rgb(58 35 33 / 92%) 0%,
+      rgb(58 35 33 / 80%) 70%,
+      rgb(58 35 33 / 0%) 100%
+    );
   }
 
+  .hero.hero6 > div:last-child > div,
   .hero.hero6.block > div:last-child > div {
-    max-width: none;
+    max-width: unset;
+    padding: 24px 16px 32px;
+    gap: 10px;
   }
-}
-
-/* --- End of generated CSS --- */
-
-/* --- Begin merged .hero.hero6 selector (from base + generated, generated wins) --- */
-.hero.hero6 {
-  position: relative;
-  display: flex;
-  flex-direction: row;
-  align-items: flex-start;
-  overflow: hidden;
-  min-height: 340px;
-  max-width: 100vw;
-  border-radius: 24px 0 0 24px;
-  margin: 0 auto;
-  background: none;
-  box-shadow: none;
 }
