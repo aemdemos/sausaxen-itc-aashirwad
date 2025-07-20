@@ -5,7 +5,7 @@
   padding: 0;
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(257px, 1fr));
-  grid-gap: 24px;
+  gap: 24px;
 }
 
 .cards > ul > li {
@@ -171,27 +171,22 @@
   .cards.cards8 {
     padding: 4px 0;
   }
-
   .cards.cards8 > ul {
     gap: 4px;
     max-width: 99vw;
   }
-
   .cards.cards8 > ul > li {
     padding: 7px 2px;
     border-radius: 8px;
     width: 100%;
   }
-
   .cards.cards8 .cards-card-image {
     margin-bottom: 4px;
   }
-
   .cards.cards8 .cards-card-body h5 {
     font-size: 15px;
     margin-bottom: 2px;
   }
-
   .cards.cards8 .cards-card-body p {
     font-size: 11px;
   }
@@ -199,18 +194,6 @@
 
 .button-container {
   width: 100%;
-}
-
-.cards.cards23 > ul > li {
-  background: none;
-  border: none;
-  box-shadow: none;
-  margin: 0;
-  padding: 0;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-align: center;
 }
 
 .cards.cards17 > ul > li {
@@ -230,21 +213,6 @@
   margin: 0 auto;
   box-sizing: border-box;
   transition: box-shadow 0.16s;
-}
-
-.cards.cards26 {
-  padding: 0;
-  background: none;
-}
-
-.cards.cards26 > ul {
-  display: flex;
-  flex-flow: row nowrap;
-  gap: 24px;
-  padding: 0;
-  margin: 0;
-  overflow-x: auto;
-  list-style: none;
 }
 
 .cards.cards38 > ul > li {
@@ -281,6 +249,18 @@
   /* Moved above .cards.cards26 > ul > li:hover for specificity order */
 }
 
+.cards.cards23 > ul > li {
+  background: none;
+  border: none;
+  box-shadow: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
 .cards.cards26 > ul > li {
   background: #F6F2ED;
   border-radius: 20px;
@@ -293,22 +273,6 @@
   padding: 0 0 20px;
   position: relative;
   transition: box-shadow 0.2s;
-}
-
-.cards.cards26 > ul > li:hover {
-  box-shadow: 0 8px 24px 0 rgb(72 49 20 / 15%);
-}
-
-.cards.cards23 > ul > li:nth-child(4) {
-  grid-column: 2 / 3;
-  grid-row: 2;
-  grid-area: d;
-}
-
-.cards.cards23 > ul > li:nth-child(5) {
-  grid-column: 3 / 4;
-  grid-row: 2;
-  grid-area: e;
 }
 
 .cards.cards23 > ul {
@@ -330,6 +294,8 @@
 .cards.cards23 > ul > li:nth-child(1) { grid-area: a; }
 .cards.cards23 > ul > li:nth-child(2) { grid-area: b; }
 .cards.cards23 > ul > li:nth-child(3) { grid-area: c; }
+.cards.cards23 > ul > li:nth-child(4) { grid-area: d; }
+.cards.cards23 > ul > li:nth-child(5) { grid-area: e; }
 
 .cards.cards23 .cards-card-image {
   width: 192px;
@@ -376,7 +342,7 @@
   display: inline-block;
   background: none;
   border: none;
-  font-family: "Times New Roman", Times, serif;
+  font-family: Times New Roman, Times, serif;
   color: #2d1b0e;
   font-size: 22px;
   font-weight: 700;
@@ -392,7 +358,35 @@
 }
 
 .cards.cards23 {
-  /* No explicit properties in base or generated; add here if needed in future */
+  background: #FFF6E9;
+  padding: 28px 0 36px;
+  width: 100vw;
+  box-sizing: border-box;
+  position: relative;
+  left: 50%;
+  right: 50%;
+  margin-left: -50vw;
+  margin-right: -50vw;
+  display: block;
+}
+
+.cards.cards26 {
+  padding: 0;
+  background: none;
+}
+
+.cards.cards26 > ul {
+  display: flex;
+  flex-flow: row nowrap;
+  gap: 24px;
+  padding: 0;
+  margin: 0;
+  overflow-x: auto;
+  list-style: none;
+}
+
+.cards.cards26 > ul > li:hover {
+  box-shadow: 0 8px 24px 0 rgb(72 49 20 / 15%);
 }
 
 .cards.cards10 > ul {
@@ -696,3 +690,145 @@
   align-items: center;
   box-sizing: border-box;
 }
+
+/* --- BEGIN GENERATED CSS --- */
+.cards.cards23 {
+  background: #FFF6E9;
+  padding: 28px 0 36px;
+  width: 100vw;
+  box-sizing: border-box;
+  position: relative;
+  left: 50%;
+  right: 50%;
+  margin-left: -50vw;
+  margin-right: -50vw;
+  display: block;
+}
+
+.cards.cards23 > ul {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(2, auto);
+  grid-template-areas:
+    "a b c"
+    ". d e";
+  gap: 28px 60px;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding-left: 32px;
+  padding-right: 32px;
+  list-style: none;
+}
+
+.cards.cards23 > ul > li:nth-child(1) { grid-area: a; }
+.cards.cards23 > ul > li:nth-child(2) { grid-area: b; }
+.cards.cards23 > ul > li:nth-child(3) { grid-area: c; }
+.cards.cards23 > ul > li:nth-child(4) { grid-area: d; }
+.cards.cards23 > ul > li:nth-child(5) { grid-area: e; }
+
+.cards.cards23 > ul > li {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: none;
+  border: none;
+  box-shadow: none;
+  margin: 0;
+  padding: 0;
+  text-align: center;
+}
+
+.cards.cards23 .cards-card-image {
+  background: #F2E7D6;
+  border-radius: 50%;
+  width: 172px;
+  height: 172px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 16px;
+  overflow: visible;
+  position: relative;
+}
+
+.cards.cards23 .cards-card-image picture,
+.cards.cards23 .cards-card-image img {
+  display: block;
+  max-width: 95%;
+  max-height: 95%;
+  width: auto;
+  height: auto;
+  margin: 0 auto;
+  object-fit: contain;
+}
+
+.cards.cards23 .cards-card-body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.cards.cards23 .cards-card-body .button-container {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  text-align: center;
+}
+
+.cards.cards23 .cards-card-body a.button,
+.cards.cards23 .cards-card-body a.button.primary {
+  display: inline-block;
+  font-family: "Times New Roman", Times, serif;
+  font-size: 22px;
+  font-weight: 600;
+  color: #29221A;
+  background: none;
+  border: none;
+  box-shadow: none;
+  text-align: center;
+  cursor: default;
+  min-width: 0;
+  padding: 0;
+  line-height: 1.2;
+  text-decoration: none;
+  margin: 0;
+}
+
+@media (width <= 900px) {
+  .cards.cards23 > ul {
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(3, auto);
+    grid-template-areas:
+      "a b"
+      "c d"
+      ". e";
+    gap: 18px 10vw;
+    max-width: 98vw;
+    padding-left: 0;
+    padding-right: 0;
+  }
+  .cards.cards23 > ul > li:nth-child(1) { grid-area: a; }
+  .cards.cards23 > ul > li:nth-child(2) { grid-area: b; }
+  .cards.cards23 > ul > li:nth-child(3) { grid-area: c; }
+  .cards.cards23 > ul > li:nth-child(4) { grid-area: d; }
+  .cards.cards23 > ul > li:nth-child(5) { grid-area: e; }
+  .cards.cards23 .cards-card-image {
+    width: 98px;
+    height: 98px;
+    margin-bottom: 8px;
+  }
+  .cards.cards23 .cards-card-image picture,
+  .cards.cards23 .cards-card-image img {
+    max-width: 90%;
+    max-height: 90%;
+  }
+  .cards.cards23 .cards-card-body a.button,
+  .cards.cards23 .cards-card-body a.button.primary {
+    font-size: 15px;
+    line-height: 1.1;
+  }
+}
+/* --- END GENERATED CSS --- */
