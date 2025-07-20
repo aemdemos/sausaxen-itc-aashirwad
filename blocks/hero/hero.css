@@ -66,7 +66,7 @@
   margin: 0;
   padding: 0;
   max-width: none;
-  background-image: url(./media_1901603107e7298fefb1531d4e6f917bddce67c26.png?width=2000&format=png&optimize=medium);
+  background-image: url("./media_1901603107e7298fefb1531d4e6f917bddce67c26.png?width=2000&format=png&optimize=medium");
   background-repeat: repeat;
   background-position: center top;
   background-size: 630px auto;
@@ -140,7 +140,7 @@
   min-height: 520px;
   width: 100vw;
   max-width: 100vw;
-  background: url(https://s7ap1.scene7.com/is/image/itcportalprod/Product-Story-Background-Image-Desktop?fmt=webp-alpha) center center/cover no-repeat;
+  background: url("https://s7ap1.scene7.com/is/image/itcportalprod/Product-Story-Background-Image-Desktop?fmt=webp-alpha") center center/cover no-repeat;
   position: relative;
   box-sizing: border-box;
   padding: 0;
@@ -257,15 +257,14 @@
 }
 
 .hero.hero28 {
-  position: relative;
   display: flex;
   flex-direction: row;
   align-items: stretch;
-  justify-content: flex-end;
+  min-height: 320px;
   border-radius: 20px;
   overflow: hidden;
-  min-height: 260px;
   background: #181818;
+  width: 100%;
   box-sizing: border-box;
 }
 
@@ -403,6 +402,39 @@
   display: none;
 }
 
+.hero.hero42 > div:last-child > div > p:last-of-type {
+  display: inline-block;
+  background: #e6858a;
+  color: #fff;
+  font-size: 1.18rem;
+  font-family: var(--body-font-family), sans-serif;
+  font-weight: 600;
+  border-radius: 1.5em;
+  padding: 0.82em 2.5em;
+  margin: 2.1em auto 0;
+  box-shadow: 0 2px 8px 0 rgb(0 0 0 / 11%);
+  text-align: center;
+  cursor: pointer;
+  transition: background 0.18s;
+  min-width: 120px;
+  max-width: 244px;
+  letter-spacing: 0.03em;
+  border: none;
+}
+
+.hero.hero42 > div:last-child > div > p:last-of-type:hover,
+.hero.hero42 > div:last-child > div > p:last-of-type:focus {
+  background: #cc6e74;
+}
+
+.hero.hero42 > div:last-child > div > h1 {
+  margin-bottom: 0.15em;
+}
+
+.hero.hero42 > div:last-child > div > h2 {
+  margin-bottom: 0.7em;
+}
+
 .hero.hero42 > div:last-child > div .hero42-options-row {
   display: flex;
   flex-direction: row;
@@ -478,39 +510,6 @@
   width: 120px;
 }
 
-.hero.hero42 > div:last-child > div > h1 {
-  margin-bottom: 0.15em;
-}
-
-.hero.hero42 > div:last-child > div > h2 {
-  margin-bottom: 0.7em;
-}
-
-.hero.hero42 > div:last-child > div > p:last-of-type {
-  display: inline-block;
-  background: #e6858a;
-  color: #fff;
-  font-size: 1.18rem;
-  font-family: var(--body-font-family), sans-serif;
-  font-weight: 600;
-  border-radius: 1.5em;
-  padding: 0.82em 2.5em;
-  margin: 2.1em auto 0;
-  box-shadow: 0 2px 8px 0 rgb(0 0 0 / 11%);
-  text-align: center;
-  cursor: pointer;
-  transition: background 0.18s;
-  min-width: 120px;
-  max-width: 244px;
-  letter-spacing: 0.03em;
-  border: none;
-}
-
-.hero.hero42 > div:last-child > div > p:last-of-type:hover,
-.hero.hero42 > div:last-child > div > p:last-of-type:focus {
-  background: #cc6e74;
-}
-
 @media (width <= 900px) {
   .hero.hero42 > div:last-child > div .hero42-options-row {
     flex-direction: column;
@@ -518,10 +517,12 @@
     max-width: 150px;
     margin-bottom: 1.1em;
   }
+
   .hero.hero42 > div:last-child > div .hero42-options-row > p {
     width: 100%;
     margin: 0;
   }
+
   .hero.hero42 > div:last-child > div .hero42-options-row > p:nth-of-type(1) picture img,
   .hero.hero42 > div:last-child > div .hero42-options-row > p:nth-of-type(3) picture img,
   .hero.hero42 > div:last-child > div .hero42-options-row > p:nth-of-type(5) picture img {
@@ -529,12 +530,14 @@
     height: 62px;
     margin-bottom: 0.4em;
   }
+
   .hero.hero42 > div:last-child > div .hero42-options-row > p:nth-of-type(2),
   .hero.hero42 > div:last-child > div .hero42-options-row > p:nth-of-type(4),
   .hero.hero42 > div:last-child > div .hero42-options-row > p:nth-of-type(6) {
     font-size: 0.96rem;
     min-height: 1.2em;
   }
+
   .hero.hero42 > div:last-child > div > p:last-of-type {
     font-size: 1rem;
     padding: 0.7em 2em;
