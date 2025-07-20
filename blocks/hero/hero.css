@@ -5,6 +5,29 @@
   padding: 0;
 }
 
+/* Merged .hero.hero36 selector */
+.hero.hero36 {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: flex-start;
+  background: #f7e2b7;
+  border-radius: 32px;
+  min-height: 230px;
+  padding: 0 32px;
+  box-sizing: border-box;
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  background-image:
+    url('https://www.aashirvaad.com/sites/default/files/wheatear-left.png'),
+    url('https://www.aashirvaad.com/sites/default/files/wheatear-right.png');
+  background-repeat: no-repeat, no-repeat;
+  background-position: 36px 20px, calc(100% - 36px) calc(100% - 20px);
+  background-size: 108px auto, 98px auto;
+  gap: 8px;
+}
+
 .hero {
   position: relative;
   display: flex;
@@ -768,5 +791,140 @@
       rgb(58 35 33 / 80%) 70%,
       rgb(58 35 33 / 0%) 100%
     );
+  }
+}
+
+/* GENERATED CSS, except .hero.hero36 block, which is merged above */
+
+.hero.hero36 > div:first-child {
+  flex: 0 1 56%;
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-end;
+  min-width: 300px;
+  max-width: 620px;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Center the image/banner vertically if smaller than the hero */
+.hero.hero36 > div:first-child > div {
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-end;
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.hero.hero36 picture {
+  display: block;
+  width: 500px;
+  max-width: 100%;
+  min-width: 220px;
+  position: relative;
+  z-index: 2;
+}
+
+.hero.hero36 img {
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+  display: block;
+  border-radius: 0;
+}
+
+/* Remove text overlay in the image area */
+.hero.hero36 > div:first-child p {
+  display: none;
+}
+
+/* Right: text area */
+.hero.hero36 > div:last-child {
+  flex: 1 1 44%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  min-width: 120px;
+  max-width: 470px;
+  padding: 36px 0 0 24px;
+  box-sizing: border-box;
+  height: 100%;
+}
+
+/* Remove inner div gap for a more compact look */
+.hero.hero36 > div:last-child > div {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  width: 100%;
+  max-width: 460px;
+  gap: 0;
+}
+
+.hero.hero36 > div:last-child p {
+  margin: 0;
+  font-family: var(--heading-font-family), serif;
+  font-size: 2rem;
+  font-weight: 700;
+  color: #383838;
+  letter-spacing: 0;
+  line-height: 1.18;
+  text-align: left;
+  padding: 0;
+}
+
+@media (width <= 900px) {
+  .hero.hero36 {
+    flex-direction: column;
+    padding: 14px 4vw;
+    border-radius: 20px;
+    min-height: 0;
+    gap: 0;
+  }
+
+  .hero.hero36 > div:first-child,
+  .hero.hero36 > div:last-child {
+    flex: none;
+    min-width: 0;
+    width: 100%;
+    max-width: 100%;
+    justify-content: center;
+    align-items: center;
+    padding: 8px 0 0;
+    box-sizing: border-box;
+  }
+
+  .hero.hero36 picture {
+    width: 80vw;
+    min-width: 100px;
+    max-width: 100vw;
+  }
+
+  .hero.hero36 > div:last-child {
+    padding: 10px 0 0;
+    align-items: center;
+  }
+
+  .hero.hero36 > div:last-child > div {
+    align-items: center;
+    max-width: 100%;
+  }
+
+  .hero.hero36 > div:last-child p {
+    text-align: center;
+  }
+}
+
+@media (width <= 600px) {
+  .hero.hero36 {
+    padding: 0 2vw;
+  }
+
+  .hero.hero36 picture {
+    width: 98vw;
+    min-width: 80px;
+    max-width: 100vw;
   }
 }
