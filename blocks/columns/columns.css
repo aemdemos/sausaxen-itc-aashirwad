@@ -1,5 +1,3 @@
-
-
 /* --- columns base --- */
 .columns > div {
   display: flex;
@@ -22,17 +20,70 @@
   display: block;
 }
 
-@media (width >= 900px) {
-  .columns > div {
-    align-items: center;
-    flex-direction: unset;
-    gap: 24px;
-  }
+.columns.columns2 p {
+  color: #444;
+  font-size: 1rem;
+  margin: 0 0 4px;
+  line-height: 1.53;
+  padding: 0;
+}
 
-  .columns > div > div {
-    flex: 1;
-    order: unset;
-  }
+.columns.columns3 > div > div:last-child > p:first-of-type {
+  color: #4C4C4C;
+  font-size: 1.07rem;
+  font-weight: 500;
+  font-family: var(--body-font-family), sans-serif;
+  margin: 0;
+  line-height: 1.4;
+  text-align: left;
+  display: inline;
+}
+
+.columns.columns2 .button-container .button {
+  background: none;
+  color: #E63946;
+  font-size: 1rem;
+  font-weight: 700;
+  border: none;
+  box-shadow: none;
+  text-decoration: underline;
+  border-radius: 0;
+  padding: 0;
+  min-width: 0;
+  margin: 0;
+  display: inline;
+  cursor: pointer;
+}
+
+.columns.columns3 .button-container .button {
+  background: none;
+  color: #DD3142;
+  text-decoration: underline;
+  font-weight: 500;
+  font-size: 1.07rem;
+  border: none;
+  border-radius: 0;
+  min-width: 0;
+  margin-left: 6px;
+  margin-right: 0;
+  padding: 0;
+  box-shadow: none;
+  cursor: pointer;
+  display: inline;
+  vertical-align: baseline;
+  text-align: left;
+}
+
+.columns.columns2 .button-container .button:hover {
+  color: #B22234;
+  background: none;
+}
+
+.columns.columns3 .button-container .button:hover,
+.columns.columns3 .button-container .button:focus {
+  color: #b02436;
+  background: none;
+  outline: none;
 }
 
 .columns.columns2 #available-pack-sizes + p,
@@ -69,38 +120,30 @@
   display: none;
 }
 
+.columns.columns3 #available-pack-sizes + p + p {
+  display: none;
+}
+
+.columns.columns3 #available-pack-sizes + p {
+  display: inline-block;
+  background: #4C4C4C;
+  color: #fff;
+  border-radius: 18px;
+  padding: 5px 14px;
+  font-size: 0.97rem;
+  font-family: var(--body-font-family), sans-serif;
+  font-weight: 600;
+  margin: 0;
+  letter-spacing: 0.3px;
+  text-align: center;
+  border: none;
+  line-height: 1.2;
+  box-sizing: border-box;
+}
+
 .columns.columns2 #available-pack-sizes {
   margin-bottom: 2px;
   margin-top: 0;
-}
-
-.columns.columns2 .button-container .button:hover {
-  color: #B22234;
-  background: none;
-}
-
-.columns.columns2 p {
-  color: #444;
-  font-size: 1rem;
-  margin: 0 0 4px;
-  line-height: 1.53;
-  padding: 0;
-}
-
-.columns.columns2 .button-container .button {
-  background: none;
-  color: #E63946;
-  font-size: 1rem;
-  font-weight: 700;
-  border: none;
-  box-shadow: none;
-  text-decoration: underline;
-  border-radius: 0;
-  padding: 0;
-  min-width: 0;
-  margin: 0;
-  display: inline;
-  cursor: pointer;
 }
 
 .columns.columns2 > div {
@@ -125,6 +168,19 @@
     margin-bottom: 20px;
     max-width: 100%;
     margin-top: 0;
+  }
+}
+
+@media (width >= 900px) {
+  .columns > div {
+    align-items: center;
+    flex-direction: unset;
+    gap: 24px;
+  }
+
+  .columns > div > div {
+    flex: 1;
+    order: unset;
   }
 }
 
@@ -172,90 +228,6 @@
   line-height: 1.2;
   letter-spacing: 0;
   padding: 0;
-}
-
-/* --- Pack Size Pills: Combine duplicates and fix order --- */
-
-/* --- Nutritional Info (rename ID, combine duplicates, fix order) --- */
-.columns.columns2 #nutritional-information-per-100g {
-  font-family: var(--heading-font-family);
-  font-weight: bold;
-  color: #222;
-  font-size: 1.1rem;
-  margin: 14px 0 2px;
-  padding-bottom: 6px;
-  border-bottom: 1.5px solid #B65B5B;
-  display: flex;
-  align-items: center;
-  line-height: 1.2;
-  letter-spacing: 0.01em;
-  text-indent: -2em;
-  padding-left: 2em;
-  white-space: pre;
-  width: 100%;
-}
-
-.columns.columns2 #nutritional-information-per-100g::after {
-  display: inline-block;
-  width: 13px;
-  height: 13px;
-  margin-left: 7px;
-  border-right: 2px solid #B65B5B;
-  border-bottom: 2px solid #B65B5B;
-  transform: rotate(45deg) translateY(-2px);
-  content: "";
-  flex-shrink: 0;
-}
-
-.columns.columns3 > div > div:last-child > p:first-of-type {
-  color: #4C4C4C;
-  font-size: 1.07rem;
-  font-weight: 500;
-  font-family: var(--body-font-family), sans-serif;
-  margin: 0;
-  line-height: 1.4;
-  text-align: left;
-  display: inline;
-}
-
-.columns.columns3 .button-container .button {
-  background: none;
-  color: #DD3142;
-  text-decoration: underline;
-  font-weight: 500;
-  font-size: 1.07rem;
-  border: none;
-  border-radius: 0;
-  min-width: 0;
-  margin-left: 6px;
-  margin-right: 0;
-  padding: 0;
-  box-shadow: none;
-  cursor: pointer;
-  display: inline;
-  vertical-align: baseline;
-  text-align: left;
-}
-
-.columns.columns3 #available-pack-sizes + p + p {
-  display: none;
-}
-
-.columns.columns3 #available-pack-sizes + p {
-  display: inline-block;
-  background: #4C4C4C;
-  color: #fff;
-  border-radius: 18px;
-  padding: 5px 14px;
-  font-size: 0.97rem;
-  font-family: var(--body-font-family), sans-serif;
-  font-weight: 600;
-  margin: 0;
-  letter-spacing: 0.3px;
-  text-align: center;
-  border: none;
-  line-height: 1.2;
-  box-sizing: border-box;
 }
 
 .columns.columns3 > div > div:last-child > *:not(:last-child) {
@@ -331,13 +303,6 @@
   padding: 0;
 }
 
-.columns.columns3 .button-container .button:hover,
-.columns.columns3 .button-container .button:focus {
-  color: #b02436;
-  background: none;
-  outline: none;
-}
-
 .columns.columns3 h3 {
   font-size: 1.03rem;
   font-weight: 700;
@@ -368,10 +333,37 @@
   }
 }
 
-/* ---- GENERATED CSS ---- */
-.columns.columns4 {
-  background: #e5dbcf;
-  padding: 48px 0;
+/* --- Pack Size Pills: Combine duplicates and fix order --- */
+
+/* --- Nutritional Info (rename ID, combine duplicates, fix order) --- */
+.columns.columns2 #nutritional-information-per-100g {
+  font-family: var(--heading-font-family);
+  font-weight: bold;
+  color: #222;
+  font-size: 1.1rem;
+  margin: 14px 0 2px;
+  padding-bottom: 6px;
+  border-bottom: 1.5px solid #B65B5B;
+  display: flex;
+  align-items: center;
+  line-height: 1.2;
+  letter-spacing: 0.01em;
+  text-indent: -2em;
+  padding-left: 2em;
+  white-space: pre;
+  width: 100%;
+}
+
+.columns.columns2 #nutritional-information-per-100g::after {
+  display: inline-block;
+  width: 13px;
+  height: 13px;
+  margin-left: 7px;
+  border-right: 2px solid #B65B5B;
+  border-bottom: 2px solid #B65B5B;
+  transform: rotate(45deg) translateY(-2px);
+  content: "";
+  flex-shrink: 0;
 }
 
 .columns.columns4 > div {
@@ -485,6 +477,11 @@
     max-width: 62px;
     margin-bottom: 6px;
   }
+}
+
+.columns.columns4 {
+  background: #e5dbcf;
+  padding: 48px 0;
 }
 
 .columns.columns5 > div > div:not(.columns-img-col) > h3 + p,
@@ -646,10 +643,21 @@
   }
 }
 
+.columns.columns12 {
+  background: #FFF7E4;
+  padding: 56px 0;
+  box-sizing: border-box;
+}
+
+.columns.columns13 {
+  background: #FFF6E6;
+  padding: 0;
+}
+
 .columns.columns11 {
   background: #df0527;
   color: #fff;
-  font-family: Poppins, 'Poppins Fallback', sans-serif;
+  font-family: Poppins, "Poppins Fallback", sans-serif;
 }
 
 .columns.columns11 > div,
@@ -665,18 +673,6 @@
   padding: 36px 0;
   box-sizing: border-box;
   min-height: 240px;
-}
-
-@media (width <= 900px) {
-  .columns.columns11 > div,
-  .columns.columns11 > .columns,
-  .columns.columns11 > .block.columns-3-cols {
-    flex-direction: column;
-    align-items: stretch;
-    padding: 18px 0;
-    min-height: unset;
-    max-width: 98vw;
-  }
 }
 
 .columns.columns11 > div > div,
@@ -709,6 +705,15 @@
   text-align: center;
 }
 
+.columns.columns11 > div > div:first-child p:last-child,
+.columns.columns11 > .columns > div:first-child p:last-child,
+.columns.columns11 > .block.columns-3-cols > div > div:first-child p:last-child {
+  font-size: 15px;
+  color: #e1bfc4;
+  margin-bottom: 0;
+  margin-top: 2px;
+}
+
 .columns.columns11 > div > div:first-child picture,
 .columns.columns11 > .columns > div:first-child picture,
 .columns.columns11 > .block.columns-3-cols > div > div:first-child picture {
@@ -726,15 +731,6 @@
   max-width: 120px;
   height: auto;
   margin: 0 auto 2px;
-}
-
-.columns.columns11 > div > div:first-child p:last-child,
-.columns.columns11 > .columns > div:first-child p:last-child,
-.columns.columns11 > .block.columns-3-cols > div > div:first-child p:last-child {
-  font-size: 15px;
-  color: #e1bfc4;
-  margin-bottom: 0;
-  margin-top: 2px;
 }
 
 .columns.columns11 > div > div:nth-child(2),
@@ -910,14 +906,6 @@
   color: #e1bfc4;
 }
 
-.columns.columns11 > div > div:last-child ul,
-.columns.columns11 > .columns > div:last-child ul,
-.columns.columns11 > .block.columns-3-cols > div > div:last-child ul {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-}
-
 .columns.columns11 > div > div > *:not(:last-child),
 .columns.columns11 > .columns > div > *:not(:last-child),
 .columns.columns11 .block.columns-3-cols > div > div > *:not(:last-child) {
@@ -936,174 +924,4 @@
   .columns.columns11 .block.columns-3-cols > div > div {
     padding: 0 1vw;
   }
-}
-
-/* ---- GENERATED CSS ---- */
-
-.columns.columns12 {
-  display: block;
-  background: #FFF5E1;
-  padding: 64px 0;
-  box-sizing: border-box;
-}
-
-.columns.columns12 > div {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: flex-start;
-  gap: 80px;
-  max-width: 980px;
-  margin: 0 auto;
-  box-sizing: border-box;
-  visibility: visible;
-  opacity: 1;
-}
-
-@media (width <= 900px) {
-  .columns.columns12 > div {
-    flex-direction: column;
-    gap: 48px;
-    padding: 0 16px;
-    max-width: 98vw;
-  }
-
-  .columns.columns12 {
-    padding: 32px 0;
-  }
-}
-
-.columns.columns12 > div > div {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  justify-content: flex-start;
-  background: none;
-  padding: 0 8px;
-  box-sizing: border-box;
-  min-width: 0;
-  max-width: 420px;
-  width: 100%;
-  position: relative;
-  gap: 0;
-  visibility: visible;
-  opacity: 1;
-}
-
-/* Ellipse + image: bigger ellipse, centered image, more space below */
-.columns.columns12 > div > div > p:first-child {
-  margin: 0 0 36px;
-  padding: 0;
-  min-width: 260px;
-  min-height: 260px;
-  width: 260px;
-  height: 260px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border-radius: 50% / 48%;
-  position: relative;
-  background: radial-gradient(ellipse 70% 65% at 52% 60%, #FFE6A2 98%, transparent 100%);
-  visibility: visible;
-  opacity: 1;
-}
-
-.columns.columns12 > div > div > p:first-child picture,
-.columns.columns12 > div > div > p:first-child img {
-  display: block;
-  position: relative;
-  z-index: 1;
-  max-width: 140px;
-  max-height: 170px;
-  width: auto;
-  height: auto;
-  margin: 0 auto;
-  visibility: visible;
-  opacity: 1;
-}
-
-@media (width <= 900px) {
-  .columns.columns12 > div > div > p:first-child {
-    min-width: 140px;
-    min-height: 140px;
-    width: 140px;
-    height: 140px;
-    margin-bottom: 18px;
-  }
-
-  .columns.columns12 > div > div > p:first-child picture,
-  .columns.columns12 > div > div > p:first-child img {
-    max-width: 85px;
-    max-height: 110px;
-  }
-}
-
-/* Text blocks: always left aligned, better line length */
-.columns.columns12 > div > div > p:not(:first-child) {
-  display: block;
-  width: 100%;
-  max-width: 340px;
-  white-space: normal;
-  text-align: left;
-  margin-left: 0;
-  margin-right: 0;
-  margin-bottom: 0;
-  box-sizing: border-box;
-  word-break: normal;
-  visibility: visible;
-  opacity: 1;
-}
-
-/* Title: left, larger, bold */
-.columns.columns12 > div > div > p:nth-child(2) {
-  font-family: 'Libre Baskerville', 'Libre Baskerville Fallback', serif;
-  font-size: 1.35rem;
-  color: #3B2C17;
-  font-weight: 700;
-  margin-bottom: 10px;
-  margin-top: 0;
-  line-height: 1.22;
-}
-
-/* Description: left, consistent margin */
-.columns.columns12 > div > div > p:nth-child(3) {
-  font-family: Poppins, "Poppins Fallback", sans-serif;
-  font-size: 1.06rem;
-  color: #1A1A1A;
-  margin-bottom: 18px;
-  margin-top: 0;
-  line-height: 1.55;
-  font-weight: 400;
-}
-
-/* Buy Now: bigger, bolder, left-aligned */
-.columns.columns12 > div > div > p:nth-child(4) {
-  font-family: Poppins, "Poppins Fallback", sans-serif;
-  color: #D7761C;
-  font-weight: 700;
-  font-size: 1.13rem;
-  margin: 0;
-  cursor: pointer;
-  line-height: 1.4;
-}
-
-@media (width <= 900px) {
-  .columns.columns12 > div > div > p:not(:first-child) {
-    max-width: 100%;
-    font-size: 0.97rem;
-  }
-}
-
-.columns.columns12 > div > div > p,
-.columns.columns12 > div > div > p * {
-  box-sizing: border-box;
-  word-break: break-word;
-  visibility: visible;
-  opacity: 1;
-}
-
-/* --- merged .columns.columns13 selector --- */
-.columns.columns13 {
-  background: #FFF6E6;
-  padding: 0;
 }
