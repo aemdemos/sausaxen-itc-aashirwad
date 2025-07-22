@@ -1,5 +1,3 @@
-/* --- Begin CSS --- */
-
 .cards > ul {
   list-style: none;
   margin: 0;
@@ -151,7 +149,7 @@
   margin: 0 0 4px;
   font-size: 20px;
   font-weight: 800;
-  font-family: Lato, Open Sans, Arial, sans-serif;
+  font-family: Lato, "Open Sans", Arial, sans-serif;
   color: #4a3f38;
   text-align: left;
   line-height: 1.13;
@@ -162,7 +160,7 @@
   margin: 0;
   font-size: 16px;
   color: #6a5e53;
-  font-family: Lato, Open Sans, Arial, sans-serif;
+  font-family: Lato, "Open Sans", Arial, sans-serif;
   line-height: 1.33;
   overflow-wrap: break-word;
   text-align: left;
@@ -202,96 +200,6 @@
   width: 100%;
 }
 
-.cards.cards17 > ul > li {
-  display: flex;
-  flex-direction: column;
-  align-items: stretch;
-  justify-content: flex-start;
-  background: transparent;
-  border-radius: 20px;
-  box-shadow: 0 2px 8px 0 rgb(44 29 8 / 12%);
-  border: none;
-  padding: 0;
-  width: 100%;
-  height: 100%;
-  min-width: 0;
-  max-width: 350px;
-  margin: 0 auto;
-  box-sizing: border-box;
-  transition: box-shadow 0.16s;
-}
-
-.cards.cards38 > ul > li {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  background: none;
-  border: none;
-  box-shadow: none;
-  margin: 0;
-  padding: 0;
-  min-width: 160px;
-  width: 170px;
-  max-width: 32vw;
-}
-
-.cards.cards35 > ul > li {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: flex-start;
-  background: none;
-  border: none;
-  box-shadow: none;
-  padding: 0;
-  margin: 0;
-  width: 100%;
-  min-width: 0;
-  gap: 48px;
-  margin-left: 24px;
-}
-
-.cards.cards34 > ul > li {
-  display: flex;
-  align-items: center;
-  background: none;
-  border: none;
-  box-shadow: none;
-  margin: 0;
-  padding: 0;
-  min-width: 0;
-}
-
-.cards.cards26 > ul > li {
-  flex: 0 0 260px;
-  min-width: 260px;
-  max-width: 260px;
-  background: #fff;
-  border: none;
-  border-radius: 16px;
-  box-shadow: 0 2px 16px 0 rgb(0 0 0 / 7%);
-  display: flex;
-  flex-direction: column;
-  overflow: hidden;
-  margin: 0;
-  transition: box-shadow 0.2s;
-  height: 370px;
-  scroll-snap-align: start;
-}
-
-/* Merged duplicate selectors for .cards.cards23 > ul > li */
-.cards.cards23 > ul > li {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  background: none;
-  border: none;
-  box-shadow: none;
-  margin: 0;
-  padding: 0;
-  list-style: none;
-}
-
 .cards.cards23 {
   background: #FFF3E6;
   padding: 48px 0;
@@ -309,16 +217,16 @@
   place-items: start center;
 }
 
-.cards.cards26 .cards-card-body {
-  flex: 1 1 auto;
+.cards.cards23 > ul > li {
   display: flex;
   flex-direction: column;
-  justify-content: flex-start;
-  padding: 20px 20px 0;
-  gap: 8px;
-  background: transparent;
-  box-sizing: border-box;
-  text-align: left;
+  align-items: center;
+  background: none;
+  border: none;
+  box-shadow: none;
+  margin: 0;
+  padding: 0;
+  list-style: none;
 }
 
 .cards.cards23 > ul > li:nth-child(4) {
@@ -362,7 +270,7 @@
 
 .cards.cards23 .cards-card-body a.button.primary {
   color: #5A4327;
-  font-family: Georgia, Times New Roman, serif;
+  font-family: Georgia, "Times New Roman", serif;
   font-size: 20px;
   font-weight: 500;
   background: none;
@@ -390,77 +298,6 @@
   }
 }
 
-.cards.cards34 .cards-card-body:first-child {
-  display: none;
-}
-
-.cards.cards34 .cards-card-body:last-child {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 3px 18px;
-  border-radius: 9999px;
-  font-size: 12px;
-  font-family: inherit;
-  font-weight: 700;
-  border: 1px solid #aaa299;
-  color: #2d2926;
-  background: transparent;
-  box-sizing: border-box;
-  white-space: nowrap;
-  line-height: 1.1;
-  margin: 0;
-  letter-spacing: 0;
-  outline: none;
-  height: 28px;
-  min-width: 0;
-}
-
-.cards.cards34 > ul > li:first-child .cards-card-body:last-child {
-  background: #e30613;
-  color: #fff;
-  border: none;
-  font-weight: 700;
-  padding: 3px 18px;
-  height: 28px;
-}
-
-@media (width <= 600px) {
-  .cards.cards34 .cards-card-body:last-child {
-    font-size: 11px;
-    padding: 2px 10px;
-    height: 24px;
-  }
-
-  .cards.cards34 > ul > li:first-child .cards-card-body:last-child {
-    padding: 2px 10px;
-    height: 24px;
-  }
-
-  .cards.cards34 > ul {
-    gap: 4px;
-  }
-
-  .cards.cards34 {
-    padding: 0;
-  }
-}
-
-@media (width <= 450px) {
-  .cards.cards34 > ul {
-    flex-direction: column;
-    align-items: stretch;
-    gap: 4px;
-    padding-left: 0;
-  }
-
-  .cards.cards34 .cards-card-body:last-child {
-    justify-content: flex-start;
-    width: 100%;
-    min-width: 0;
-  }
-}
-
 .cards.cards26 {
   background: #ece6df;
   padding: 64px 0;
@@ -469,37 +306,6 @@
   justify-content: center;
   align-items: center;
   min-height: 500px;
-}
-
-/* Merged duplicate selectors for .cards.cards26 > ul > li */
-.cards.cards26 > ul > li {
-  flex: 0 0 260px;
-  min-width: 260px;
-  max-width: 260px;
-  background: #fff;
-  border: none;
-  border-radius: 16px;
-  box-shadow: 0 2px 16px 0 rgb(0 0 0 / 7%);
-  display: flex;
-  flex-direction: column;
-  overflow: hidden;
-  margin: 0;
-  transition: box-shadow 0.2s;
-  height: 370px;
-  scroll-snap-align: start;
-}
-
-/* Merged duplicate selectors for .cards.cards26 .cards-card-body */
-.cards.cards26 .cards-card-body {
-  flex: 1 1 auto;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  padding: 20px 20px 0;
-  gap: 8px;
-  background: transparent;
-  box-sizing: border-box;
-  text-align: left;
 }
 
 .cards.cards26 > ul {
@@ -522,6 +328,35 @@
 
 .cards.cards26 > ul::-webkit-scrollbar {
   display: none;
+}
+
+.cards.cards26 > ul > li {
+  flex: 0 0 260px;
+  min-width: 260px;
+  max-width: 260px;
+  background: #fff;
+  border: none;
+  border-radius: 16px;
+  box-shadow: 0 2px 16px 0 rgb(0 0 0 / 7%);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  margin: 0;
+  transition: box-shadow 0.2s;
+  height: 370px;
+  scroll-snap-align: start;
+}
+
+.cards.cards26 .cards-card-body {
+  flex: 1 1 auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  padding: 20px 20px 0;
+  gap: 8px;
+  background: transparent;
+  box-sizing: border-box;
+  text-align: left;
 }
 
 .cards.cards26 > ul > li:hover {
@@ -641,4 +476,156 @@
   }
 }
 
-/* --- End CSS --- */
+.cards.cards34 {
+  background: #e9e1d7;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 3px 0;
+  height: auto;
+  min-height: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+.cards.cards34 > ul {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 8px;
+  justify-content: flex-start;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  height: auto;
+}
+
+.cards.cards34 > ul > li {
+  display: flex;
+  align-items: center;
+  margin: 0;
+  padding: 0;
+  background: none;
+  border: none;
+  min-width: 0;
+  box-shadow: none;
+  height: auto;
+}
+
+.cards.cards34 .cards-card-body:first-child {
+  display: none;
+}
+
+.cards.cards34 .cards-card-body:last-child {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 999px;
+  padding: 0 16px;
+  font-size: 13px;
+  font-family: inherit;
+  font-weight: 600;
+  border: 1px solid #736b63;
+  color: #2d2926;
+  background: transparent;
+  box-sizing: border-box;
+  white-space: nowrap;
+  margin: 0;
+  outline: none;
+  letter-spacing: 0;
+  line-height: 1.2;
+  height: 32px;
+  min-width: 0;
+  transition: background 0.2s, color 0.2s, border 0.2s;
+}
+
+.cards.cards34 > ul > li:first-child .cards-card-body:last-child {
+  background: #e32025;
+  color: #fff;
+  border: none;
+  font-weight: 700;
+}
+
+@media (width <= 600px) {
+  .cards.cards34 {
+    padding: 2px 0;
+  }
+
+  .cards.cards34 .cards-card-body:last-child {
+    font-size: 12px;
+    padding: 0 10px;
+    height: 26px;
+  }
+
+  .cards.cards34 > ul {
+    gap: 4px;
+  }
+}
+
+@media (width <= 450px) {
+  .cards.cards34 {
+    padding: 0;
+  }
+
+  .cards.cards34 > ul {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 4px;
+    height: auto;
+  }
+
+  .cards.cards34 .cards-card-body:last-child {
+    justify-content: flex-start;
+    width: 100%;
+    min-width: 0;
+  }
+}
+
+.cards.cards17 > ul > li {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  justify-content: flex-start;
+  background: transparent;
+  border-radius: 20px;
+  box-shadow: 0 2px 8px 0 rgb(44 29 8 / 12%);
+  border: none;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  min-width: 0;
+  max-width: 350px;
+  margin: 0 auto;
+  box-sizing: border-box;
+  transition: box-shadow 0.16s;
+}
+
+.cards.cards38 > ul > li {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: none;
+  border: none;
+  box-shadow: none;
+  margin: 0;
+  padding: 0;
+  min-width: 160px;
+  width: 170px;
+  max-width: 32vw;
+}
+
+.cards.cards35 > ul > li {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+  background: none;
+  border: none;
+  box-shadow: none;
+  padding: 0;
+  margin: 0;
+  width: 100%;
+  min-width: 0;
+  gap: 48px;
+  margin-left: 24px;
+}
