@@ -1,9 +1,11 @@
+/* ================== HERO CONTAINER ================== */
 .hero-container .hero-wrapper,
 .hero-container > .hero-wrapper {
   max-width: unset;
   padding: 0;
 }
 
+/* ================== HERO BASE ================== */
 .hero {
   position: relative;
   display: flex;
@@ -51,6 +53,7 @@
   height: 100%;
 }
 
+/* ================== HERO 14 ================== */
 .hero.hero14 {
   width: 100vw;
   min-height: 100vh;
@@ -123,6 +126,7 @@
   text-shadow: 0 2px 7px rgb(0 0 0 / 18%);
 }
 
+/* ================== HERO 20 ================== */
 .hero.hero20 {
   display: flex;
   flex-direction: row;
@@ -247,106 +251,7 @@
   text-shadow: 0 2px 7px rgb(0 0 0 / 18%);
 }
 
-.hero.hero28 > div:first-child {
-  position: relative;
-  flex: 0 0 55%;
-  width: 55%;
-  min-width: 320px;
-  display: flex;
-  align-items: stretch;
-  justify-content: stretch;
-  overflow: hidden;
-  background: #181818;
-  order: 1;
-}
-
-.hero.hero28 > div:last-child {
-  flex: 0 0 45%;
-  width: 45%;
-  min-width: 280px;
-  max-width: 600px;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  align-items: flex-start;
-  padding: 24px 56px 18px 36px;
-  box-sizing: border-box;
-  order: 2;
-  background: transparent;
-  z-index: 2;
-  margin-left: auto;
-}
-
-.hero.hero28 > div:first-child picture,
-.hero.hero28 > div:first-child img {
-  position: absolute;
-  inset: 0;
-  width: 100% !important;
-  height: 100% !important;
-  min-height: 220px;
-  max-width: none !important;
-  object-fit: cover;
-  display: block;
-  margin: 0;
-  border-radius: 0;
-  z-index: 1;
-  background: none;
-}
-
-.hero.hero28 > div:last-child > div {
-  width: 100%;
-  max-width: 440px;
-  display: flex;
-  flex-direction: column;
-  gap: 4px;
-}
-
-.hero.hero28 h2 {
-  color: #fff;
-  font-family: var(--heading-font-family), serif;
-  font-size: 2rem;
-  font-weight: 700;
-  margin: 0 0 2px;
-  letter-spacing: -0.01em;
-  line-height: 1.12;
-}
-
-.hero.hero28 p {
-  color: rgb(255 255 255 / 80%);
-  font-family: var(--body-font-family), sans-serif;
-  font-size: 1.06rem;
-  line-height: 1.45;
-  margin: 0 0 2px;
-}
-
-.hero.hero28 .button-container {
-  margin: 0;
-  width: 100%;
-  display: flex;
-  justify-content: flex-start;
-}
-
-.hero.hero28 .button-container .button {
-  background: #e30613;
-  color: #fff;
-  border-radius: 24px;
-  font-weight: 700;
-  font-size: 1rem;
-  padding: 12px 32px;
-  box-shadow: none;
-  display: inline-block;
-  border: none;
-  text-align: center;
-  transition: background 0.18s;
-  margin-top: 8px;
-  font-family: var(--body-font-family), sans-serif;
-}
-
-.hero.hero28 .button-container .button:hover,
-.hero.hero28 .button-container .button:focus {
-  background: #b80010;
-}
-
+/* ================== HERO 32 ================== */
 .hero.hero32 {
   position: relative;
   display: flex;
@@ -360,6 +265,7 @@
   background: none;
 }
 
+/* ================== HERO 36 ================== */
 .hero.hero36 {
   display: flex;
   flex-direction: row;
@@ -416,6 +322,7 @@
   border-radius: 24px 0 0 24px;
 }
 
+/* ================== HERO 42 ================== */
 .hero.hero42 {
   position: relative;
   display: flex;
@@ -442,35 +349,6 @@
   position: relative;
   gap: 2.1em;
   padding-bottom: 2em;
-}
-
-.hero.hero42 > div:last-child > div > p {
-  display: none;
-}
-
-.hero.hero42 > div:last-child > div > p:last-of-type {
-  display: inline-block;
-  background: #e6858a;
-  color: #fff;
-  font-size: 1.18rem;
-  font-family: var(--body-font-family), sans-serif;
-  font-weight: 600;
-  border-radius: 1.5em;
-  padding: 0.82em 2.5em;
-  margin: 2.1em auto 0;
-  box-shadow: 0 2px 8px 0 rgb(0 0 0 / 11%);
-  text-align: center;
-  cursor: pointer;
-  transition: background 0.18s;
-  min-width: 120px;
-  max-width: 244px;
-  letter-spacing: 0.03em;
-  border: none;
-}
-
-.hero.hero42 > div:last-child > div > p:last-of-type:hover,
-.hero.hero42 > div:last-child > div > p:last-of-type:focus {
-  background: #cc6e74;
 }
 
 .hero.hero42 > div:last-child > div > h1 {
@@ -556,6 +434,35 @@
   width: 120px;
 }
 
+.hero.hero42 > div:last-child > div > p:last-of-type {
+  display: inline-block;
+  background: #e6858a;
+  color: #fff;
+  font-size: 1.18rem;
+  font-family: var(--body-font-family), sans-serif;
+  font-weight: 600;
+  border-radius: 1.5em;
+  padding: 0.82em 2.5em;
+  margin: 2.1em auto 0;
+  box-shadow: 0 2px 8px 0 rgb(0 0 0 / 11%);
+  text-align: center;
+  cursor: pointer;
+  transition: background 0.18s;
+  min-width: 120px;
+  max-width: 244px;
+  letter-spacing: 0.03em;
+  border: none;
+}
+
+.hero.hero42 > div:last-child > div > p:last-of-type:hover,
+.hero.hero42 > div:last-child > div > p:last-of-type:focus {
+  background: #cc6e74;
+}
+
+.hero.hero42 > div:last-child > div > p {
+  display: none;
+}
+
 @media (width >= 900px) {
   .hero {
     padding: 40px 32px;
@@ -563,34 +470,6 @@
 }
 
 @media (width <= 900px) {
-  .hero.hero28 {
-    flex-direction: column;
-    min-height: 0;
-  }
-
-  .hero.hero28 > div:first-child,
-  .hero.hero28 > div:last-child {
-    min-width: 0;
-    max-width: 100%;
-    width: 100%;
-    order: initial;
-  }
-
-  .hero.hero28 > div:first-child {
-    height: 240px;
-    min-width: 0;
-  }
-
-  .hero.hero28 > div:last-child {
-    padding: 24px 16px 18px;
-    align-items: flex-start;
-    margin-left: 0;
-  }
-
-  .hero.hero28 > div:last-child > div {
-    max-width: 100%;
-  }
-
   .hero.hero42 > div:last-child > div .hero42-options-row {
     flex-direction: column;
     gap: 1.2em;
@@ -681,13 +560,9 @@
   }
 }
 
-/* Remove margin/padding on the block's outer wrapper to make hero full-width */
-.hero-container > .hero-wrapper {
-  max-width: unset;
-  padding: 0;
-}
+/* ================== HERO WRAPPER DUPLICATE REMOVED (already above) ================== */
 
-/* Main hero block: taller aspect, rounded, edge-to-edge, flex row */
+/* ================== HERO 6 ================== */
 .hero.hero6 {
   display: flex;
   flex-direction: row;
@@ -702,7 +577,6 @@
   margin: 0;
 }
 
-/* Image block fills whole hero */
 .hero.hero6 > div:first-child {
   flex: 1 1 0;
   min-width: 0;
@@ -724,7 +598,6 @@
   flex: 1 1 0;
 }
 
-/* Gradient overlay narrows and fades faster */
 .hero.hero6 > div:first-child::before {
   position: absolute;
   top: 0;
@@ -739,7 +612,6 @@
   content: "";
 }
 
-/* Text block: vertically centered in overlay, more left padding */
 .hero.hero6 > div:last-child {
   position: absolute;
   left: 0;
@@ -806,7 +678,6 @@
   background: #b8001f;
 }
 
-/* RESPONSIVENESS */
 @media (width <= 900px) {
   .hero.hero6 {
     min-height: 240px;
@@ -836,5 +707,157 @@
 
   .hero.hero6 > div:last-child > div {
     gap: 1.05rem;
+  }
+}
+
+/* ================== HERO 28 ================== */
+.hero.hero28 {
+  display: flex;
+  flex-direction: row;
+  align-items: stretch;
+  border-radius: 16px;
+  overflow: hidden;
+  background: #18181d;
+  min-height: 357px;
+  width: 100%;
+  max-width: 100%;
+  box-shadow: 0 2px 12px rgb(0 0 0 / 8%);
+  padding: 0;
+  position: relative;
+}
+
+/* Left: Image column */
+.hero.hero28 > div:first-child {
+  flex: 1 1 51%;
+  display: flex;
+  align-items: stretch;
+  justify-content: stretch;
+  min-width: 360px;
+  min-height: 357px;
+  background: #18181d;
+  padding: 0;
+}
+
+.hero.hero28 > div:first-child picture,
+.hero.hero28 > div:first-child img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  min-height: 357px;
+  max-width: none;
+  border-radius: 0;
+  position: static;
+}
+
+/* Right: Content column */
+.hero.hero28 > div:last-child {
+  flex: 1 1 49%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  min-width: 280px;
+  max-width: 540px;
+  min-height: 357px;
+  height: 100%;
+  box-sizing: border-box;
+  padding: 48px 56px 48px 18px;
+  background: transparent;
+  z-index: 2;
+}
+
+/* Content group: left aligned, max width, slightly more vertical gap */
+.hero.hero28 > div:last-child > div {
+  width: 100%;
+  max-width: 390px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 18px;
+}
+
+/* Heading */
+.hero.hero28 h2 {
+  color: #fff;
+  font-family: var(--heading-font-family), serif;
+  font-size: 1.6rem;
+  font-weight: 700;
+  margin: 0;
+  line-height: 1.18;
+  letter-spacing: -0.01em;
+  text-align: left;
+}
+
+/* Description */
+.hero.hero28 p {
+  color: #fff;
+  font-family: var(--body-font-family), sans-serif;
+  font-size: 1rem;
+  line-height: 1.5;
+  margin: 0;
+  text-align: left;
+  max-width: 340px;
+}
+
+/* Button container: left-aligned */
+.hero.hero28 .button-container {
+  margin: 0;
+  width: 100%;
+  display: flex;
+  justify-content: flex-start;
+}
+
+/* Button style */
+.hero.hero28 .button-container .button {
+  background: #e50914;
+  color: #fff;
+  border-radius: 999px;
+  font-weight: 600;
+  font-size: 1rem;
+  padding: 12px 36px;
+  border: none;
+  margin-top: 10px;
+  font-family: var(--body-font-family), sans-serif;
+  transition: background 0.2s;
+  text-align: center;
+  box-shadow: none;
+}
+
+.hero.hero28 .button-container .button:hover,
+.hero.hero28 .button-container .button:focus {
+  background: #b0060f;
+}
+
+/* Responsive: stack on small screens, keep image visible */
+@media (width <= 900px) {
+  .hero.hero28 {
+    flex-direction: column;
+    min-height: 0;
+  }
+
+  .hero.hero28 > div:first-child,
+  .hero.hero28 > div:last-child {
+    min-width: 0;
+    max-width: 100%;
+    width: 100%;
+    height: auto;
+    padding: 0;
+  }
+
+  .hero.hero28 > div:first-child {
+    height: 180px;
+    min-height: 120px;
+  }
+
+  .hero.hero28 > div:last-child {
+    padding: 24px 16px;
+    align-items: flex-start;
+    min-height: unset;
+  }
+
+  .hero.hero28 > div:last-child > div {
+    max-width: 100%;
+    align-items: flex-start;
   }
 }
