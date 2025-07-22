@@ -1058,7 +1058,6 @@
   }
 }
 
-/* Left visual column (image + oval) */
 .columns.columns12 > div > div:first-child {
   position: relative;
   width: 380px;
@@ -1080,7 +1079,6 @@
   }
 }
 
-/* The oval, centered behind the image, more elliptical */
 .columns.columns12 > div > div:first-child > p:first-child {
   position: absolute;
   left: 50%;
@@ -1104,7 +1102,6 @@
   }
 }
 
-/* Product image styling, larger and centered */
 .columns.columns12 > div > div:first-child picture,
 .columns.columns12 > div > div:first-child img {
   position: relative;
@@ -1129,7 +1126,6 @@
   }
 }
 
-/* Only display the first <p> (with image and shape) in the left column */
 .columns.columns12 > div > div:first-child > p {
   display: none;
 }
@@ -1138,7 +1134,6 @@
   display: block;
 }
 
-/* Right text column */
 .columns.columns12 > div > div:last-child {
   display: flex;
   flex-direction: column;
@@ -1160,7 +1155,6 @@
   }
 }
 
-/* Hide any extra <p> tags in right column except title and description */
 .columns.columns12 > div > div:last-child > p {
   display: none;
 }
@@ -1170,7 +1164,6 @@
   display: block;
 }
 
-/* Title */
 .columns.columns12 > div > div:last-child > p:nth-of-type(2) {
   font-family: 'Libre Baskerville', 'Libre Baskerville Fallback', serif;
   font-size: 1.45rem;
@@ -1189,7 +1182,6 @@
   }
 }
 
-/* Description */
 .columns.columns12 > div > div:last-child > p:nth-of-type(3) {
   font-family: Poppins, "Poppins Fallback", sans-serif;
   font-size: 1.08rem;
@@ -1208,11 +1200,145 @@
   }
 }
 
-/* Responsive tweaks for stacking on small screens */
 @media (width <= 600px) {
   .columns.columns12 > div {
     flex-direction: column;
     gap: 20px;
     padding: 0 3vw;
+  }
+}
+
+
+.columns {
+  background: #faf5ef;
+  padding: 40px 0;
+}
+
+/* Use flex for side-by-side cards */
+.columns > div {
+  display: flex;
+  flex-direction: row;
+  gap: 28px;
+  max-width: 1120px;
+  margin: 0 auto;
+  width: 100%;
+  box-sizing: border-box;
+  align-items: stretch;
+  justify-content: center;
+}
+
+/* Card: all product content in a single stacked column */
+.columns > div > div {
+  background: #fce9b2;
+  border-radius: 18px;
+  box-shadow: 0 4px 24px rgb(80 43 0 / 7%);
+  padding: 28px 32px 24px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  min-width: 0;
+  flex: 1 1 0;
+  max-width: 480px;
+  box-sizing: border-box;
+  position: relative;
+  margin: 0;
+}
+
+/* Product image at top, left-aligned */
+.columns > div > div picture img {
+  width: 140px;
+  height: auto;
+  border-radius: 12px;
+  margin-bottom: 16px;
+  display: block;
+  box-shadow: 0 2px 7px rgb(60 30 10 / 10%);
+  align-self: flex-start;
+}
+
+/* Card Title */
+.columns > div > div > p:nth-of-type(2) {
+  font-family: var(--heading-font-family);
+  font-weight: 700;
+  color: #3e2d17;
+  font-size: 1.3rem;
+  margin: 0 0 10px;
+  line-height: 1.2;
+  text-align: left;
+}
+
+/* Card Description */
+.columns > div > div > p:nth-of-type(3) {
+  color: #604b32;
+  font-size: 1.025rem;
+  font-family: var(--body-font-family);
+  line-height: 1.5;
+  margin: 0 0 12px;
+  text-align: left;
+}
+
+/* "Buy Now" Button */
+.columns > div > div > p:last-child {
+  background: #fff2cb;
+  color: #a40000;
+  font-family: var(--body-font-family);
+  font-weight: 700;
+  font-size: 1.05rem;
+  border-radius: 6px;
+  padding: 8px 26px;
+  margin: 18px 0 0;
+  display: inline-block;
+  text-align: center;
+  cursor: pointer;
+  box-shadow: 0 1px 4px rgb(80 43 0 / 8%);
+  transition: background 0.2s;
+}
+
+.columns > div > div > p:last-child:hover {
+  background: #ffe9a6;
+}
+
+/* General card paragraphs */
+.columns > div > div > p {
+  margin: 0 0 10px;
+  color: #604b32;
+  font-size: 1.03rem;
+  text-align: left;
+  font-family: var(--body-font-family);
+}
+
+.columns > div > div > p:first-child {
+  margin-bottom: 12px;
+}
+
+/* Responsive stacking */
+@media (width <= 900px) {
+  .columns > div {
+    flex-direction: column;
+    gap: 18px;
+    padding: 0 12px;
+    align-items: stretch;
+  }
+
+  .columns > div > div {
+    max-width: 100%;
+    width: 100%;
+  }
+}
+
+/* Tighter layout on small screens */
+@media (width <= 600px) {
+  .columns > div {
+    gap: 12px;
+    padding: 0 4px;
+  }
+
+  .columns > div > div {
+    padding: 12px 8px 10px;
+    max-width: 100%;
+  }
+
+  .columns > div > div picture img {
+    width: 82px;
   }
 }
