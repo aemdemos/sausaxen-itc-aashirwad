@@ -1,61 +1,58 @@
 /* global WebImporter */
 export default function parse(element, { document }) {
-  // Ensure the header exactly matches the example
+  // Block header row per spec
   const headerRow = ['Embed (embedVideo25)'];
 
-  // We'll collect all visible text content and iframe as a link
-  const cellContent = [];
+  // Find the main iframe (YouTube or Vimeo)
+  const iframe = element.querySelector('iframe');
+  let videoUrl = '';
+  // Prefer data-youtube-video-url if present
+  if (element.getAttribute('data-youtube-video-url')) {
+    videoUrl = element.getAttribute('data-youtube-video-url');
+  // Otherwise, convert known YouTube embed src to watch URL
+  } else if (iframe && iframe.src) {
+    const ytMatch = iframe.src.match(/youtube.com\/embed\/([\w-]+)/);
+    if (ytMatch) {
+      videoUrl = `https://www.youtube.com/watch?v=${ytMatch[1]}`;
+    } else {
+      videoUrl = iframe.src;
+    }
+  }
 
-  // Collect all text (including from nested divs) except from the iframe
-  // and preserve the order
-  function gatherTextAndLinks(node, arr) {
-    for (const child of node.childNodes) {
-      if (child.nodeType === Node.TEXT_NODE) {
-        const txt = child.textContent.trim();
-        if (txt) {
-          arr.push(document.createTextNode(txt + '\n'));
-        }
-      } else if (child.nodeType === Node.ELEMENT_NODE) {
-        if (child.tagName === 'IFRAME') {
-          // Only add a link for iframe src
-          const src = child.getAttribute('src');
-          if (src) {
-            let videoUrl = src;
-            const ytMatch = src.match(/youtube\.com\/embed\/([a-zA-Z0-9_-]+)/);
-            if (ytMatch) {
-              videoUrl = `https://www.youtube.com/watch?v=${ytMatch[1]}`;
-            }
-            const link = document.createElement('a');
-            link.href = videoUrl;
-            link.textContent = videoUrl;
-            arr.push(link);
-          }
-        } else {
-          // Gather recursively for all other elements
-          gatherTextAndLinks(child, arr);
-        }
+  // Gather all text nodes and non-iframe elements inside the main element for the cell
+  // (There may be captions, descriptions, etc. in future variants, and we must preserve them.)
+  let cellNodes = [];
+  // 1. All direct children (to preserve structure)
+  Array.from(element.childNodes).forEach((node) => {
+    if (node.nodeType === Node.ELEMENT_NODE) {
+      // For element nodes, skip if it's an iframe or inside a YouTube wrapper (handled by link)
+      if (!node.querySelector('iframe')) {
+        cellNodes.push(node);
       }
+    } else if (node.nodeType === Node.TEXT_NODE && node.textContent.trim()) {
+      cellNodes.push(node);
     }
+  });
+
+  // 2. Always include a link to the video after any content
+  if (videoUrl) {
+    const a = document.createElement('a');
+    a.href = videoUrl;
+    a.textContent = videoUrl;
+    if (cellNodes.length > 0) cellNodes.push(document.createElement('br'));
+    cellNodes.push(a);
   }
 
-  gatherTextAndLinks(element, cellContent);
-
-  // Fallback: if nothing, use the data-youtube-video-url attribute if present
-  if (!cellContent.length) {
-    const videoUrl = element.getAttribute('data-youtube-video-url');
-    if (videoUrl) {
-      const link = document.createElement('a');
-      link.href = videoUrl;
-      link.textContent = videoUrl;
-      cellContent.push(link);
-    }
+  // If the cellNodes only contains whitespace or nothing, still ensure link is present
+  if (cellNodes.length === 0 && videoUrl) {
+    const a = document.createElement('a');
+    a.href = videoUrl;
+    a.textContent = videoUrl;
+    cellNodes = [a];
   }
 
-  // The example shows one table only, 1 column, 2 rows
-  const table = WebImporter.DOMUtils.createTable([
-    headerRow,
-    [cellContent]
-  ], document);
-
+  // Compose table as per block instructions
+  const cells = [headerRow, [cellNodes]];
+  const table = WebImporter.DOMUtils.createTable(cells, document);
   element.replaceWith(table);
 }

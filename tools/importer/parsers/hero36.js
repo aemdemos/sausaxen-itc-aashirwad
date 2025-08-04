@@ -1,64 +1,53 @@
 /* global WebImporter */
 export default function parse(element, { document }) {
-  // 1. Table header row
-  const headerRow = ['Hero (hero36)'];
-
-  // 2. Get the hero teaser block
+  // Helper: get the first .cmp-teaser in the descendants
   const teaser = element.querySelector('.cmp-teaser');
 
-  // 3. Get background image URL from the teaser
-  let bgImgRow = [''];
+  // Extract background image (prefer desktop, fallback to mobile)
+  let bgImgUrl = null;
   if (teaser) {
-    let bgImgUrl = teaser.getAttribute('data-background-image-desktop');
-    if (!bgImgUrl) {
-      const style = teaser.getAttribute('style');
-      if (style) {
-        const match = style.match(/background-image:\s*url\(["']?([^"')]+)["']?\)/);
-        if (match) {
-          bgImgUrl = match[1];
-        }
+    bgImgUrl =
+      teaser.getAttribute('data-background-image-desktop') ||
+      teaser.getAttribute('data-background-image-mobile') || '';
+  }
+  let bgImgEl = null;
+  if (bgImgUrl) {
+    bgImgEl = document.createElement('img');
+    bgImgEl.src = bgImgUrl;
+    bgImgEl.setAttribute('loading', 'lazy');
+  }
+
+  // Extract headline and subheadline if present (in this sample, they're part of the image)
+  // There is no visible headline/subheadline in HTML, so we skip
+
+  // Extract CTA: Find the CTA link and use its button text as CTA text
+  let ctaAnchor = null;
+  if (teaser) {
+    const teaserLink = teaser.querySelector('a.cmp-teaser__link');
+    if (teaserLink) {
+      // Find button text inside the teaser link
+      const btnText = teaserLink.querySelector('.cmp-button__text');
+      if (btnText && btnText.textContent.trim()) {
+        ctaAnchor = document.createElement('a');
+        ctaAnchor.href = teaserLink.href;
+        ctaAnchor.textContent = btnText.textContent.trim();
+        // Copy over any target/rel for accessibility
+        if (teaserLink.target) ctaAnchor.target = teaserLink.target;
+        if (teaserLink.rel) ctaAnchor.rel = teaserLink.rel;
       }
-    }
-    if (bgImgUrl) {
-      const img = document.createElement('img');
-      img.src = bgImgUrl;
-      img.alt = '';
-      bgImgRow = [img];
     }
   }
 
-  // 4. Block content: All visible content (headings/text/buttons) from .cmp-teaser__content or teaser
-  let contentRow = [''];
-  if (teaser) {
-    // Prefer .cmp-teaser__content if present, else use teaser itself
-    const contentEl = teaser.querySelector('.cmp-teaser__content') || teaser;
-    // Gather all direct children nodes that are not empty text
-    const nodes = Array.from(contentEl.childNodes).filter(node => {
-      if (node.nodeType === Node.TEXT_NODE) {
-        return node.textContent.trim().length > 0;
-      }
-      return true;
-    });
-    // If there's only one node and it's a wrapper div, we can flatten
-    if (nodes.length === 1 && nodes[0].nodeType === Node.ELEMENT_NODE && nodes[0].tagName === 'DIV') {
-      const innerNodes = Array.from(nodes[0].childNodes).filter(node => {
-        if (node.nodeType === Node.TEXT_NODE) {
-          return node.textContent.trim().length > 0;
-        }
-        return true;
-      });
-      if (innerNodes.length > 0) {
-        contentRow = [innerNodes];
-      } else {
-        contentRow = [nodes];
-      }
-    } else if (nodes.length > 0) {
-      contentRow = [nodes];
-    }
-  }
+  // Assemble the rows for the block table
+  const rows = [];
+  // Header row: must match exactly as in the example
+  rows.push(['Hero (hero36)']);
+  // Background image row
+  rows.push([bgImgEl ? bgImgEl : '']);
+  // Content row: only CTA (since other content is in image)
+  rows.push([ctaAnchor ? [ctaAnchor] : '']);
 
-  // 5. Build and replace
-  const cells = [headerRow, bgImgRow, contentRow];
-  const table = WebImporter.DOMUtils.createTable(cells, document);
+  // Create and replace block table
+  const table = WebImporter.DOMUtils.createTable(rows, document);
   element.replaceWith(table);
 }

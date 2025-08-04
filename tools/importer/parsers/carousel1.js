@@ -1,53 +1,41 @@
 /* global WebImporter */
 export default function parse(element, { document }) {
-  // Get carousel slide elements
-  // Path: .cmp-carousel__container > .slick-list > .slick-track > .cmp-carousel__item
-  const container = element.querySelector('.cmp-carousel__container');
-  const slickList = container && container.querySelector('.slick-list');
-  const slickTrack = slickList && slickList.querySelector('.slick-track');
-  if (!slickTrack) return;
-  const slides = Array.from(slickTrack.children).filter(
-    (el) => el.classList.contains('cmp-carousel__item')
-  );
+  // Get the carousel track which contains the slides
+  const track = element.querySelector('.cmp-carousel__container .slick-list .slick-track');
+  if (!track) return;
+  const slides = Array.from(track.querySelectorAll(':scope > .cmp-carousel__item'));
+  if (!slides.length) return;
 
-  const rows = [['Carousel (carousel1)']];
+  // Build rows
+  const rows = [];
+  rows.push(['Carousel (carousel1)']); // Header row matches exactly
 
   slides.forEach((slide) => {
-    // Get the image element (first img in .cmp-banner__content)
-    let imageEl = null;
-    const img = slide.querySelector('.cmp-banner__image');
-    if (img) {
-      imageEl = img;
-    } else {
-      // Try to get background-image from .cmp-banner
-      const banner = slide.querySelector('.cmp-banner');
-      if (banner && banner.style.backgroundImage) {
-        const urlMatch = banner.style.backgroundImage.match(/url\(["']?(.*?)["']?\)/);
-        if (urlMatch && urlMatch[1]) {
-          const imgEl = document.createElement('img');
-          imgEl.src = urlMatch[1];
-          imageEl = imgEl;
-        }
-      }
+    // First cell: the slide image (direct reference)
+    const img = slide.querySelector('img');
+    // Second cell: text content (may have one or more elements)
+    const content = slide.querySelector('.cmp-banner__content') || slide;
+    const cellContent = [];
+    // Heading (h2)
+    const h2 = content.querySelector('h2');
+    if (h2) cellContent.push(h2);
+    // Sub-title (h3)
+    const h3 = content.querySelector('h3');
+    if (h3) {
+      // Use a <p> for the sub-title, to match block semantics
+      const p = document.createElement('p');
+      p.innerHTML = h3.innerHTML;
+      cellContent.push(p);
     }
-
-    // Get text content: all content except the image inside .cmp-banner__content
-    const content = slide.querySelector('.cmp-banner__content');
-    let textContent = null;
-    if (content) {
-      // Create array of nodes (excluding image)
-      const nodes = Array.from(content.childNodes).filter((node) => {
-        return !(node.nodeType === 1 && node.tagName.toLowerCase() === 'img');
-      });
-      // If nodes are not empty, use as cell content
-      if (nodes.length > 0) {
-        textContent = nodes;
-      }
-    }
-    rows.push([imageEl, textContent]);
+    // CTA link (if any)
+    const cta = content.querySelector('a.cmp-button');
+    if (cta) cellContent.push(cta);
+    rows.push([
+      img || '',
+      cellContent.length ? cellContent : ''
+    ]);
   });
 
-  // Create table via WebImporter helper
-  const table = WebImporter.DOMUtils.createTable(rows, document);
-  element.replaceWith(table);
+  const block = WebImporter.DOMUtils.createTable(rows, document);
+  element.replaceWith(block);
 }

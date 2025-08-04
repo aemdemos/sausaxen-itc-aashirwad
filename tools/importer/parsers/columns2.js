@@ -1,45 +1,54 @@
 /* global WebImporter */
 export default function parse(element, { document }) {
-  // Find the core product detail DOM container
+  // Find the main product detail container
   const productDetail = element.querySelector('.cmp-product-detail');
   if (!productDetail) return;
 
-  // Left column: product image
-  const left = productDetail.querySelector('.cmp-product-detail__left-container');
+  // Get left (image) and right (info) columns
+  const leftCol = productDetail.querySelector('.cmp-product-detail__left-container');
+  const rightCol = productDetail.querySelector('.cmp-product-detail__right-container');
 
-  // Right column: all product info content
-  const right = productDetail.querySelector('.cmp-product-detail__right-container');
+  // Defensive: If either column is missing, fill with empty div
+  const leftCell = leftCol || document.createElement('div');
+  const rightCell = rightCol || document.createElement('div');
 
-  let rightCellContents = [];
-  if (right) {
-    // Title (h1)
-    const title = right.querySelector('.cmp-product-detail__title');
-    if (title) rightCellContents.push(title);
-    // Description (span/p)
-    const descContainer = right.querySelector('.cmp-product-detail__description-container');
-    if (descContainer) rightCellContents.push(descContainer);
-    // Pack sizes title
-    const packTitle = right.querySelector('.cmp-product-detail__pack-title');
-    if (packTitle) rightCellContents.push(packTitle);
-    // Pack sizes (tab group)
-    const tabGroup = right.querySelector('.cmp-tab-group');
-    if (tabGroup) rightCellContents.push(tabGroup);
-    // Price/button container (may be empty)
-    const priceContainer = right.querySelector('.cmp-product-detail__price-container');
-    if (priceContainer && priceContainer.textContent.trim()) rightCellContents.push(priceContainer);
-    // Accordion (nutritional info etc)
-    const accordion = right.querySelector('.cmp-accordion');
-    if (accordion) rightCellContents.push(accordion);
+  // Split rightCol into: infoTop (all before .accordion/.cmp-accordion), infoBottom (the accordion and everything after)
+  let infoTop = document.createElement('div');
+  let infoBottom = document.createElement('div');
+  if (rightCol) {
+    // Find the accordion (nutrition info)
+    let accordion = rightCol.querySelector('.cmp-accordion, .accordion');
+    let foundAccordion = false;
+    Array.from(rightCol.childNodes).forEach((node) => {
+      // Node is the actual accordion reference
+      if (!foundAccordion && accordion && node === accordion) {
+        foundAccordion = true;
+        infoBottom.appendChild(node);
+      } else if (!foundAccordion) {
+        infoTop.appendChild(node);
+      } else {
+        infoBottom.appendChild(node);
+      }
+    });
+    // If there's no accordion, put all in infoTop
+    if (!accordion) {
+      infoTop = rightCol;
+      infoBottom = document.createElement('div');
+    }
   }
 
-  // If no left or right, fallback gracefully
-  const leftCell = left || '';
-  const rightCell = rightCellContents.length ? rightCellContents : '';
-
+  // Build table rows
   const headerRow = ['Columns (columns2)'];
-  const contentRow = [leftCell, rightCell];
-  const cells = [headerRow, contentRow];
-  const table = WebImporter.DOMUtils.createTable(cells, document);
+  const firstContentRow = [leftCell, infoTop];
+  const secondContentRow = ['', infoBottom];
 
+  // Compose final table rows
+  const cells = [headerRow, firstContentRow];
+  // Only add the second row if there is actual nutrition info content
+  if (infoBottom && infoBottom.childNodes.length > 0 && infoBottom.textContent.trim().length > 0) {
+    cells.push(secondContentRow);
+  }
+
+  const table = WebImporter.DOMUtils.createTable(cells, document);
   element.replaceWith(table);
 }

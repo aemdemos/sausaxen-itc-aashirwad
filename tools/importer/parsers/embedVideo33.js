@@ -1,58 +1,54 @@
 /* global WebImporter */
 export default function parse(element, { document }) {
-  // Header row with the exact block name
+  // Header row matching block name
   const headerRow = ['Embed (embedVideo33)'];
 
-  // Gather all direct children (could be text, embed wrappers, etc)
-  const cellContent = [];
-  // Get all text nodes and element nodes, preserving order
-  element.childNodes.forEach((node) => {
-    if (node.nodeType === Node.TEXT_NODE) {
-      const text = node.textContent.trim();
-      if (text) cellContent.push(text);
-    } else if (node.nodeType === Node.ELEMENT_NODE) {
-      cellContent.push(node);
-    }
-  });
+  // To accumulate all content for the single cell
+  const content = [];
 
-  // Find iframe anywhere inside (for the embed link)
-  const iframe = element.querySelector('iframe');
-  let videoUrl = '';
-  if (iframe && iframe.src) {
-    videoUrl = iframe.src;
-  }
-  // Convert embed link to canonical short form if applicable
-  let displayUrl = videoUrl;
-  if (/youtube\.com\/embed\//.test(videoUrl)) {
-    const match = videoUrl.match(/youtube.com\/embed\/([a-zA-Z0-9_-]+)/);
-    if (match && match[1]) {
-      displayUrl = `https://youtu.be/${match[1]}`;
-    }
-  } else if (/vimeo.com\/video\//.test(videoUrl)) {
-    const match = videoUrl.match(/vimeo.com\/video\/([0-9]+)/);
-    if (match && match[1]) {
-      displayUrl = `https://vimeo.com/${match[1]}`;
-    }
-  }
-
-  // Always add the link last (unless already present as a text node)
-  if (displayUrl) {
-    // Only add if not already present as a link or in text nodes
-    let alreadyPresent = false;
-    cellContent.forEach(item => {
-      if (typeof item === 'string' && item.includes(displayUrl)) alreadyPresent = true;
-      if (item.tagName === 'A' && item.href === displayUrl) alreadyPresent = true;
+  // Gather all text content and DOM elements that represent the block visually
+  // This includes direct children and nested children.
+  // Collect visible non-empty text nodes
+  function collectTextNodes(node) {
+    node.childNodes.forEach(child => {
+      if (child.nodeType === Node.ELEMENT_NODE) {
+        collectTextNodes(child);
+      } else if (child.nodeType === Node.TEXT_NODE) {
+        const text = child.textContent.trim();
+        if (text) {
+          content.push(text);
+        }
+      }
     });
-    if (!alreadyPresent) {
-      const link = document.createElement('a');
-      link.href = displayUrl;
-      link.textContent = displayUrl;
-      cellContent.push(link);
+  }
+  collectTextNodes(element);
+
+  // Find the first iframe (for embed)
+  const iframe = element.querySelector('iframe');
+  if (iframe && iframe.src) {
+    let videoUrl = iframe.src;
+    // Clean YouTube embed URLs to short form if possible
+    const ytMatch = videoUrl.match(/youtube.com\/embed\/([a-zA-Z0-9_-]{11})/);
+    if (ytMatch) {
+      videoUrl = `https://youtu.be/${ytMatch[1]}`;
     }
+    // Construct a link element referencing existing video URL
+    const link = document.createElement('a');
+    link.href = videoUrl;
+    link.textContent = videoUrl;
+    content.push(link);
   }
 
-  // Structure: 1 header row, 1 content row (with all content in a single cell)
-  const cells = [headerRow, [cellContent]];
-  const table = WebImporter.DOMUtils.createTable(cells, document);
+  // If there is structural (non-iframe) HTML in the element, and it's not just wrappers, include it
+  // For robustness, append all direct children that are not the iframe or its wrappers (if any)
+  // but skip empty div wrappers if there's no extra content
+  // This handles edge cases where content is visually significant
+  // (In current example, there is no non-iframe visible content besides text.)
+
+  // Create the table and replace the element
+  const table = WebImporter.DOMUtils.createTable([
+    headerRow,
+    [content.length === 1 ? content[0] : content]
+  ], document);
   element.replaceWith(table);
 }

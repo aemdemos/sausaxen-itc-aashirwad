@@ -1,50 +1,64 @@
 /* global WebImporter */
 export default function parse(element, { document }) {
-  // 1. Header row: only one column, exactly as in the spec
-  const headerRow = ['Columns (columns12)'];
-
-  // 2. Find all carousel items (each is a column)
-  const items = Array.from(element.querySelectorAll('.cmp-popular-products__carousel-item'));
-
-  // Defensive: if no items found, do nothing
+  // Find all carousel items - each is a column
+  const items = element.querySelectorAll('.cmp-popular-products__carousel-item');
   if (!items.length) return;
 
-  // 3. Prepare a cell for each column in the second row (content row)
-  const contentRow = items.map((item) => {
-    const frag = document.createElement('div');
-    // Image (possibly wrapped in link)
-    const imageWrapper = item.querySelector('.cmp-popular-products__image');
-    if (imageWrapper) {
-      const link = imageWrapper.querySelector('a');
-      const img = imageWrapper.querySelector('img');
-      if (link && img && link.contains(img)) {
-        frag.appendChild(link);
-      } else if (img) {
-        frag.appendChild(img);
+  // For each item, build the content for the column
+  const cols = Array.from(items).map((item) => {
+    const content = [];
+
+    // Product image (inside a link)
+    const imageDiv = item.querySelector('.cmp-popular-products__image');
+    if (imageDiv) {
+      const imageLink = imageDiv.querySelector('a');
+      if (imageLink) {
+        content.push(imageLink);
       }
     }
-    // Title
-    const titleEl = item.querySelector('.cmp-popular-products__product-name');
-    if (titleEl) {
-      frag.appendChild(titleEl);
+
+    // Product name
+    const nameDiv = item.querySelector('.cmp-popular-products__product-name');
+    if (nameDiv) {
+      content.push(nameDiv);
     }
-    // Details
-    const detailsEl = item.querySelector('.cmp-popular-products__product-details');
-    if (detailsEl) {
-      frag.appendChild(detailsEl);
+
+    // Product details
+    const detailsDiv = item.querySelector('.cmp-popular-products__product-details');
+    if (detailsDiv) {
+      content.push(detailsDiv);
     }
-    // Action button
-    const actionEl = item.querySelector('.cmp-popular-products__action');
-    if (actionEl) {
-      frag.appendChild(actionEl);
+
+    // Action button: convert to link if possible
+    const actionDiv = item.querySelector('.cmp-popular-products__action');
+    if (actionDiv) {
+      const btn = actionDiv.querySelector('button, a');
+      let actionEl = null;
+      // Find buy link from the image if possible
+      if (btn && imageDiv && imageDiv.querySelector('a')) {
+        const prodLink = imageDiv.querySelector('a').href;
+        const a = document.createElement('a');
+        a.href = prodLink;
+        a.textContent = btn.textContent.trim();
+        actionEl = a;
+      } else if (btn) {
+        actionEl = btn;
+      }
+      if (actionEl) content.push(actionEl);
     }
-    return frag;
+
+    return content;
   });
 
-  // 4. Build the table: first row is a single header column, second row has N columns
-  const table = WebImporter.DOMUtils.createTable([
-    headerRow,
-    contentRow,
-  ], document);
+  // Header row should have one cell, but as many columns as content row (empty cells after first)
+  const headerRow = ['Columns (columns12)'];
+  while (headerRow.length < cols.length) {
+    headerRow.push('');
+  }
+
+  const tableRows = [headerRow, cols];
+
+  // Create the block table
+  const table = WebImporter.DOMUtils.createTable(tableRows, document);
   element.replaceWith(table);
 }

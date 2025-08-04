@@ -1,37 +1,41 @@
 /* global WebImporter */
 export default function parse(element, { document }) {
-  // Extract background image URL from style attribute
-  let bgUrl = null;
-  const style = element.getAttribute('style') || '';
-  const urlMatch = style.match(/url\((?:'|")?(.*?)(?:'|")?\)/i);
-  if (urlMatch && urlMatch[1]) {
-    // Remove any trailing parameters (e.g., after a comma)
-    bgUrl = urlMatch[1].split(',')[0].trim();
+  // Helper: Extract background image URL from style attribute
+  function extractBgUrl(style) {
+    if (!style) return null;
+    // Match url("...") or url('...') or url(...)
+    const urlMatch = style.match(/url\(&quot;(.*?)&quot;\)/) || style.match(/url\(['"]?(.*?)['"]?\)/);
+    return urlMatch ? urlMatch[1] : null;
   }
-  // Create an <img> element for the background image if available
-  let imgEl = '';
+
+  // 1. Get the background image URL
+  const bgUrl = extractBgUrl(element.getAttribute('style'));
+  let bgImgEl = null;
   if (bgUrl) {
-    imgEl = document.createElement('img');
-    imgEl.src = bgUrl;
-    imgEl.alt = '';
+    bgImgEl = document.createElement('img');
+    bgImgEl.src = bgUrl;
+    // Set alt attribute from heading if available
+    const heading = element.querySelector('h1, h2, h3, h4, h5, h6');
+    bgImgEl.alt = heading ? heading.textContent.trim() : '';
   }
-  // Gather all existing content elements (heading, posted date)
-  // Reference the original elements directly (do not clone), for DOMUtils block compatibility
-  const contentElems = [];
-  for (let child of element.children) {
-    if (child.tagName === 'H1' || child.tagName === 'H2' || child.tagName === 'H3') {
-      contentElems.push(child); // Heading(s)
-    } else if (child.tagName === 'P') {
-      contentElems.push(child); // Posted date or subtitle
-    } // Ignore others (not present in provided examples)
-  }
-  // Table structure: Header, Image, Content
+
+  // 2. Get the title and subheading (if present)
+  // Reference the actual elements in the DOM, do not clone.
+  const headingEl = element.querySelector('h1, h2, h3, h4, h5, h6');
+  const subheadingEl = element.querySelector('p');
+  // Compose the content cell as an array, only including present items
+  const contentArr = [];
+  if (headingEl) contentArr.push(headingEl);
+  if (subheadingEl) contentArr.push(subheadingEl);
+
+  // Compose the table
   const rows = [
     ['Hero (hero14)'],
-    [imgEl],
-    [contentElems]
+    [bgImgEl || ''],
+    [contentArr]
   ];
-  // Build table and replace
+
+  // Create the table block and replace the original element
   const block = WebImporter.DOMUtils.createTable(rows, document);
   element.replaceWith(block);
 }

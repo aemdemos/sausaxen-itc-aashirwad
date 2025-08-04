@@ -1,94 +1,71 @@
 /* global WebImporter */
 export default function parse(element, { document }) {
-  // Table header for Cards block
+  // Table header as per block spec
   const headerRow = ['Cards (cards26)'];
+  const rows = [headerRow];
 
-  // Find carousel container
-  const carousel = element.querySelector('.cmp-carousel');
-  if (!carousel) return;
+  // Find the carousel track
+  const track = element.querySelector('.slick-track');
+  if (!track) return;
 
-  // All cards are in .cmp-carousel__item
-  const cardEls = carousel.querySelectorAll('.cmp-recipe-group__carousel-item');
-  if (!cardEls.length) return;
+  // Find all carousel items (cards)
+  const cards = track.querySelectorAll('.cmp-recipe-group__carousel-item, .cmp-carousel__item');
 
-  // Build table rows for each card
-  const rows = Array.from(cardEls).map(cardEl => {
-    // Get link (for entire card)
-    const cardLink = cardEl.querySelector('a.card');
+  cards.forEach((card) => {
+    // Only process if there is a card link
+    const link = card.querySelector('a.card');
+    if (!link) return;
 
-    // Get image (should always exist)
-    const img = cardEl.querySelector('.cmp-card__image img');
-    let imgEl = null;
-    if (img) {
-      imgEl = img;
+    // --- First cell: card image ---
+    let img = link.querySelector('.cmp-card__image img');
+    let imageCell = img || '';
+
+    // --- Second cell: text content ---
+    // We'll preserve the category, card title, and footer info (time, difficulty)
+    const textFrag = document.createElement('div');
+
+    // Category/tag line (optional)
+    const tagP = link.querySelector('.cmp-card__tag-wrapper p');
+    if (tagP && tagP.textContent.trim()) {
+      const p = document.createElement('p');
+      p.textContent = tagP.textContent.trim();
+      textFrag.appendChild(p);
     }
 
-    // Get text content: tag, title, meta (time, difficulty)
-    const info = cardEl.querySelector('.cmp-card__info');
-    // Compose everything in a fragment
-    const frag = document.createDocumentFragment();
+    // Card title: as heading (h4)
+    const h4 = link.querySelector('.cmp-card__title h4');
+    if (h4 && h4.textContent.trim()) {
+      // Reference the actual h4 node for semantic accuracy
+      textFrag.appendChild(h4);
+    }
 
-    // Tag (category)
-    if (info) {
-      const tag = info.querySelector('.cmp-card__tag-wrapper p');
-      if (tag && tag.textContent.trim()) {
-        const tagP = document.createElement('p');
-        tagP.textContent = tag.textContent.trim();
-        frag.appendChild(tagP);
-      }
-      // Title (as heading)
-      const title = info.querySelector('.cmp-card__title h4');
-      if (title && title.textContent.trim()) {
-        // Reference the actual heading element
-        frag.appendChild(title);
-      }
-      // Footer (time & difficulty)
-      const footer = info.querySelector('.cmp-card__recipe_footer');
-      if (footer) {
-        const metaBits = [];
-        // Time
-        const time = footer.querySelector('.cmp-card__time-in-minutes p');
+    // Description details: time and difficulty from recipe_footer
+    const footer = link.querySelector('.cmp-card__recipe_footer');
+    if (footer) {
+      const time = footer.querySelector('.cmp-card__time-in-minutes p');
+      const diff = footer.querySelector('.cmp-card__difficulty-level p');
+      if ((time && time.textContent.trim()) || (diff && diff.textContent.trim())) {
+        const descP = document.createElement('p');
+        let desc = '';
         if (time && time.textContent.trim()) {
-          metaBits.push(time);
+          desc += time.textContent.trim();
         }
-        // Difficulty
-        const diff = footer.querySelector('.cmp-card__difficulty-level p');
         if (diff && diff.textContent.trim()) {
-          metaBits.push(diff);
+          if (desc) desc += ' | ';
+          desc += diff.textContent.trim();
         }
-        if (metaBits.length) {
-          // Put each meta in a <span> separated by space
-          const metaDiv = document.createElement('div');
-          metaBits.forEach((el, i) => {
-            const span = document.createElement('span');
-            span.textContent = el.textContent.trim();
-            if (i > 0) metaDiv.appendChild(document.createTextNode(' '));
-            metaDiv.appendChild(span);
-          });
-          frag.appendChild(metaDiv);
-        }
+        descP.textContent = desc;
+        textFrag.appendChild(descP);
       }
     }
 
-    // If card has a link, wrap the text in a link (preserve child structure)
-    let textContentFinal = frag;
-    if (cardLink && cardLink.href) {
-      const linkElem = document.createElement('a');
-      linkElem.href = cardLink.href;
-      // Move all children from frag into the link
-      while (frag.firstChild) {
-        linkElem.appendChild(frag.firstChild);
-      }
-      textContentFinal = linkElem;
-    }
-
-    return [imgEl, textContentFinal];
+    rows.push([
+      imageCell,
+      textFrag
+    ]);
   });
 
-  // Compose final cells array
-  const cells = [headerRow, ...rows];
-
-  // Create and replace
-  const block = WebImporter.DOMUtils.createTable(cells, document);
-  element.replaceWith(block);
+  // Create and replace table
+  const table = WebImporter.DOMUtils.createTable(rows, document);
+  element.replaceWith(table);
 }

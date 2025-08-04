@@ -1,37 +1,42 @@
 /* global WebImporter */
 export default function parse(element, { document }) {
-  // Table header
+  // Header row, exactly as in the example
   const headerRow = ['Hero (hero42)'];
-
-  // Extract background image from style attribute
-  let bgImgEl = '';
-  const cmpBlogQuiz = element.querySelector('.cmp-blog-quiz');
-  if (cmpBlogQuiz && cmpBlogQuiz.style && cmpBlogQuiz.style.backgroundImage) {
-    const urlMatch = cmpBlogQuiz.style.backgroundImage.match(/url\(["']?([^"')]+)["']?\)/);
-    if (urlMatch && urlMatch[1]) {
-      const img = document.createElement('img');
-      img.src = urlMatch[1];
-      img.alt = '';
-      bgImgEl = img;
+  
+  // --- Background Image Row ---
+  let bgImgElem = '';
+  const quizDiv = element.querySelector('.cmp-blog-quiz');
+  if (quizDiv) {
+    const style = quizDiv.getAttribute('style') || '';
+    const match = style.match(/background-image:\s*url\(["']?([^"')]+)["']?\)/i);
+    if (match) {
+      bgImgElem = document.createElement('img');
+      bgImgElem.src = match[1];
+      bgImgElem.alt = '';
     }
   }
+  const bgImgRow = [bgImgElem || ''];
 
-  // Extract content: reference whole content block for all text and structure
-  let contentCell;
+  // --- Content Row ---
+  let contentRowContent = [];
+  // Use direct children of .cmp-blog-quiz__content, as this gives: h1 (title), main-content, actions (cta), etc.
   const contentDiv = element.querySelector('.cmp-blog-quiz__content');
   if (contentDiv) {
-    contentCell = contentDiv;
+    // Collect all direct child nodes (preserves structure and all text)
+    const nodes = [];
+    contentDiv.childNodes.forEach(node => {
+      if (node.nodeType === Node.ELEMENT_NODE || (node.nodeType === Node.TEXT_NODE && node.textContent.trim())) {
+        nodes.push(node);
+      }
+    });
+    contentRowContent = nodes.length ? nodes : [''];
   } else {
-    // fallback: use the whole element if sub-block is missing
-    contentCell = element;
+    contentRowContent = [''];
   }
+  const contentRow = [contentRowContent];
 
-  const rows = [
-    headerRow,
-    [bgImgEl ? bgImgEl : ''],
-    [contentCell]
-  ];
-
-  const table = WebImporter.DOMUtils.createTable(rows, document);
+  // --- Output table ---
+  const cells = [headerRow, bgImgRow, contentRow];
+  const table = WebImporter.DOMUtils.createTable(cells, document);
   element.replaceWith(table);
 }

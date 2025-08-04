@@ -1,60 +1,50 @@
 /* global WebImporter */
 export default function parse(element, { document }) {
-  // Header row: one column only
-  const rows = [['Accordion']];
+  // Find the main accordion container
+  const accordion = element.querySelector('.cmp-accordion');
+  if (!accordion) return;
+  // Find all accordion items
+  const items = accordion.querySelectorAll(':scope > .cmp-accordion__item');
 
-  // Find the accordion root element
-  let accordionRoot = element.querySelector('.cmp-accordion');
-  if (!accordionRoot && element.classList.contains('cmp-accordion')) {
-    accordionRoot = element;
-  }
-  if (!accordionRoot) {
-    accordionRoot = element;
-  }
+  // Build rows: header row is a single cell, all other rows are 2 cells (title, content)
+  const cells = [];
+  // Header row: ONLY 1 cell
+  cells.push(['Accordion']);
 
-  // Accumulate rows: each content row must have two columns (title, content)
-  const items = accordionRoot.querySelectorAll('.cmp-accordion__item');
-  items.forEach((item) => {
-    // Title extraction
+  // For each item
+  items.forEach(item => {
+    // Get title text
     let title = '';
-    const button = item.querySelector('button.cmp-accordion__button');
-    if (button) {
-      const titleSpan = button.querySelector('.cmp-accordion__title');
-      if (titleSpan) {
-        title = titleSpan.textContent.trim();
-      } else {
-        title = button.textContent.trim();
-      }
+    const headerBtn = item.querySelector('.cmp-accordion__header .cmp-accordion__button .cmp-accordion__title');
+    if (headerBtn) {
+      title = headerBtn.textContent.trim();
     } else {
-      const header = item.querySelector('.cmp-accordion__header');
-      if (header) {
-        title = header.textContent.trim();
-      }
+      const btn = item.querySelector('.cmp-accordion__header .cmp-accordion__button');
+      if (btn) title = btn.textContent.trim();
     }
-    // Content extraction
+    // Get the panel content
     let contentCell = '';
-    const panel = item.querySelector('[data-cmp-hook-accordion="panel"]');
+    const panel = item.querySelector('.cmp-accordion__panel');
     if (panel) {
-      // Try .container.responsivegrid > .cmp-container
-      let possibleContent = null;
-      const grid = panel.querySelector('.container.responsivegrid');
-      if (grid && grid.children.length === 1) {
-        possibleContent = grid.firstElementChild;
+      const cmpContainer = panel.querySelector('.cmp-container');
+      if (cmpContainer && cmpContainer.textContent.trim() !== '') {
+        contentCell = cmpContainer;
+      } else {
+        const children = Array.from(panel.children).filter(el => !['SCRIPT','STYLE'].includes(el.tagName));
+        if (children.length === 1) {
+          contentCell = children[0];
+        } else if (children.length > 1) {
+          contentCell = children;
+        } else {
+          contentCell = panel;
+        }
       }
-      if (!possibleContent) {
-        possibleContent = panel.querySelector('.cmp-container');
-      }
-      if (!possibleContent) {
-        possibleContent = panel;
-      }
-      contentCell = possibleContent;
     }
-    // Push row with two cells: [title, content]
-    rows.push([title, contentCell]);
+    // Each subsequent row is an array of exactly two cells
+    cells.push([title, contentCell]);
   });
 
-  // All non-header rows must have exactly two columns, header exactly one
-  // The table array is already correct as written above
-  const table = WebImporter.DOMUtils.createTable(rows, document);
+  // Create the table
+  const table = WebImporter.DOMUtils.createTable(cells, document);
   element.replaceWith(table);
 }

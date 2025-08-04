@@ -1,47 +1,42 @@
 /* global WebImporter */
 export default function parse(element, { document }) {
-  // Get all direct carousel slide items
-  const slides = element.querySelectorAll('.cmp-carousel__item');
-  if (!slides.length) return;
+  // Find the currently active carousel slide, using aria-hidden="false" for robustness
+  let activeItem = element.querySelector('.cmp-carousel__item[aria-hidden="false"]');
+  if (!activeItem) {
+    activeItem = element.querySelector('.cmp-carousel__item--active');
+  }
+  if (!activeItem) return;
 
-  // Use the first slide as Hero block
-  const firstSlide = slides[0];
-  if (!firstSlide) return;
-
-  // Find the teaser within first slide
-  const teaser = firstSlide.querySelector('.cmp-teaser');
+  // Find the .cmp-teaser inside the active item
+  const teaser = activeItem.querySelector('.cmp-teaser');
   if (!teaser) return;
 
-  // Extract background image for desktop
-  const bgImageUrl = teaser.getAttribute('data-background-image-desktop');
-  let bgImgEl = null;
-  if (bgImageUrl) {
+  // Get the background image (desktop, as in the spec)
+  const bgImgUrl = teaser.getAttribute('data-background-image-desktop');
+  let bgImgEl = '';
+  if (bgImgUrl) {
     bgImgEl = document.createElement('img');
-    bgImgEl.src = bgImageUrl;
+    bgImgEl.src = bgImgUrl;
     bgImgEl.alt = '';
   }
 
-  // For robustly gathering all text/cta content, get the teaser content container
+  // Compose the main content
   const teaserContent = teaser.querySelector('.cmp-teaser__content');
-  // Put all child nodes (including text, headings, paragraphs, CTA)
-  let contentCell = '';
+  let contentCell = [];
+  
   if (teaserContent) {
-    // Instead of clone, reference children directly (per guidelines)
-    const content = [];
-    Array.from(teaserContent.children).forEach(child => {
-      content.push(child);
-    });
-    contentCell = content;
+    // Gather all immediate children to preserve all text, semantic tags, and ordering
+    contentCell = Array.from(teaserContent.children);
   }
 
-  // Build the table as per requirements
-  const rows = [
+  // Compose table as per block spec and markdown example
+  const cells = [
     ['Hero (hero28)'],
-    [bgImgEl ? bgImgEl : ''],
+    [bgImgEl],
     [contentCell]
   ];
 
-  // Create the block table and replace the element
-  const table = WebImporter.DOMUtils.createTable(rows, document);
+  // Create the table and replace the original element
+  const table = WebImporter.DOMUtils.createTable(cells, document);
   element.replaceWith(table);
 }
