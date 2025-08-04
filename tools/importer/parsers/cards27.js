@@ -1,9 +1,8 @@
 /* global WebImporter */
 export default function parse(element, { document }) {
-  // The provided HTML contains only a gradient div (visual only, no card content).
-  // According to the specification and the markdown example, no Section Metadata is needed,
-  // and only the header row ('Cards (cards27)') should be created if there is no card content.
-  // No content is being missed, and the header row matches the example exactly.
+  // The provided HTML is only: <div class="bottom-container-gradient"></div>
+  // There is no card content or metadata to extract.
+  // Per spec, only the header row should be created.
   const cells = [
     ['Cards (cards27)']
   ];

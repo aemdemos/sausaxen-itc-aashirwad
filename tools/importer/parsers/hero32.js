@@ -1,71 +1,83 @@
 /* global WebImporter */
 export default function parse(element, { document }) {
-  // Find the first .slickcarousel within the element
-  const carousel = element.querySelector('.slickcarousel');
+  // Get the carousel (which contains the hero banner)
+  const carousel = element.querySelector('.cmp-carousel');
   if (!carousel) return;
 
-  // Find the first .cmp-carousel__item (active slide)
-  const carouselItem = carousel.querySelector('.cmp-carousel__item');
-  if (!carouselItem) return;
+  // Get the current/active carousel item
+  let activeItem = carousel.querySelector('.cmp-carousel__item--active');
+  if (!activeItem) {
+    // fallback to first .cmp-carousel__item if no active
+    activeItem = carousel.querySelector('.cmp-carousel__item');
+  }
+  if (!activeItem) return;
 
-  // Find the banner inside the carousel item
-  const banner = carouselItem.querySelector('.cmp-banner');
+  // Get the .cmp-banner__content block that contains image and (sometimes) text
+  const banner = activeItem.querySelector('.cmp-banner');
   if (!banner) return;
-
-  // Find the content div inside the banner
   const bannerContent = banner.querySelector('.cmp-banner__content');
   if (!bannerContent) return;
 
-  // Find the banner image (optional)
-  const bannerImage = bannerContent.querySelector('img');
+  // Find the image representing the hero background
+  const img = bannerContent.querySelector('img');
 
-  // For the content row: gather ALL content except the image, including text from all levels
-  // We'll gather all elements inside bannerContent except the first image
-  const contentElements = [];
-  Array.from(bannerContent.childNodes).forEach((node) => {
-    if (node === bannerImage) return;
-    if (node.nodeType === Node.ELEMENT_NODE) {
-      // If it is an element and not the image, include it
-      contentElements.push(node);
-    } else if (node.nodeType === Node.TEXT_NODE && node.textContent.trim()) {
-      // For any meaningful text nodes, wrap in a <p>
-      const p = document.createElement('p');
-      p.textContent = node.textContent.trim();
-      contentElements.push(p);
+  // Prepare content for the third row (headings, paragraphs, etc)
+  // Approach: collect *all* non-image nodes from bannerContent, including those nested in .cmp-banner__product-benefits
+  let contentNodes = [];
+  // Get direct children that are NOT the hero image
+  Array.from(bannerContent.childNodes).forEach(node => {
+    if (node.nodeType === 1 && node.tagName.toLowerCase() === 'img') {
+      return;
     }
-  });
-
-  // If contentElements are empty, try to find meaningful content deeper
-  let fallbackContent = null;
-  if (contentElements.length === 0) {
-    // Sometimes the content is nested deeper, e.g. inside cmp-banner__product-benefits
-    const benefit = bannerContent.querySelector('.cmp-banner__product-benefits');
-    if (benefit) {
-      // Use all children of product-benefits except for the main-content which may be empty
-      const benefitChildren = Array.from(benefit.childNodes).filter(n => {
-        if (n.nodeType === Node.ELEMENT_NODE) {
-          // skip empty content
-          return n.textContent.trim().length > 0;
+    // if it's a product benefits wrapper, extract all of its children
+    if (node.nodeType === 1 && node.classList.contains('cmp-banner__product-benefits')) {
+      // Could be deeply nested, so flatten one more level
+      Array.from(node.childNodes).forEach(child => {
+        // Only push non-empty nodes
+        if ((child.nodeType === 3 && child.textContent.trim()) || (child.nodeType === 1 && (child.textContent.trim() || child.querySelector('img,svg,a,button')))) {
+          contentNodes.push(child);
         }
-        return n.nodeType === Node.TEXT_NODE && n.textContent.trim().length > 0;
+        // If it contains more nested children, add them as well
+        if (child.nodeType === 1 && child.childNodes.length > 0) {
+          Array.from(child.childNodes).forEach(grandChild => {
+            if ((grandChild.nodeType === 3 && grandChild.textContent.trim()) || (grandChild.nodeType === 1 && (grandChild.textContent.trim() || grandChild.querySelector('img,svg,a,button')))) {
+              contentNodes.push(grandChild);
+            }
+          });
+        }
       });
-      if (benefitChildren.length) {
-        fallbackContent = benefitChildren;
+    } else {
+      // Only push if it has meaningful content
+      if ((node.nodeType === 3 && node.textContent.trim()) || (node.nodeType === 1 && (node.textContent.trim() || node.querySelector('img,svg,a,button')))) {
+        contentNodes.push(node);
       }
     }
+  });
+  // Remove duplicates and empty nodes (if any)
+  contentNodes = contentNodes.filter((node, i, arr) => {
+    if (!node) return false;
+    if (node.nodeType === 3 && !node.textContent.trim()) return false;
+    if (node.nodeType === 1 && !node.textContent.trim() && !node.querySelector('img,svg,a,button')) return false;
+    // Remove if already in the array
+    return arr.indexOf(node) === i;
+  });
+
+  let contentCell;
+  if (contentNodes.length === 0) {
+    // If nothing found, fallback to textContent
+    contentCell = bannerContent.textContent.trim() ? bannerContent.textContent.trim() : '';
+  } else if (contentNodes.length === 1) {
+    contentCell = contentNodes[0];
+  } else {
+    contentCell = contentNodes;
   }
-  const finalContent = (contentElements.length > 0) ? contentElements : (fallbackContent || ['']);
 
-  // Compose table rows
-  const headerRow = ['Hero (hero32)'];
-  const imageRow = [bannerImage ? bannerImage : ''];
-  const contentRow = [finalContent];
-
-  const table = WebImporter.DOMUtils.createTable([
-    headerRow,
-    imageRow,
-    contentRow
-  ], document);
-
+  // Compose the block table
+  const cells = [
+    ['Hero (hero32)'],
+    [img ? img : ''],
+    [contentCell]
+  ];
+  const table = WebImporter.DOMUtils.createTable(cells, document);
   element.replaceWith(table);
 }

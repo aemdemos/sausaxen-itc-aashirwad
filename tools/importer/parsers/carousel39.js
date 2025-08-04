@@ -1,79 +1,83 @@
 /* global WebImporter */
 export default function parse(element, { document }) {
-  // Find carousel container and slides
-  const carousel = element.querySelector('.cmp-carousel');
-  if (!carousel) return;
-  const container = carousel.querySelector('.cmp-carousel__container');
-  if (!container) return;
-  const slickTrack = container.querySelector('.slick-track');
-  if (!slickTrack) return;
-  const slideItems = Array.from(slickTrack.querySelectorAll('.cmp-recipe-group__carousel-item'));
+  // Find the main carousel container
+  const carouselRoot = element.querySelector('.cmp-carousel');
+  if (!carouselRoot) return;
+  
+  // Find the actual carousel slide container
+  const slidesContainer = carouselRoot.querySelector('.cmp-carousel__container');
+  if (!slidesContainer) return;
 
-  const headerRow = ['Carousel (carousel39)'];
-  const rows = [headerRow];
+  // Find all slides
+  const items = slidesContainer.querySelectorAll('.cmp-recipe-group__carousel-item, .cmp-carousel__item');
 
-  slideItems.forEach(item => {
-    // First cell: image (mandatory)
+  // Init table with header row matching the example
+  const cells = [['Carousel (carousel39)']];
+
+  items.forEach((item) => {
+    // Get the image (first img in card)
     const img = item.querySelector('img');
+    // Only include if present
     const imageCell = img || '';
 
-    // Second cell: aggregate all relevant text content
-    const textContent = [];
-    const a = item.querySelector('a');
-    if (a) {
-      // Title (as a heading)
-      const titleEl = a.querySelector('.cmp-card__title h4');
-      if (titleEl && titleEl.textContent.trim()) {
-        const heading = document.createElement('h3');
-        heading.textContent = titleEl.textContent.trim();
-        textContent.push(heading);
+    // Build text cell: gather all text nodes in the card info area
+    // 1. Try .cmp-card__info (contains all text content)
+    let info = item.querySelector('.cmp-card__info');
+    let textParts = [];
+    if (info) {
+      // Find the title (as h2)
+      const titleH4 = info.querySelector('.cmp-card__title h4');
+      if (titleH4 && titleH4.textContent.trim()) {
+        const h2 = document.createElement('h2');
+        h2.textContent = titleH4.textContent.trim();
+        textParts.push(h2);
       }
-      // Tag (e.g., Breakfast and Savoury)
-      const tagEl = a.querySelector('.cmp-card__tag-wrapper p');
-      if (tagEl && tagEl.textContent.trim()) {
+      // Find the tag (if any)
+      const tag = info.querySelector('.cmp-card__tag-wrapper p');
+      if (tag && tag.textContent.trim()) {
         const tagP = document.createElement('p');
-        tagP.textContent = tagEl.textContent.trim();
-        textContent.push(tagP);
+        tagP.textContent = tag.textContent.trim();
+        textParts.push(tagP);
       }
-      // Any additional description in .cmp-card__info
-      const info = a.querySelector('.cmp-card__info');
-      if (info) {
-        Array.from(info.querySelectorAll('p'))
-          .filter(p => {
-            // Exclude tag (already handled)
-            if (tagEl && p === tagEl) return false;
-            // Exclude time/difficulty
-            return !p.closest('.cmp-card__time-in-minutes') && !p.closest('.cmp-card__difficulty-level');
-          })
-          .forEach(p => {
-            if (p.textContent.trim()) {
-              textContent.push(p);
-            }
-          });
+      // Find the time (if any)
+      const time = info.querySelector('.cmp-card__time-in-minutes p');
+      if (time && time.textContent.trim()) {
+        const timeP = document.createElement('p');
+        timeP.textContent = time.textContent.trim();
+        textParts.push(timeP);
       }
-      // Time
-      const timeP = a.querySelector('.cmp-card__time-in-minutes p');
-      if (timeP && timeP.textContent.trim()) {
-        textContent.push(timeP);
-      }
-      // Difficulty
-      const diffP = a.querySelector('.cmp-card__difficulty-level p');
-      if (diffP && diffP.textContent.trim()) {
-        textContent.push(diffP);
-      }
-      // CTA (link to detail page)
-      if (a.href && a.href.trim()) {
-        const ctaPara = document.createElement('p');
-        const ctaLink = document.createElement('a');
-        ctaLink.href = a.href;
-        ctaLink.textContent = 'View Recipe';
-        ctaPara.appendChild(ctaLink);
-        textContent.push(ctaPara);
+      // Find the difficulty (if any)
+      const diff = info.querySelector('.cmp-card__difficulty-level p');
+      if (diff && diff.textContent.trim()) {
+        const diffP = document.createElement('p');
+        diffP.textContent = diff.textContent.trim();
+        textParts.push(diffP);
       }
     }
-    rows.push([imageCell, textContent.length > 0 ? textContent : '']);
+    // Add View Recipe CTA if link present
+    const outerLink = item.querySelector('a');
+    if (outerLink && outerLink.href) {
+      const p = document.createElement('p');
+      const link = document.createElement('a');
+      link.href = outerLink.href;
+      link.textContent = 'View Recipe';
+      p.appendChild(link);
+      textParts.push(p);
+    }
+    // If there's no info, try to extract all text content from card
+    if ((!info || !info.textContent.trim()) && item.textContent.trim()) {
+      const p = document.createElement('p');
+      p.textContent = item.textContent.trim();
+      textParts.push(p);
+    }
+    // Compose row: always two columns (image, text)
+    cells.push([
+      imageCell,
+      textParts.length > 0 ? textParts : ''
+    ]);
   });
 
-  const table = WebImporter.DOMUtils.createTable(rows, document);
+  // Build and replace
+  const table = WebImporter.DOMUtils.createTable(cells, document);
   element.replaceWith(table);
 }

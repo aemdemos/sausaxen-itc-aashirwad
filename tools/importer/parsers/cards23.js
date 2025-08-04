@@ -1,39 +1,35 @@
 /* global WebImporter */
 export default function parse(element, { document }) {
-  // Block header
-  const headerRow = ['Cards (cards23)'];
+  // Table header
+  const cells = [['Cards (cards23)']];
+  // Find all direct card blocks
+  const cardDivs = element.querySelectorAll(':scope > .cmp-categorylist');
+  cardDivs.forEach((cardDiv) => {
+    const link = cardDiv.querySelector('a.cmp-categorylist__item');
+    if (!link) return;
+    const img = link.querySelector('.cmp-categorylist__imagewrapper img');
+    const nameSpan = link.querySelector('.cmp-categorylist__name');
 
-  // Gather all immediate card divs
-  const cardDivs = Array.from(element.querySelectorAll(':scope > div.cmp-categorylist'));
-
-  const cardRows = cardDivs.map(cardDiv => {
-    const anchor = cardDiv.querySelector('a.cmp-categorylist__item');
-    if (!anchor) return ['',''];
-    // First cell: the image (reference the actual <img> element)
-    const imgWrapper = anchor.querySelector('.cmp-categorylist__imagewrapper');
-    let img = imgWrapper ? imgWrapper.querySelector('img') : null;
-    // Second cell: the title (reference the text, as a strong, wrapped in a link)
-    const nameEl = anchor.querySelector('.cmp-categorylist__name');
-    let titleCell = '';
-    if (nameEl) {
-      // Title as <strong>
+    // Prepare text cell: strong element for title, optionally wrapped in a link
+    let textCell = '';
+    if (nameSpan) {
       const strong = document.createElement('strong');
-      strong.textContent = nameEl.textContent.trim();
-      // Make the whole <strong> a link
-      if (anchor.href) {
-        const link = document.createElement('a');
-        link.href = anchor.href;
-        link.title = anchor.title || '';
-        link.appendChild(strong);
-        titleCell = link;
+      strong.textContent = nameSpan.textContent.trim();
+      if (link.href) {
+        const headingLink = document.createElement('a');
+        headingLink.href = link.href;
+        if (link.title) headingLink.title = link.title;
+        headingLink.appendChild(strong);
+        textCell = headingLink;
       } else {
-        titleCell = strong;
+        textCell = strong;
       }
     }
-    return [img, titleCell];
+    cells.push([
+      img || '',
+      textCell || '',
+    ]);
   });
-
-  const cells = [headerRow, ...cardRows];
   const table = WebImporter.DOMUtils.createTable(cells, document);
   element.replaceWith(table);
 }

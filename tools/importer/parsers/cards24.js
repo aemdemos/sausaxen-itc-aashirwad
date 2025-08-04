@@ -1,20 +1,35 @@
 /* global WebImporter */
 export default function parse(element, { document }) {
-  // Always start with the header row as specified
-  const cells = [
-    ['Cards (cards24)']
-  ];
-  // Find all .cmp-text blocks that might represent card content
-  const cardBlocks = Array.from(element.querySelectorAll('.cmp-text'));
-  cardBlocks.forEach(tb => {
-    // Collect all non-empty children (paragraphs, headings, etc.)
-    const content = Array.from(tb.children).filter(child => child.textContent.trim());
-    if (content.length > 0) {
-      cells.push([content]);
-    }
+  // Assemble the Cards (cards24) block, even if content is empty
+
+  // Create the header row exactly as specified
+  const cells = [['Cards (cards24)']];
+
+  // Find all direct or nested .cmp-text or .text blocks that are not empty
+  // These are where the actual text content resides in this kind of AEM structure
+  const textBlocks = Array.from(element.querySelectorAll('.cmp-text, .text'));
+
+  // Filter out blocks that have only whitespace or non-breaking spaces
+  const contentBlocks = textBlocks.filter(block => {
+    const txt = block.textContent.replace(/\u00a0|\s|&nbsp;/g, '');
+    return txt.length > 0;
   });
-  // Only the header row will be present if there is no content in the source HTML
-  // The function still produces card rows if card content exists
+
+  // For each non-empty content block, add a row with the existing element
+  for (const block of contentBlocks) {
+    cells.push([block]);
+  }
+
+  // If absolutely no content blocks, but there's some other visible text, include it in a <p>
+  if (cells.length === 1) {
+    const fallbackText = element.textContent && element.textContent.replace(/\u00a0|&nbsp;/g, '').trim();
+    if (fallbackText) {
+      const p = document.createElement('p');
+      p.textContent = fallbackText;
+      cells.push([p]);
+    }
+  }
+  // Create and replace
   const table = WebImporter.DOMUtils.createTable(cells, document);
   element.replaceWith(table);
 }

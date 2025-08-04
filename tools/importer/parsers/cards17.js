@@ -1,85 +1,68 @@
 /* global WebImporter */
 export default function parse(element, { document }) {
-  // Table header as in the example
-  const headerRow = ['Cards (cards17)'];
+  // Find all the cards (immediate children with .cmp-recipe-group__carousel-item)
+  let cards = Array.from(element.querySelectorAll(':scope > .slick-track > .cmp-recipe-group__carousel-item'));
+  // Fallback: try to get direct children (for resilience)
+  if (!cards.length) {
+    cards = Array.from(element.querySelectorAll('.cmp-recipe-group__carousel-item'));
+  }
+  
+  const rows = [['Cards (cards17)']];
 
-  // Find all visible, unique card elements by their link href
-  const allCardItems = Array.from(element.querySelectorAll(':scope > .slick-track > .cmp-recipe-group__carousel-item'));
-  const seen = new Set();
-  const uniqueCards = allCardItems.filter(card => {
-    const link = card.querySelector('a.card');
-    if (!link) return false;
-    const href = link.getAttribute('href');
-    if (!href || seen.has(href)) return false;
-    seen.add(href);
-    return true;
-  });
+  cards.forEach(card => {
+    // The clickable card link
+    const cardLink = card.querySelector('a.card');
+    if (!cardLink) return;
 
-  // For each card, extract the image and ALL text content in the right cell
-  const cardRows = uniqueCards.map(card => {
-    // Image for first cell
-    const img = card.querySelector('img');
-    // Second cell: all text content as a <div>
-    const info = card.querySelector('.cmp-card__info');
-    const textDiv = document.createElement('div');
-    if (info) {
-      // Tag (top line)
-      const tag = info.querySelector('.cmp-card__tag-wrapper p');
-      if (tag && tag.textContent.trim()) {
-        const tagP = document.createElement('p');
-        tagP.textContent = tag.textContent.trim();
-        textDiv.appendChild(tagP);
+    // 1. IMAGE (always required, in left cell)
+    const img = cardLink.querySelector('.cmp-card__image img');
+    
+    // 2. TEXTUAL CONTENT (all in right cell)
+    // We'll build an array for the right cell
+    const infoCell = [];
+
+    // Get category/tag (optional, often present)
+    const tagP = cardLink.querySelector('.cmp-card__tag-wrapper p');
+    if (tagP && tagP.textContent.trim()) {
+      const tagDiv = document.createElement('div');
+      tagDiv.textContent = tagP.textContent.trim();
+      infoCell.push(tagDiv);
+    }
+
+    // Get the card title (h4)
+    const titleH4 = cardLink.querySelector('.cmp-card__title h4');
+    if (titleH4 && titleH4.textContent.trim()) {
+      const cardTitle = document.createElement('h4');
+      cardTitle.textContent = titleH4.textContent.trim();
+      infoCell.push(cardTitle);
+    }
+
+    // Get the recipe footer for time and difficulty
+    const footer = cardLink.querySelector('.cmp-card__recipe_footer');
+    if (footer) {
+      // Get time
+      const timeP = footer.querySelector('.cmp-card__time-in-minutes p');
+      if (timeP && timeP.textContent.trim()) {
+        const timeDiv = document.createElement('div');
+        timeDiv.textContent = timeP.textContent.trim();
+        infoCell.push(timeDiv);
       }
-      // Title (as <strong> in example)
-      const title = info.querySelector('.cmp-card__title h4');
-      if (title && title.textContent.trim()) {
-        const strong = document.createElement('strong');
-        strong.textContent = title.textContent.trim();
-        textDiv.appendChild(strong);
-        textDiv.appendChild(document.createElement('br'));
-      }
-      // Any other description in <p> after title and tag, but not in footer
-      const tagP = info.querySelector('.cmp-card__tag-wrapper p');
-      const footer = info.querySelector('.cmp-card__recipe_footer');
-      info.querySelectorAll('p').forEach(p => {
-        if (p !== tagP && (!footer || !footer.contains(p)) && p !== title) {
-          // Not tag, not footer, not the title h4
-          if (p.textContent.trim()) {
-            const descP = document.createElement('p');
-            descP.textContent = p.textContent.trim();
-            textDiv.appendChild(descP);
-          }
-        }
-      });
-      // Footer: time and difficulty
-      if (footer) {
-        const time = footer.querySelector('.cmp-card__time-in-minutes p');
-        const diff = footer.querySelector('.cmp-card__difficulty-level p');
-        let footerText = '';
-        if (time && time.textContent.trim()) {
-          footerText += time.textContent.trim();
-        }
-        if (diff && diff.textContent.trim()) {
-          if (footerText) footerText += ' | ';
-          footerText += diff.textContent.trim();
-        }
-        if (footerText) {
-          const span = document.createElement('span');
-          span.textContent = footerText;
-          textDiv.appendChild(document.createElement('br'));
-          textDiv.appendChild(span);
-        }
+      // Get difficulty
+      const diffP = footer.querySelector('.cmp-card__difficulty-level p');
+      if (diffP && diffP.textContent.trim()) {
+        const diffDiv = document.createElement('div');
+        diffDiv.textContent = diffP.textContent.trim();
+        infoCell.push(diffDiv);
       }
     }
-    return [img, textDiv];
+
+    // If for some reason infoCell is empty, fallback to the card
+    rows.push([
+      img || '',
+      infoCell.length > 0 ? infoCell : card
+    ]);
   });
 
-  // Create the block table
-  const table = WebImporter.DOMUtils.createTable([
-    headerRow,
-    ...cardRows
-  ], document);
-
-  // Replace the original element in place
+  const table = WebImporter.DOMUtils.createTable(rows, document);
   element.replaceWith(table);
 }

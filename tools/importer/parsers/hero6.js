@@ -1,56 +1,44 @@
 /* global WebImporter */
 export default function parse(element, { document }) {
-  // Header row (exact match to example)
+  // Header row for the block, per example
   const headerRow = ['Hero (hero6)'];
 
-  // Locate the .cmp-teaser element inside the block
+  // Find the teaser (should only be one per block)
   const teaser = element.querySelector('.cmp-teaser');
+  if (!teaser) return;
 
-  // ----- 2nd row: Background Image (optional) -----
-  let bgImgElem = null;
-  if (teaser) {
-    // Try to extract background image URL (desktop preferred)
-    let bgImgUrl = teaser.getAttribute('data-background-image-desktop');
-    if (!bgImgUrl && teaser.style && teaser.style.backgroundImage) {
-      // Fallback: background-image style
-      const match = teaser.style.backgroundImage.match(/url\(["']?(.*?)["']?\)/);
-      if (match && match[1]) {
-        bgImgUrl = match[1];
-      }
-    }
-    if (bgImgUrl) {
-      bgImgElem = document.createElement('img');
-      bgImgElem.src = bgImgUrl;
-      bgImgElem.alt = '';
-    }
+  // Background image: prefer desktop, fallback to mobile
+  const bgImgUrl = teaser.getAttribute('data-background-image-desktop') || teaser.getAttribute('data-background-image-mobile');
+  let bgImgEl = null;
+  if (bgImgUrl) {
+    bgImgEl = document.createElement('img');
+    bgImgEl.src = bgImgUrl;
+    bgImgEl.alt = '';
   }
 
-  // ----- 3rd row: Content (Title, Description, CTA) -----
-  // We'll reference the existing elements for robust parsing
-  let contentParts = [];
-  if (teaser) {
-    const content = teaser.querySelector('.cmp-teaser__content');
-    if (content) {
-      // Title (h2)
-      const title = content.querySelector('.cmp-teaser__title');
-      if (title) contentParts.push(title);
-      // Description (p)
-      const desc = content.querySelector('.cmp-teaser__description');
-      if (desc) contentParts.push(desc);
-      // CTA button (cmp-teaser__action-container)
-      const action = content.querySelector('.cmp-teaser__action-container');
-      if (action) contentParts.push(action);
-    }
+  // Title, subheading, CTA
+  const content = teaser.querySelector('.cmp-teaser__content');
+  const contentEls = [];
+  if (content) {
+    // Title: if present, keep tag (eg. h2)
+    const title = content.querySelector('.cmp-teaser__title');
+    if (title) contentEls.push(title);
+    // Description: if present, reference the element
+    const desc = content.querySelector('.cmp-teaser__description');
+    if (desc) contentEls.push(desc);
+    // CTA: if present, reference the button/link container
+    const action = content.querySelector('.cmp-teaser__action-container');
+    if (action) contentEls.push(action);
   }
 
-  // Compose the rows according to the specification: always 1 column, always 3 rows
-  const cells = [
+  // Compose the table as 3 rows, 1 column each
+  const rows = [
     headerRow,
-    [bgImgElem ? bgImgElem : ''],
-    [contentParts.length ? contentParts : '']
+    [bgImgEl ? bgImgEl : ''],
+    [contentEls.length ? contentEls : '']
   ];
 
-  // Create and replace with the block table
-  const table = WebImporter.DOMUtils.createTable(cells, document);
+  // Create and replace
+  const table = WebImporter.DOMUtils.createTable(rows, document);
   element.replaceWith(table);
 }
