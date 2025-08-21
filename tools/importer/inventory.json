@@ -5392,6 +5392,19 @@
           "section": "section-2"
         }
       ]
+    },
+    {
+      "name": "Carousel",
+      "cluster": 43,
+      "instances": [
+        {
+          "url": "https://aashirvaad.com/our-products/atta/shudh-chakki-atta.html",
+          "urlHash": "03cd46e14e567a25916666cc8cbb53dc069c7856",
+          "uuid": "03cd46e1-05-298651cb7665d08d10db35f655e54ff9fd29dd7f",
+          "xpath": "/html[1]/body[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[5]/div[1]/div[1]/div[1]/div[1]/div[1]",
+          "section": "section-2"
+        }
+      ]
     }
   ],
   "outliers": [
@@ -5401,13 +5414,6 @@
       "uuid": "03cd46e1-04-b1a4c91216d25c9049ab989baef52ebaadf9eb9e",
       "xpath": "/html[1]/body[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[4]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/ul[1]",
       "section": "section-3"
-    },
-    {
-      "url": "https://aashirvaad.com/our-products/atta/shudh-chakki-atta.html",
-      "urlHash": "03cd46e14e567a25916666cc8cbb53dc069c7856",
-      "uuid": "03cd46e1-05-298651cb7665d08d10db35f655e54ff9fd29dd7f",
-      "xpath": "/html[1]/body[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[5]/div[1]/div[1]/div[1]/div[1]/div[1]",
-      "section": "section-2"
     },
     {
       "url": "https://aashirvaad.com/our-products/atta/shudh-chakki-atta.html",
