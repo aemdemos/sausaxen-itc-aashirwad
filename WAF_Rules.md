@@ -4,7 +4,7 @@
 
 **ITC can use their WAF with EDS, but with performance trade-offs.**
 
-**EDS has built-in WAF security features** and additional WAF layers can negatively impact site performance ([Unsupported Integrations](https://www.aem.live/docs/unsupported)). However, ITC can implement their WAF rulesets through AWS CloudFront + AWS WAF using the BYO CDN approach.
+**EDS has built-in WAF security features** and additional WAF layers can negatively impact site performance ([Unsupported Integrations](https://www.aem.live/docs/unsupported)). However, ITC can implement their WAF rulesets using the BYO CDN approach.
 
 ### Key Points:
 - All 9 ITC WAF rules are technically compatible with EDS
