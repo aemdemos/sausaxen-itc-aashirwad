@@ -4,7 +4,7 @@
 
 **ITC can use their WAF with EDS, but with performance trade-offs.**
 
-Adobe's position: **EDS has built-in WAF security features** and additional WAF layers are officially discouraged ([Unsupported Integrations](https://www.aem.live/docs/unsupported)). However, ITC can implement their WAF rulesets through AWS CloudFront + AWS WAF using the BYO CDN approach.
+**EDS has built-in WAF security features** and additional WAF layers can negatively impact site performance ([Unsupported Integrations](https://www.aem.live/docs/unsupported)). However, ITC can implement their WAF rulesets through AWS CloudFront + AWS WAF using the BYO CDN approach.
 
 ### Key Points:
 - All 9 ITC WAF rules are technically compatible with EDS
@@ -29,8 +29,6 @@ Adobe's position: **EDS has built-in WAF security features** and additional WAF 
 ### Adobe's Guidance on WAF
 > "Web Application Firewalls can introduce performance challenges through synchronous request processing, complex pattern matching rules, inefficient geographic routing, and interference with CDN caching."
 
-**Recommendation**: Use EDS's built-in WAF security features or implement WAF through supported CDN providers only.
-
 **Reference**: [Unsupported Integrations - Discouraged Security Practices](https://www.aem.live/docs/unsupported#discouraged-security-practices)
 
 ---
@@ -40,10 +38,10 @@ Adobe's position: **EDS has built-in WAF security features** and additional WAF 
 | # | Rule Name | Latency | Impact | Critical Optimization |
 |---|-----------|---------|--------|----------------------|
 | 1 | RateBasedRule_IP-300 | 1-3ms | 🟢 LOW | Keep enabled |
-| 2 | **CommonRuleSet-XSS** | **10-30ms** | 🔴 **HIGH** | **MUST scope to form paths only** |
+| 2 | **CommonRuleSet-XSS** | **10-30ms** | 🔴 **HIGH** | **Should scope to form paths only** |
 | 3 | KnownBadInputsRuleset | 3-8ms | 🟢 LOW | Keep enabled |
 | 4 | BlockLinuxDesktopOnGraphQL | 0.5-2ms | 🟢 LOW | Disable if no GraphQL |
-| 5 | **SQLiRuleSet** | **10-25ms** | 🔴 **HIGH** | **MUST scope to API paths only** |
+| 5 | **SQLiRuleSet** | **10-25ms** | 🔴 **HIGH** | **Should scope to API paths only** |
 | 6 | AmazonIpReputationList | 2-5ms | 🟢 LOW | Keep enabled |
 | 7 | BotControlRuleSet | 5-15ms | 🟡 MEDIUM | Use targeted mode + allowlist Adobe services |
 | 8 | LinuxRuleSet | 8-20ms | 🟡 MEDIUM | Evaluate necessity (EDS is managed) |
@@ -89,26 +87,6 @@ Adobe's position: **EDS has built-in WAF security features** and additional WAF 
 
 ### 🟢 KEEP ENABLED (Low Impact Rules)
 5 rules with minimal overhead: Rate limiting, IP reputation, known bad inputs, anonymous IPs, GraphQL blocking
-
----
-
-## Architecture
-
-```
-User Request
-    ↓
-AWS CloudFront + AWS WAF (ITC's 9 rulesets)
-    ↓
-EDS Origins (*.aem.live)
-    ↓
-Content Source (SharePoint/Google Drive/AEM)
-```
-
-**Configuration:**
-- Point CloudFront to EDS origins
-- Apply WAF rules at CloudFront edge (not origin)
-- Configure push invalidation for cache management
-- Restrict direct .aem.live access to CloudFront only
 
 ---
 
